@@ -46,27 +46,36 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Customer.cs" />
-    <Compile Include="CustomerForm.cs">
+    <Compile Include="EditCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <Compile Include="EditCustomerForm.Designer.cs">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomersData.cs" />
+    <Compile Include="NewCustomerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewCustomerForm.Designer.cs">
+      <DependentUpon>NewCustomerForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Sales.cs" />
     <Compile Include="NormalCustomer.cs" />
     <Compile Include="PremiumCustomer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SalesOrderForm.cs">
+    <Compile Include="CustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SalesOrderForm.Designer.cs">
-      <DependentUpon>SalesOrderForm.cs</DependentUpon>
-    </Compile>
-    <EmbeddedResource Include="CustomerForm.resx">
+    <Compile Include="CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="EditCustomerForm.resx">
+      <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewCustomerForm.resx">
+      <DependentUpon>NewCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -77,8 +86,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SalesOrderForm.resx">
-      <DependentUpon>SalesOrderForm.cs</DependentUpon>
+    <EmbeddedResource Include="CustomerForm.resx">
+      <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\Settings.settings">

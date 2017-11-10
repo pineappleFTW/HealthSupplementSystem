@@ -8,16 +8,20 @@ namespace Health_Assignment
 {
     public class CustomersData
     {
-        static List<Customer> customers = new List<Customer>();
+        public static List<Customer> customers = new List<Customer>();
 
         public static List<Customer> initializeData()
         {
             
-            customers.Add(new Customer("lisheng", "ong", "address", "premium", "34573487"));
-            customers.Add(new Customer("hahhaa", "ong", "sdaddress", "normal", "34573487"));
+            customers.Add(new Customer("lisheng", "ong", "address", "Premium", "34573487"));
+            customers.Add(new Customer("hahhaa", "ong", "sdaddress", "Normal", "34573487"));
+            customers.Add(new Customer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
+            customers.Add(new Customer("josh", "teh", "sdaddress", "Normal", "12345"));
+            customers.Add(new Customer("awad", "lol", "sdaddress", "Normal", "12345"));
 
             return customers;
         }
+
 
         public static void updateInformation(Customer currentCustomer)
         {
@@ -29,6 +33,16 @@ namespace Health_Assignment
                     currentCust.LastName = currentCustomer.LastName;
                 }
             }
+        }
+
+        public static void addNewCustomer(Customer newCustomer)
+        {
+            customers.Add(newCustomer);
+        }
+
+        public static void deleteCustomer(Customer customer)
+        {
+            customers.Remove(customer);
         }
     }
 }

@@ -45,6 +45,21 @@ namespace Health_Assignment
             return ++ID_INCREMENT;
         }
 
-        
+        public override bool Equals(object obj)
+        {
+            if(obj == null || GetType() !=obj.GetType())
+            {
+                return false;
+            }
+
+            Customer customer = (Customer)obj;
+            {
+                return (ID == customer.ID) && (FirstName == customer.FirstName) && (LastName == customer.LastName);
+            }
+
+
+        }
+
+
     }
 }

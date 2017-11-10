@@ -12,6 +12,7 @@ namespace Health_Assignment
         public string Name { set; get; }
         public string Description { set; get; }
         public string Prescription { set; get; }
+        public string Manufacturer { set; get; }
         private static int ID_INCREMENT=0;
 
         private decimal price;
