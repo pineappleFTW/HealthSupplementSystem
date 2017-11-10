@@ -16,7 +16,7 @@ namespace Health_Assignment
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CustomerForm());
+            Application.Run(new Login());
         }
     }
 }
