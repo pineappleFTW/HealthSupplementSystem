@@ -22,17 +22,21 @@ namespace Health_Assignment
             return customers;
         }
 
+        public static List<Customer> getCurrentList()
+        {
+            return customers;
+        }
 
         public static void updateInformation(Customer currentCustomer)
         {
-            foreach(Customer currentCust in customers)
-            {
-                if (currentCust.ID == currentCustomer.ID)
-                {
-                    currentCust.FirstName = currentCustomer.FirstName;
-                    currentCust.LastName = currentCustomer.LastName;
-                }
-            }
+
+            Customer existingCustomer = customers.Find(x => x.ID == currentCustomer.ID);
+            existingCustomer.FirstName = currentCustomer.FirstName;
+            existingCustomer.LastName = currentCustomer.LastName;
+            existingCustomer.CustomerType = currentCustomer.CustomerType;
+            existingCustomer.Address = currentCustomer.Address;
+            existingCustomer.PhoneNumber = currentCustomer.PhoneNumber;
+
         }
 
         public static void addNewCustomer(Customer newCustomer)

@@ -72,11 +72,8 @@ namespace Health_Assignment
 
         public void populateList()
         {
-
-            currentListOfCustomers = CustomersData.initializeData();
+            currentListOfCustomers = CustomersData.getCurrentList();
             dataGridView1.DataSource = currentListOfCustomers;
-
-            
         }
 
         private void button_add_Click(object sender, EventArgs e)

@@ -21,7 +21,10 @@ namespace Health_Assignment
         {
             List<UserAccount> currentUserAccounts = new List<UserAccount>();
             currentUserAccounts = UserAccountsData.initializeAccount();
-        }
+            List<Customer> currentListOfCustomers = new List<Customer>();
+            currentListOfCustomers = CustomersData.initializeData();
+
+    }
 
         private void txtUserID_TextChanged(object sender, EventArgs e)
         {
