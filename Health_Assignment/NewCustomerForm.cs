@@ -98,5 +98,15 @@ namespace Health_Assignment
             mainMenu.customerUserControlForm.reloadList();
             this.Close();
         }
+
+        private void textBox_newPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_newCustomerText_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

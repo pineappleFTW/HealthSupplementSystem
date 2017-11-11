@@ -27,6 +27,7 @@ namespace Health_Assignment
             comboBox_searchOptions.Items.Add("Address");
             comboBox_searchOptions.Items.Add("Phone Number");
             comboBox_searchOptions.SelectedIndex = 0;
+            dataGridView1.EnableHeadersVisualStyles = false;
             populateList();
         }
 
@@ -63,6 +64,10 @@ namespace Health_Assignment
         {
             if (currentListOfCustomers.Count != 0)
             {
+                if (currentListOfCustomers.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
                 DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
                 Customer currentObject;
                 string custType = selectedRow.Cells[4].Value.ToString();
@@ -182,6 +187,9 @@ namespace Health_Assignment
             dataGridView1.DataSource = currentListOfCustomers;
         }
 
-        
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
