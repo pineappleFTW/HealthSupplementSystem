@@ -137,7 +137,7 @@
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(21, 295);
+            this.button_save.Location = new System.Drawing.Point(42, 305);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 11;
@@ -166,7 +166,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(381, 330);
+            this.ClientSize = new System.Drawing.Size(381, 342);
             this.Controls.Add(this.richTextBox_creditLimit);
             this.Controls.Add(this.label_creditLimit);
             this.Controls.Add(this.button_save);

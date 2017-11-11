@@ -34,7 +34,7 @@ namespace Health_Assignment
 
         private void icon_customer_Click(object sender, EventArgs e)
         {
-            CustomerForm customerForm = new CustomerForm();
+            CustomerMainForm customerForm = new CustomerMainForm();
             customerForm.Show();
             
         }
