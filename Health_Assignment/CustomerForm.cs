@@ -12,8 +12,8 @@ namespace Health_Assignment
 {
     public partial class CustomerForm : Form
     {
-        private int currentIndex = 0;
-        private List<Customer> currentListOfCustomers;
+        public int currentIndex = 0;
+        public List<Customer> currentListOfCustomers;
       
         public CustomerForm()
         {
@@ -44,23 +44,31 @@ namespace Health_Assignment
 
         private void button_editCustomer_Click(object sender, EventArgs e)
         {
-            
-            DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
-            Customer currentObject;
-            string custType = selectedRow.Cells[4].Value.ToString();
-
-            if (custType.Equals("Premium"))
+            if (currentListOfCustomers.Count != 0)
             {
-               currentObject = (PremiumCustomer)dataGridView1.CurrentRow.DataBoundItem;
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Customer currentObject;
+                string custType = selectedRow.Cells[4].Value.ToString();
+
+                if (custType.Equals("Premium"))
+                {
+                    currentObject = (PremiumCustomer)dataGridView1.CurrentRow.DataBoundItem;
+                }
+                else
+                {
+                    currentObject = (NormalCustomer)dataGridView1.CurrentRow.DataBoundItem;
+
+                }
+
+
+                EditCustomerForm customerForm = new EditCustomerForm(currentObject);
+                customerForm.Show();
             }
             else
             {
-                currentObject = (NormalCustomer)dataGridView1.CurrentRow.DataBoundItem;
-
+                MessageBox.Show("There is no more user");
             }
-
-            EditCustomerForm customerForm = new EditCustomerForm(currentObject);
-            customerForm.Show();
+            
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -90,13 +98,15 @@ namespace Health_Assignment
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            try
+            if (currentListOfCustomers.Count != 0)
             {
+                if (currentListOfCustomers.Count <= currentIndex )
+                {
+                    currentIndex = 0;
+                }
                 DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
                 Customer currentCustomer;
                 currentCustomer = currentCustomer = (Customer)dataGridView1.CurrentRow.DataBoundItem;
-
-
 
                 var confirmResult = MessageBox.Show("Are you sure to delete ID: " + currentCustomer.ID + " : " + currentCustomer.FirstName + " " + currentCustomer.LastName + " ?",
                                          "Delete Confirmation",
@@ -105,19 +115,20 @@ namespace Health_Assignment
                 {
                     CustomersData.deleteCustomer(currentCustomer);
                     currentListOfCustomers.Remove(currentCustomer);
+                    
                 }
                 else
                 {
                     // If 'No', do something here.
                 }
-                currentIndex = currentIndex - 1;
+                
                 reloadList();
             }
-            catch(Exception exception)
+            else
             {
                 MessageBox.Show("There is no more user");
             }
-           
+
 
         }
 

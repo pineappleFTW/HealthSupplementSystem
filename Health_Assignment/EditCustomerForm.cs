@@ -131,9 +131,11 @@ namespace Health_Assignment
                 CurrentCustomer = currentNormalCustomer;
             }
             
+            
             CustomersData.updateInformation(CurrentCustomer);
             Form mainForm = Application.OpenForms["CustomerForm"];
             CustomerForm salesForm = (CustomerForm)mainForm;
+            salesForm.currentListOfCustomers[salesForm.currentIndex] = CurrentCustomer;
             salesForm.reloadList();
             this.Close();
         }
