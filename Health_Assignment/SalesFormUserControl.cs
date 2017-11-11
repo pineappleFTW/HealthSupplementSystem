@@ -37,5 +37,11 @@ namespace Health_Assignment
             dataGridView1.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
             populateList();
         }
+
+        private void button_addSales_Click(object sender, EventArgs e)
+        {
+            AddNewSalesForm newSalesForm = new AddNewSalesForm();
+            newSalesForm.Show();
+        }
     }
 }

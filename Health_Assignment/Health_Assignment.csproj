@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewSalesForm.Designer.cs">
+      <DependentUpon>AddNewSalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Customer.cs" />
     <Compile Include="EditCustomerForm.cs">
       <SubType>Form</SubType>
@@ -53,6 +59,12 @@
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomersData.cs" />
+    <Compile Include="EditUserAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditUserAccountForm.Designer.cs">
+      <DependentUpon>EditUserAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -70,6 +82,12 @@
     </Compile>
     <Compile Include="NewCustomerForm.Designer.cs">
       <DependentUpon>NewCustomerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewUserAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUserAccountForm.Designer.cs">
+      <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="Sales.cs" />
@@ -97,9 +115,27 @@
       <DependentUpon>SalesFormUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccount.cs" />
+    <Compile Include="UserAccountForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserAccountForm.Designer.cs">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAccountsData.cs" />
+    <Compile Include="UserAccountUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserAccountUserControl.Designer.cs">
+      <DependentUpon>UserAccountUserControl.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="AddNewSalesForm.resx">
+      <DependentUpon>AddNewSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditUserAccountForm.resx">
+      <DependentUpon>EditUserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -109,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewCustomerForm.resx">
       <DependentUpon>NewCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewUserAccountForm.resx">
+      <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -128,8 +167,15 @@
     <EmbeddedResource Include="SalesFormUserControl.resx">
       <DependentUpon>SalesFormUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserAccountForm.resx">
+      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserAccountUserControl.resx">
+      <DependentUpon>UserAccountUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />
+    <None Include="Properties\DataSources\UserAccount.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

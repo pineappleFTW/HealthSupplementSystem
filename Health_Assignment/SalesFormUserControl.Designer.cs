@@ -72,6 +72,7 @@
             this.button_addSales.TabIndex = 2;
             this.button_addSales.Text = "Add New Sales";
             this.button_addSales.UseVisualStyleBackColor = true;
+            this.button_addSales.Click += new System.EventHandler(this.button_addSales_Click);
             // 
             // button_editSales
             // 

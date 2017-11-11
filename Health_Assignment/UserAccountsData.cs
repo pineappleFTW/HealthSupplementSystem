@@ -24,6 +24,38 @@ namespace Health_Assignment
             return isAuthorized;
         }
 
-        
+        public static bool addUserAccount(UserAccount newUserAccount)
+        {
+            if (userAccounts.Contains(newUserAccount))
+            {
+                return false;
+            }
+            else
+            {
+                userAccounts.Add(newUserAccount);
+                return true;
+            }
+            
+        }
+
+        public static void removeUserAccount(UserAccount userAccount)
+        {
+            userAccounts.Remove(userAccount);
+        }
+
+        public static void updateInformation(UserAccount userAccount)
+        {
+
+            UserAccount existingCustomer = userAccounts.Find(x => x.UserName == userAccount.UserName);
+            int index = userAccounts.IndexOf(existingCustomer);
+            userAccounts[index] = userAccount;
+
+
+        }
+
+        public static void deleteUserAccount(UserAccount userAccount)
+        {
+            userAccounts.Remove(userAccount);
+        }
     }
 }

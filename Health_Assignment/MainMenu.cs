@@ -60,5 +60,11 @@ namespace Health_Assignment
             SalesForm salesForm = new SalesForm();
             salesForm.Show();
         }
+
+        private void icon_users_Click(object sender, EventArgs e)
+        {
+            UserAccountForm userAccountForm = new UserAccountForm();
+            userAccountForm.Show();
+        }
     }
 }

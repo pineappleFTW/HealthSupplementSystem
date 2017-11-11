@@ -133,6 +133,7 @@
             this.icon_users.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.icon_users.TabIndex = 19;
             this.icon_users.TabStop = false;
+            this.icon_users.Click += new System.EventHandler(this.icon_users_Click);
             // 
             // label_inventory
             // 

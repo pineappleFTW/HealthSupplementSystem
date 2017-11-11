@@ -18,6 +18,7 @@ namespace Health_Assignment
             customers.Add(new NormalCustomer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
             customers.Add(new NormalCustomer("josh", "teh", "sdaddress", "Normal", "12345"));
             customers.Add(new NormalCustomer("awad", "lol", "sdaddress", "Normal", "12345"));
+            customers.Add(new NormalCustomer("awad", "lsssol", "sdaddress", "Normal", "12345"));
 
             return customers;
         }
