@@ -106,6 +106,7 @@
             this.icon_sales.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.icon_sales.TabIndex = 17;
             this.icon_sales.TabStop = false;
+            this.icon_sales.Click += new System.EventHandler(this.icon_sales_Click);
             // 
             // icon_reports
             // 
@@ -181,6 +182,7 @@
             this.label_purchase.Size = new System.Drawing.Size(75, 21);
             this.label_purchase.TabIndex = 28;
             this.label_purchase.Text = "Purchase";
+            this.label_purchase.Click += new System.EventHandler(this.label_purchase_Click);
             // 
             // label_sales
             // 

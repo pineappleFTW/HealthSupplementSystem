@@ -44,16 +44,22 @@ namespace Health_Assignment
 
         private void button_editCustomer_Click(object sender, EventArgs e)
         {
-       
+            
             DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
-            int id = Int32.Parse(selectedRow.Cells[0].Value.ToString());
-            string fn = selectedRow.Cells[1].Value.ToString();
-            string ln = selectedRow.Cells[2].Value.ToString();
-            string add = selectedRow.Cells[3].Value.ToString();
+            Customer currentObject;
             string custType = selectedRow.Cells[4].Value.ToString();
-            string phone = selectedRow.Cells[5].Value.ToString();
-            Customer currentCustomer = new Customer(id, fn, ln, add, custType, phone);
-            EditCustomerForm customerForm = new EditCustomerForm(currentCustomer);
+
+            if (custType.Equals("Premium"))
+            {
+               currentObject = (PremiumCustomer)dataGridView1.CurrentRow.DataBoundItem;
+            }
+            else
+            {
+                currentObject = (NormalCustomer)dataGridView1.CurrentRow.DataBoundItem;
+
+            }
+
+            EditCustomerForm customerForm = new EditCustomerForm(currentObject);
             customerForm.Show();
         }
 
@@ -84,39 +90,34 @@ namespace Health_Assignment
 
         private void button_delete_Click(object sender, EventArgs e)
         {
-            DataGridViewRow selectedRow;
-            
-           
             try
             {
-                selectedRow = dataGridView1.Rows[currentIndex];
-            }catch(ArgumentOutOfRangeException excep)
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Customer currentCustomer;
+                currentCustomer = currentCustomer = (Customer)dataGridView1.CurrentRow.DataBoundItem;
+
+
+
+                var confirmResult = MessageBox.Show("Are you sure to delete ID: " + currentCustomer.ID + " : " + currentCustomer.FirstName + " " + currentCustomer.LastName + " ?",
+                                         "Delete Confirmation",
+                                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    CustomersData.deleteCustomer(currentCustomer);
+                    currentListOfCustomers.Remove(currentCustomer);
+                }
+                else
+                {
+                    // If 'No', do something here.
+                }
+                currentIndex = currentIndex - 1;
+                reloadList();
+            }
+            catch(Exception exception)
             {
-                selectedRow = dataGridView1.Rows[0];
+                MessageBox.Show("There is no more user");
             }
            
-            int id = Int32.Parse(selectedRow.Cells[0].Value.ToString());
-            string fn = selectedRow.Cells[1].Value.ToString();
-            string ln = selectedRow.Cells[2].Value.ToString();
-            string add = selectedRow.Cells[3].Value.ToString();
-            string custType = selectedRow.Cells[4].Value.ToString();
-            string phone = selectedRow.Cells[5].Value.ToString();
-            Customer currentCustomer = new Customer(id, fn, ln, add, custType, phone);
-
-            var confirmResult = MessageBox.Show("Are you sure to delete ID: " + id +" : " + fn +" " +ln +" ?",
-                                     "Delete Confirmation",
-                                     MessageBoxButtons.YesNo);
-            if (confirmResult == DialogResult.Yes)
-            {
-                CustomersData.deleteCustomer(currentCustomer);
-            }
-            else
-            {
-                // If 'No', do something here.
-            }
-
-            currentListOfCustomers.Remove(currentCustomer);
-            reloadList();
 
         }
 

@@ -83,6 +83,19 @@
     <Compile Include="CustomerForm.Designer.cs">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SalesData.cs" />
+    <Compile Include="SalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SalesForm.Designer.cs">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SalesFormUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SalesFormUserControl.Designer.cs">
+      <DependentUpon>SalesFormUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserAccount.cs" />
     <Compile Include="UserAccountsData.cs" />
     <EmbeddedResource Include="EditCustomerForm.resx">
@@ -109,7 +122,14 @@
     <EmbeddedResource Include="CustomerForm.resx">
       <DependentUpon>CustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SalesForm.resx">
+      <DependentUpon>SalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SalesFormUserControl.resx">
+      <DependentUpon>SalesFormUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\Sales.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

@@ -12,6 +12,8 @@ namespace Health_Assignment
 
         public NormalCustomer(string fn, string ln, string add, string customerType, string phoneNumber) : base(fn, ln, add, customerType, phoneNumber) { }
 
+        public NormalCustomer(int id,string fn, string ln, string add, string customerType, string phoneNumber) : base(id,fn, ln, add, customerType, phoneNumber) { }
+
 
     }
 }

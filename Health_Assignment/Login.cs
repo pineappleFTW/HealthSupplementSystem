@@ -23,6 +23,8 @@ namespace Health_Assignment
             currentUserAccounts = UserAccountsData.initializeAccount();
             List<Customer> currentListOfCustomers = new List<Customer>();
             currentListOfCustomers = CustomersData.initializeData();
+            List<Sales> currentListOfSales = new List<Sales>();
+            currentListOfSales = SalesData.initializeData();
 
     }
 

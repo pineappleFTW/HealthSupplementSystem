@@ -49,5 +49,16 @@ namespace Health_Assignment
 
             
         }
+
+        private void label_purchase_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void icon_sales_Click(object sender, EventArgs e)
+        {
+            SalesForm salesForm = new SalesForm();
+            salesForm.Show();
+        }
     }
 }

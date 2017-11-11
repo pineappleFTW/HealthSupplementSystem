@@ -60,6 +60,10 @@ namespace Health_Assignment
 
         }
 
+        public override string ToString()
+        {
+            return String.Format("Customer ID: {0} : {1} {2}",ID,FirstName,LastName);
+        }
 
     }
 }

@@ -40,6 +40,8 @@
             this.comboBox_customerType = new System.Windows.Forms.ComboBox();
             this.textBox_newPhoneNumber = new System.Windows.Forms.TextBox();
             this.button_save = new System.Windows.Forms.Button();
+            this.label_creditLimit = new System.Windows.Forms.Label();
+            this.richTextBox_creditLimit = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label_newCustomerText
@@ -143,11 +145,30 @@
             this.button_save.UseVisualStyleBackColor = true;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
+            // label_creditLimit
+            // 
+            this.label_creditLimit.AutoSize = true;
+            this.label_creditLimit.Location = new System.Drawing.Point(21, 276);
+            this.label_creditLimit.Name = "label_creditLimit";
+            this.label_creditLimit.Size = new System.Drawing.Size(58, 13);
+            this.label_creditLimit.TabIndex = 12;
+            this.label_creditLimit.Text = "Credit Limit";
+            // 
+            // richTextBox_creditLimit
+            // 
+            this.richTextBox_creditLimit.Location = new System.Drawing.Point(155, 276);
+            this.richTextBox_creditLimit.Name = "richTextBox_creditLimit";
+            this.richTextBox_creditLimit.Size = new System.Drawing.Size(100, 25);
+            this.richTextBox_creditLimit.TabIndex = 13;
+            this.richTextBox_creditLimit.Text = "";
+            // 
             // NewCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 330);
+            this.Controls.Add(this.richTextBox_creditLimit);
+            this.Controls.Add(this.label_creditLimit);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.textBox_newPhoneNumber);
             this.Controls.Add(this.comboBox_customerType);
@@ -182,5 +203,7 @@
         private System.Windows.Forms.ComboBox comboBox_customerType;
         private System.Windows.Forms.TextBox textBox_newPhoneNumber;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Label label_creditLimit;
+        private System.Windows.Forms.RichTextBox richTextBox_creditLimit;
     }
 }

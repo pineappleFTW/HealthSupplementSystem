@@ -13,11 +13,11 @@ namespace Health_Assignment
         public static List<Customer> initializeData()
         {
             
-            customers.Add(new Customer("lisheng", "ong", "address", "Premium", "34573487"));
-            customers.Add(new Customer("hahhaa", "ong", "sdaddress", "Normal", "34573487"));
-            customers.Add(new Customer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
-            customers.Add(new Customer("josh", "teh", "sdaddress", "Normal", "12345"));
-            customers.Add(new Customer("awad", "lol", "sdaddress", "Normal", "12345"));
+            customers.Add(new PremiumCustomer("lisheng", "ong", "address", "Premium", "34573487",33333M));
+            customers.Add(new NormalCustomer("hahhaa", "ong", "sdaddress", "Normal", "34573487"));
+            customers.Add(new NormalCustomer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
+            customers.Add(new NormalCustomer("josh", "teh", "sdaddress", "Normal", "12345"));
+            customers.Add(new NormalCustomer("awad", "lol", "sdaddress", "Normal", "12345"));
 
             return customers;
         }
@@ -31,11 +31,18 @@ namespace Health_Assignment
         {
 
             Customer existingCustomer = customers.Find(x => x.ID == currentCustomer.ID);
-            existingCustomer.FirstName = currentCustomer.FirstName;
-            existingCustomer.LastName = currentCustomer.LastName;
-            existingCustomer.CustomerType = currentCustomer.CustomerType;
-            existingCustomer.Address = currentCustomer.Address;
-            existingCustomer.PhoneNumber = currentCustomer.PhoneNumber;
+            int index = customers.IndexOf(existingCustomer);
+            if (currentCustomer.CustomerType.Equals("Premium"))
+            {
+                PremiumCustomer existingPremiumCustomer = (PremiumCustomer)currentCustomer;
+                customers[index] = existingPremiumCustomer;
+            }
+            else
+            {
+                NormalCustomer existingNormalCustomer = (NormalCustomer)currentCustomer;
+                customers[index] = existingNormalCustomer;
+            }
+            
 
         }
 

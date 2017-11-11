@@ -40,6 +40,8 @@
             this.label_phoneNumber = new System.Windows.Forms.Label();
             this.comboBox_customerType = new System.Windows.Forms.ComboBox();
             this.richTextBox_phoneNumber = new System.Windows.Forms.RichTextBox();
+            this.label_creditLimit = new System.Windows.Forms.Label();
+            this.richTextBox_creditLimit = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label_customerInfo
@@ -71,7 +73,7 @@
             // 
             // button_save
             // 
-            this.button_save.Location = new System.Drawing.Point(90, 288);
+            this.button_save.Location = new System.Drawing.Point(90, 310);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(75, 23);
             this.button_save.TabIndex = 7;
@@ -140,6 +142,7 @@
             this.comboBox_customerType.Name = "comboBox_customerType";
             this.comboBox_customerType.Size = new System.Drawing.Size(121, 21);
             this.comboBox_customerType.TabIndex = 14;
+            this.comboBox_customerType.SelectedIndexChanged += new System.EventHandler(this.comboBox_customerType_SelectedIndexChanged);
             // 
             // richTextBox_phoneNumber
             // 
@@ -149,11 +152,30 @@
             this.richTextBox_phoneNumber.TabIndex = 15;
             this.richTextBox_phoneNumber.Text = "";
             // 
+            // label_creditLimit
+            // 
+            this.label_creditLimit.AutoSize = true;
+            this.label_creditLimit.Location = new System.Drawing.Point(15, 275);
+            this.label_creditLimit.Name = "label_creditLimit";
+            this.label_creditLimit.Size = new System.Drawing.Size(58, 13);
+            this.label_creditLimit.TabIndex = 16;
+            this.label_creditLimit.Text = "Credit Limit";
+            // 
+            // richTextBox_creditLimit
+            // 
+            this.richTextBox_creditLimit.Location = new System.Drawing.Point(104, 275);
+            this.richTextBox_creditLimit.Name = "richTextBox_creditLimit";
+            this.richTextBox_creditLimit.Size = new System.Drawing.Size(121, 18);
+            this.richTextBox_creditLimit.TabIndex = 17;
+            this.richTextBox_creditLimit.Text = "";
+            // 
             // EditCustomerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(269, 345);
+            this.Controls.Add(this.richTextBox_creditLimit);
+            this.Controls.Add(this.label_creditLimit);
             this.Controls.Add(this.richTextBox_phoneNumber);
             this.Controls.Add(this.comboBox_customerType);
             this.Controls.Add(this.label_phoneNumber);
@@ -188,5 +210,7 @@
         private System.Windows.Forms.Label label_phoneNumber;
         private System.Windows.Forms.ComboBox comboBox_customerType;
         private System.Windows.Forms.RichTextBox richTextBox_phoneNumber;
+        private System.Windows.Forms.Label label_creditLimit;
+        private System.Windows.Forms.RichTextBox richTextBox_creditLimit;
     }
 }

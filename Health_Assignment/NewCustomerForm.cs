@@ -33,10 +33,21 @@ namespace Health_Assignment
         private void comboBox_customerType_SelectedIndexChanged(object sender, EventArgs e)
         {
             customerType = comboBox_customerType.Text;
+            if (comboBox_customerType.SelectedIndex == 0)
+            {
+                richTextBox_creditLimit.Hide();
+                label_creditLimit.Hide();
+            }
+            else
+            {
+                richTextBox_creditLimit.Show();
+                label_creditLimit.Show();
+            }
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
+            Customer newCustomer;
             firstName = textBox_newFirstName.Text;
             lastName = textBox_newLastName.Text;
             address = textBox_newAddress.Text;
@@ -65,9 +76,21 @@ namespace Health_Assignment
                 MessageBox.Show("Invalid or empty phone number", "Phone Number is Required");
                 return;
             }
-        
 
-            Customer newCustomer = new Customer(firstName, lastName, address, customerType, phoneNumber);
+            if (comboBox_customerType.Text.Equals("Premium") && string.IsNullOrWhiteSpace(richTextBox_creditLimit.Text))
+            {
+                MessageBox.Show("Invalid or empty credit limit", "Credit linit is Required");
+                return;
+            }
+
+            if (customerType.Equals("Premium"))
+            {
+                newCustomer = new PremiumCustomer(firstName, lastName, address, customerType, phoneNumber,Int32.Parse(richTextBox_creditLimit.Text));
+            }
+            else
+            {
+                newCustomer = new NormalCustomer(firstName, lastName, address, customerType, phoneNumber);
+            }
 
             CustomersData.addNewCustomer(newCustomer);
             Form mainForm = Application.OpenForms["CustomerForm"];

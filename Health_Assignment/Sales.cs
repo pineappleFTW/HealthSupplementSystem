@@ -6,11 +6,10 @@ using System.Threading.Tasks;
 
 namespace Health_Assignment
 {
-    class Sales
+    public class Sales
     {
         public int ID { set; get; }
-        public int CustomerID { set; get; }
-        public string CustomerName { set; get; }
+        public Customer CurrentCustomer { set; get; }
         public Boolean IsPaid { set; get; }
         public string Status { set; get; }
         public string PaymentMode { set; get; }
@@ -28,7 +27,16 @@ namespace Health_Assignment
             }
             set
             {
-                OrderDate = orderDate;
+                DateTime currentDate = DateTime.Now;
+                if (orderDate.Year == currentDate.Year && orderDate.Month<=currentDate.Month)
+                {
+                    orderDate = value;
+                }
+                if (orderDate.Year < currentDate.Year)
+                {
+                    orderDate = value;
+                }
+                
             }
         }
 
@@ -40,7 +48,15 @@ namespace Health_Assignment
             }
             set
             {
-                PaymentDate = paymentDate;
+                DateTime currentDate = DateTime.Now;
+                if (orderDate.Year == currentDate.Year && orderDate.Month <= currentDate.Month)
+                {
+                    paymentDate = value;
+                }
+                if (orderDate.Year < currentDate.Year)
+                {
+                    paymentDate = value;
+                }
             }
         }
 
@@ -52,11 +68,10 @@ namespace Health_Assignment
 
         public Sales() { }
 
-        public Sales(int customerID,string customerName,Boolean isPaid,string status,string paymentMode,List<int> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
+        public Sales(Customer currentCustomer,Boolean isPaid,string status,string paymentMode,List<int> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
         {
             ID = generateID();
-            CustomerID = customerID;
-            CustomerName = customerName;
+            CurrentCustomer = currentCustomer;
             IsPaid = isPaid;
             Status = status;
             PaymentMode = paymentMode;
