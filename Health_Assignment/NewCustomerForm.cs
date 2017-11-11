@@ -93,9 +93,9 @@ namespace Health_Assignment
             }
 
             CustomersData.addNewCustomer(newCustomer);
-            Form mainForm = Application.OpenForms["CustomerMainForm"];
-            CustomerMainForm customerForm = (CustomerMainForm)mainForm;
-            customerForm.customerUserControlForm1.reloadList();
+            Form mainForm = Application.OpenForms["MainMenu"];
+            MainMenu mainMenu = (MainMenu)mainForm;
+            mainMenu.customerUserControlForm.reloadList();
             this.Close();
         }
     }

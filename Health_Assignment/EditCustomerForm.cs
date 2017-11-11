@@ -137,10 +137,10 @@ namespace Health_Assignment
             
             
 
-            Form mainForm = Application.OpenForms["CustomerMainForm"];
-            CustomerMainForm customerForm = (CustomerMainForm)mainForm;
-            customerForm.customerUserControlForm1.currentListOfCustomers[customerForm.customerUserControlForm1.currentIndex] = CurrentCustomer;
-            customerForm.customerUserControlForm1.reloadList();
+            Form mainForm = Application.OpenForms["MainMenu"];
+            MainMenu mainMenu = (MainMenu)mainForm;
+            mainMenu.customerUserControlForm.currentListOfCustomers[mainMenu.customerUserControlForm.currentIndex] = CurrentCustomer;
+            mainMenu.customerUserControlForm.reloadList();
 
 
             this.Close();

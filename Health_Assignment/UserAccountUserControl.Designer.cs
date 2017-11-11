@@ -31,11 +31,11 @@
             this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView_userAccount = new System.Windows.Forms.DataGridView();
+            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_newUserAccount = new System.Windows.Forms.Button();
             this.button_editUserAccount = new System.Windows.Forms.Button();
             this.button_deleteUserAccount = new System.Windows.Forms.Button();
-            this.userNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.userAccountBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_userAccount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.userAccountBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -58,9 +58,22 @@
             this.dataGridView_userAccount.DataSource = this.userAccountBindingSource;
             this.dataGridView_userAccount.Location = new System.Drawing.Point(183, 87);
             this.dataGridView_userAccount.Name = "dataGridView_userAccount";
+            this.dataGridView_userAccount.ReadOnly = true;
             this.dataGridView_userAccount.Size = new System.Drawing.Size(434, 192);
             this.dataGridView_userAccount.TabIndex = 1;
             this.dataGridView_userAccount.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_userAccount_CellContentClick);
+            // 
+            // userNameDataGridViewTextBoxColumn
+            // 
+            this.userNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
+            this.userNameDataGridViewTextBoxColumn.HeaderText = "User Name";
+            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
+            this.userNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // userAccountBindingSource
+            // 
+            this.userAccountBindingSource.DataSource = typeof(Health_Assignment.UserAccount);
             // 
             // button_newUserAccount
             // 
@@ -91,17 +104,6 @@
             this.button_deleteUserAccount.Text = "Delete User Account";
             this.button_deleteUserAccount.UseVisualStyleBackColor = true;
             this.button_deleteUserAccount.Click += new System.EventHandler(this.button_deleteUserAccount_Click);
-            // 
-            // userNameDataGridViewTextBoxColumn
-            // 
-            this.userNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.userNameDataGridViewTextBoxColumn.DataPropertyName = "UserName";
-            this.userNameDataGridViewTextBoxColumn.HeaderText = "User Name";
-            this.userNameDataGridViewTextBoxColumn.Name = "userNameDataGridViewTextBoxColumn";
-            // 
-            // userAccountBindingSource
-            // 
-            this.userAccountBindingSource.DataSource = typeof(Health_Assignment.UserAccount);
             // 
             // UserAccountUserControl
             // 

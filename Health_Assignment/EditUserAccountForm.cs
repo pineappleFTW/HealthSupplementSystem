@@ -30,6 +30,7 @@ namespace Health_Assignment
         {
             richTextBox_userName.Text = CurrentUserAccount.UserName;
             richTextBox_password.Text = CurrentUserAccount.Password;
+            
         }
 
         private void button_save_Click(object sender, EventArgs e)

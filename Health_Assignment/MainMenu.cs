@@ -32,11 +32,31 @@ namespace Health_Assignment
 
         }
 
-        private void icon_customer_Click(object sender, EventArgs e)
+   
+
+        private void button1_Click(object sender, EventArgs e)
         {
-            CustomerMainForm customerForm = new CustomerMainForm();
-            customerForm.Show();
-            
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void icon_customer_Click_1(object sender, EventArgs e)
+        {
+            customerUserControlForm.BringToFront();
+        }
+
+        private void icon_users_Click(object sender, EventArgs e)
+        {
+            userAccountUserControl1.BringToFront();
         }
 
         private void button_logOut_Click(object sender, EventArgs e)
@@ -45,26 +65,16 @@ namespace Health_Assignment
             Login loginForm = (Login)mainForm;
             this.Close();
             loginForm.Show();
-           
-
-            
-        }
-
-        private void label_purchase_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void icon_sales_Click(object sender, EventArgs e)
         {
-            SalesForm salesForm = new SalesForm();
-            salesForm.Show();
+            salesFormUserControl.BringToFront();
         }
 
-        private void icon_users_Click(object sender, EventArgs e)
+        private void button_home_Click(object sender, EventArgs e)
         {
-            UserAccountForm userAccountForm = new UserAccountForm();
-            userAccountForm.Show();
+            homeUserControl3.BringToFront();
         }
     }
 }

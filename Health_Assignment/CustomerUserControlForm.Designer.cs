@@ -80,7 +80,6 @@
             this.label_Sales.Size = new System.Drawing.Size(33, 13);
             this.label_Sales.TabIndex = 9;
             this.label_Sales.Text = "Sales";
-            
             // 
             // button_completeList
             // 
@@ -117,7 +116,6 @@
             this.richTextBox_searchBox.Size = new System.Drawing.Size(144, 23);
             this.richTextBox_searchBox.TabIndex = 14;
             this.richTextBox_searchBox.Text = "Search";
-           
             // 
             // button_delete
             // 
@@ -235,6 +233,6 @@
         private System.Windows.Forms.Button button_delete;
         private System.Windows.Forms.Button button_add;
         private System.Windows.Forms.Button button_edit;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        public System.Windows.Forms.DataGridView dataGridView1;
     }
 }
