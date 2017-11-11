@@ -108,6 +108,7 @@
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductsData.cs" />
     <Compile Include="Sales.cs" />
     <Compile Include="NormalCustomer.cs" />
     <Compile Include="PremiumCustomer.cs" />

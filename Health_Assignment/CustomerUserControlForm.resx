@@ -175,16 +175,16 @@
     <value>NoControl</value>
   </data>
   <data name="label_Sales.Location" type="System.Drawing.Point, System.Drawing">
-    <value>389, 22</value>
+    <value>253, 30</value>
   </data>
   <data name="label_Sales.Size" type="System.Drawing.Size, System.Drawing">
-    <value>104, 41</value>
+    <value>395, 41</value>
   </data>
   <data name="label_Sales.TabIndex" type="System.Int32, mscorlib">
     <value>9</value>
   </data>
   <data name="label_Sales.Text" xml:space="preserve">
-    <value>Sales</value>
+    <value>Customers Information</value>
   </data>
   <data name="&gt;&gt;label_Sales.Name" xml:space="preserve">
     <value>label_Sales</value>

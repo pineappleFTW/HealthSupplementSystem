@@ -31,6 +31,13 @@ namespace Health_Assignment
 
         }
 
+        public void reloadList()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = currentListOfSales;
+            dataGridView1.Refresh();
+        }
+
         private void SalesFormUserControl_Load(object sender, EventArgs e)
         {
             dataGridView1.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";

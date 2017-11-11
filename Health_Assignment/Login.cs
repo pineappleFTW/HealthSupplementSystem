@@ -25,6 +25,9 @@ namespace Health_Assignment
             currentListOfCustomers = CustomersData.initializeData();
             List<Sales> currentListOfSales = new List<Sales>();
             currentListOfSales = SalesData.initializeData();
+            List<Product> currentListOfProducts = new List<Product>();
+            currentListOfProducts = ProductsData.initializeData();
+ 
         }
 
         private void txtUserID_TextChanged(object sender, EventArgs e)

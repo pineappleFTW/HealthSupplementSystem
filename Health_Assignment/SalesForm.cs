@@ -21,5 +21,10 @@ namespace Health_Assignment
         {
 
         }
+
+        private void salesFormUserControl1_Load_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -13,7 +13,7 @@ namespace Health_Assignment
         public Boolean IsPaid { set; get; }
         public string Status { set; get; }
         public string PaymentMode { set; get; }
-        public List<int> ProductsOrdered { set; get; }
+        public List<Product> ProductsOrdered { set; get; }
         public List<int> ProductsQuantity { set; get; }
 
         private DateTime orderDate;
@@ -68,7 +68,7 @@ namespace Health_Assignment
 
         public Sales() { }
 
-        public Sales(Customer currentCustomer,Boolean isPaid,string status,string paymentMode,List<int> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
+        public Sales(Customer currentCustomer,Boolean isPaid,string status,string paymentMode,List<Product> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
         {
             ID = generateID();
             CurrentCustomer = currentCustomer;

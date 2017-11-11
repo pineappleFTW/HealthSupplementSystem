@@ -37,6 +37,7 @@
             this.salesFormUserControl1.Name = "salesFormUserControl1";
             this.salesFormUserControl1.Size = new System.Drawing.Size(1030, 500);
             this.salesFormUserControl1.TabIndex = 0;
+            this.salesFormUserControl1.Load += new System.EventHandler(this.salesFormUserControl1_Load_1);
             // 
             // SalesForm
             // 

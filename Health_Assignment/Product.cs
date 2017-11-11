@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Health_Assignment
 {
-    class Product
+    public class Product
     {
         public int ID { set; get; }
         public string Name { set; get; }
@@ -58,12 +58,24 @@ namespace Health_Assignment
 
         public Product() { }
 
-        public Product(string name,string desc,string pres,decimal price,int quantity)
+        public Product(string name,string desc,string pres,string manufacturer,decimal price,int quantity)
         {
             ID = generateID();
             Name = name;
             Description = desc;
             Prescription = pres;
+            Manufacturer = manufacturer;
+            Price = price;
+            Quantity = quantity;
+        }
+
+        public Product(int id, string name, string desc, string pres, string manufacturer, decimal price, int quantity)
+        {
+            ID = id;
+            Name = name;
+            Description = desc;
+            Prescription = pres;
+            Manufacturer = manufacturer;
             Price = price;
             Quantity = quantity;
         }
@@ -71,6 +83,21 @@ namespace Health_Assignment
         public int generateID()
         {
             return ++ID_INCREMENT;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+
+            Product product = (Product)obj;
+            {
+                return (ID == product.ID) && (Name == product.Name);
+            }
+
+
         }
 
     }

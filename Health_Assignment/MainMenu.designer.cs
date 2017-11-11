@@ -312,6 +312,7 @@
             // 
             // customerUserControlForm
             // 
+            this.customerUserControlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.customerUserControlForm.Location = new System.Drawing.Point(194, 105);
             this.customerUserControlForm.Name = "customerUserControlForm";
             this.customerUserControlForm.Size = new System.Drawing.Size(990, 490);
