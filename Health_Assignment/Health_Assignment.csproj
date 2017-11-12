@@ -45,6 +45,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewPurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPurchaseOrderForm.Designer.cs">
+      <DependentUpon>AddNewPurchaseOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewSalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,14 @@
     </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductsData.cs" />
+    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="PurchaseOrdersData.cs" />
+    <Compile Include="PurchaseOrderUseControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrderUseControl.Designer.cs">
+      <DependentUpon>PurchaseOrderUseControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="ReportUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -177,6 +191,9 @@
     <Compile Include="ViewSalesForm.Designer.cs">
       <DependentUpon>ViewSalesForm.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="AddNewPurchaseOrderForm.resx">
+      <DependentUpon>AddNewPurchaseOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewSalesForm.resx">
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -228,6 +245,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="PurchaseOrderUseControl.resx">
+      <DependentUpon>PurchaseOrderUseControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportUserControl.resx">
       <DependentUpon>ReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
@@ -247,6 +267,7 @@
       <DependentUpon>ViewSalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\PurchaseOrder.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />
     <None Include="Properties\DataSources\UserAccount.datasource" />
     <None Include="Properties\Settings.settings">

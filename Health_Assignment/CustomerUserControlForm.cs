@@ -103,7 +103,7 @@ namespace Health_Assignment
                 }
                 DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
                 Customer currentCustomer;
-                currentCustomer = currentCustomer = (Customer)dataGridView1.CurrentRow.DataBoundItem;
+                currentCustomer = (Customer)dataGridView1.CurrentRow.DataBoundItem;
 
                 var confirmResult = MessageBox.Show("Are you sure to delete ID: " + currentCustomer.ID + " : " + currentCustomer.FirstName + " " + currentCustomer.LastName + " ?",
                                          "Delete Confirmation",

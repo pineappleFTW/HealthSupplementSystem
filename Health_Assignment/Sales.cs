@@ -105,5 +105,19 @@ namespace Health_Assignment
             return totalSum;
         }
 
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Sales sales = (Sales)obj;
+            {
+                return (ID == sales.ID) && (CurrentCustomer == sales.CurrentCustomer);
+            }
+
+
+        }
+
     }
 }

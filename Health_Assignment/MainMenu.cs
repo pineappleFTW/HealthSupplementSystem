@@ -81,5 +81,15 @@ namespace Health_Assignment
         {
             reportUserControl.BringToFront();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void icon_purchase_Click(object sender, EventArgs e)
+        {
+            purchaseOrderUseControl.BringToFront();
+        }
     }
 }

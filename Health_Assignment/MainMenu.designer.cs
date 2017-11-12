@@ -49,6 +49,7 @@
             this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
+            this.purchaseOrderUseControl = new Health_Assignment.PurchaseOrderUseControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -86,6 +87,7 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(164, 661);
             this.panel1.TabIndex = 34;
+            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // button_logOut
             // 
@@ -153,6 +155,7 @@
             this.icon_purchase.TabIndex = 39;
             this.icon_purchase.Text = "   Purchase";
             this.icon_purchase.UseVisualStyleBackColor = false;
+            this.icon_purchase.Click += new System.EventHandler(this.icon_purchase_Click);
             // 
             // icon_users
             // 
@@ -292,6 +295,7 @@
             // 
             // salesFormUserControl
             // 
+            this.salesFormUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.salesFormUserControl.Location = new System.Drawing.Point(177, 124);
             this.salesFormUserControl.Name = "salesFormUserControl";
             this.salesFormUserControl.Size = new System.Drawing.Size(1123, 538);
@@ -299,6 +303,7 @@
             // 
             // userAccountUserControl
             // 
+            this.userAccountUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.userAccountUserControl.Location = new System.Drawing.Point(177, 124);
             this.userAccountUserControl.Name = "userAccountUserControl";
             this.userAccountUserControl.Size = new System.Drawing.Size(1123, 537);
@@ -306,6 +311,7 @@
             // 
             // reportUserControl
             // 
+            this.reportUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.reportUserControl.Location = new System.Drawing.Point(177, 123);
             this.reportUserControl.Name = "reportUserControl";
             this.reportUserControl.Size = new System.Drawing.Size(1123, 538);
@@ -319,6 +325,14 @@
             this.customerUserControlForm.Size = new System.Drawing.Size(1131, 546);
             this.customerUserControlForm.TabIndex = 38;
             // 
+            // purchaseOrderUseControl
+            // 
+            this.purchaseOrderUseControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.purchaseOrderUseControl.Location = new System.Drawing.Point(177, 114);
+            this.purchaseOrderUseControl.Name = "purchaseOrderUseControl";
+            this.purchaseOrderUseControl.Size = new System.Drawing.Size(1123, 547);
+            this.purchaseOrderUseControl.TabIndex = 43;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -327,6 +341,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 661);
             this.Controls.Add(this.homeUserControl);
+            this.Controls.Add(this.purchaseOrderUseControl);
             this.Controls.Add(this.salesFormUserControl);
             this.Controls.Add(this.userAccountUserControl);
             this.Controls.Add(this.reportUserControl);
@@ -370,5 +385,6 @@
         public UserAccountUserControl userAccountUserControl;
         public SalesFormUserControl salesFormUserControl;
         public HomeUserControl homeUserControl;
+        public PurchaseOrderUseControl purchaseOrderUseControl;
     }
 }

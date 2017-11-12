@@ -27,6 +27,8 @@ namespace Health_Assignment
             currentListOfProducts = ProductsData.initializeData();
             List<Sales> currentListOfSales = new List<Sales>();
             currentListOfSales = SalesData.initializeData();
+            List<PurchaseOrder> currentListOfPurchaseOrders = new List<PurchaseOrder>();
+            currentListOfPurchaseOrders = PurchaseOrdersData.initializeData();
          
         }
 
