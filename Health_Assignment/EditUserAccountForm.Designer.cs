@@ -67,6 +67,7 @@
             // 
             this.richTextBox_userName.Location = new System.Drawing.Point(152, 84);
             this.richTextBox_userName.Name = "richTextBox_userName";
+            this.richTextBox_userName.ReadOnly = true;
             this.richTextBox_userName.Size = new System.Drawing.Size(109, 28);
             this.richTextBox_userName.TabIndex = 3;
             this.richTextBox_userName.Text = "";

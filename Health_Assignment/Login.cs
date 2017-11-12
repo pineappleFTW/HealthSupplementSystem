@@ -23,10 +23,12 @@ namespace Health_Assignment
             currentUserAccounts = UserAccountsData.initializeAccount();
             List<Customer> currentListOfCustomers = new List<Customer>();
             currentListOfCustomers = CustomersData.initializeData();
+            List<Product> currentListOfProducts = new List<Product>();
+            currentListOfProducts = ProductsData.initializeData();
             List<Sales> currentListOfSales = new List<Sales>();
             currentListOfSales = SalesData.initializeData();
-
-    }
+         
+        }
 
         private void txtUserID_TextChanged(object sender, EventArgs e)
         {

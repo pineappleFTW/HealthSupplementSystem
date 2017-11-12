@@ -41,8 +41,8 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.customerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPaidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.statusDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentModeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -82,6 +82,7 @@
             this.button_editSales.TabIndex = 3;
             this.button_editSales.Text = "Edit Sales";
             this.button_editSales.UseVisualStyleBackColor = true;
+            this.button_editSales.Click += new System.EventHandler(this.button_editSales_Click);
             // 
             // button_deleteSales
             // 
@@ -91,6 +92,7 @@
             this.button_deleteSales.TabIndex = 4;
             this.button_deleteSales.Text = "Delete Sales";
             this.button_deleteSales.UseVisualStyleBackColor = true;
+            this.button_deleteSales.Click += new System.EventHandler(this.button_deleteSales_Click);
             // 
             // button_generateOrderConfirmation
             // 
@@ -100,6 +102,7 @@
             this.button_generateOrderConfirmation.TabIndex = 5;
             this.button_generateOrderConfirmation.Text = "Generate Order Confirmation";
             this.button_generateOrderConfirmation.UseVisualStyleBackColor = true;
+            this.button_generateOrderConfirmation.Click += new System.EventHandler(this.button_generateOrderConfirmation_Click);
             // 
             // button_generateReceipt
             // 
@@ -109,6 +112,7 @@
             this.button_generateReceipt.TabIndex = 6;
             this.button_generateReceipt.Text = "Generate Receipt";
             this.button_generateReceipt.UseVisualStyleBackColor = true;
+            this.button_generateReceipt.Click += new System.EventHandler(this.button_generateReceipt_Click);
             // 
             // button_generateDelivery
             // 
@@ -118,6 +122,7 @@
             this.button_generateDelivery.TabIndex = 7;
             this.button_generateDelivery.Text = "Generate Delivery";
             this.button_generateDelivery.UseVisualStyleBackColor = true;
+            this.button_generateDelivery.Click += new System.EventHandler(this.button_generateDelivery_Click);
             // 
             // dataGridView1
             // 
@@ -135,8 +140,11 @@
             this.dataGridView1.Location = new System.Drawing.Point(21, 67);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(984, 150);
             this.dataGridView1.TabIndex = 8;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -159,13 +167,6 @@
             this.dataGridViewTextBoxColumn3.HeaderText = "Customer Details";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "Sales ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // customerID
             // 
             this.customerID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -173,6 +174,13 @@
             this.customerID.HeaderText = "Customer Details";
             this.customerID.Name = "customerID";
             this.customerID.ReadOnly = true;
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "Sales ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            this.iDDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // isPaidDataGridViewCheckBoxColumn
             // 

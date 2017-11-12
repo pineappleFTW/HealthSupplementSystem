@@ -1,6 +1,6 @@
 ﻿namespace Health_Assignment
 {
-    partial class SalesForm
+    partial class CustomerMainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,31 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.salesFormUserControl1 = new Health_Assignment.SalesFormUserControl();
+            this.customerUserControlForm1 = new Health_Assignment.CustomerUserControlForm();
             this.SuspendLayout();
             // 
-            // salesFormUserControl1
+            // customerUserControlForm1
             // 
-            this.salesFormUserControl1.Location = new System.Drawing.Point(0, 0);
-            this.salesFormUserControl1.Name = "salesFormUserControl1";
-            this.salesFormUserControl1.Size = new System.Drawing.Size(1030, 500);
-            this.salesFormUserControl1.TabIndex = 0;
-            this.salesFormUserControl1.Load += new System.EventHandler(this.salesFormUserControl1_Load_1);
+            this.customerUserControlForm1.Location = new System.Drawing.Point(27, 26);
+            this.customerUserControlForm1.Name = "customerUserControlForm1";
+            this.customerUserControlForm1.Size = new System.Drawing.Size(891, 490);
+            this.customerUserControlForm1.TabIndex = 0;
+            this.customerUserControlForm1.Load += new System.EventHandler(this.customerUserControlForm1_Load);
             // 
-            // SalesForm
+            // CustomerMainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1028, 496);
-            this.Controls.Add(this.salesFormUserControl1);
-            this.Name = "SalesForm";
-            this.Text = "SalesForm";
+            this.ClientSize = new System.Drawing.Size(966, 528);
+            this.Controls.Add(this.customerUserControlForm1);
+            this.Name = "CustomerMainForm";
+            this.Text = "CustomerMainForm";
+            this.Load += new System.EventHandler(this.CustomerMainForm_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private SalesFormUserControl salesFormUserControl1;
+        public CustomerUserControlForm customerUserControlForm1;
     }
 }

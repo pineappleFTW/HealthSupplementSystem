@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,19 +10,14 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class SalesForm : Form
+    public partial class HomeUserControl : UserControl
     {
-        public SalesForm()
+        public HomeUserControl()
         {
             InitializeComponent();
         }
 
-        private void salesFormUserControl1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void salesFormUserControl1_Load_1(object sender, EventArgs e)
+        private void label_Welcome_Click(object sender, EventArgs e)
         {
 
         }

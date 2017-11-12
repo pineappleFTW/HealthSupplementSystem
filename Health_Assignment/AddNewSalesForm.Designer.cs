@@ -42,7 +42,7 @@
             this.dataGridView_productPurchased = new System.Windows.Forms.DataGridView();
             this.button_addProduct = new System.Windows.Forms.Button();
             this.button_deleteProduct = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox_product = new System.Windows.Forms.ComboBox();
             this.button_searchProduct = new System.Windows.Forms.Button();
             this.textBox_quantity = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -160,6 +160,7 @@
             this.dataGridView_productPurchased.Name = "dataGridView_productPurchased";
             this.dataGridView_productPurchased.Size = new System.Drawing.Size(269, 85);
             this.dataGridView_productPurchased.TabIndex = 11;
+            this.dataGridView_productPurchased.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellClick);
             // 
             // button_addProduct
             // 
@@ -169,6 +170,7 @@
             this.button_addProduct.TabIndex = 12;
             this.button_addProduct.Text = "Add Product";
             this.button_addProduct.UseVisualStyleBackColor = true;
+            this.button_addProduct.Click += new System.EventHandler(this.button_addProduct_Click);
             // 
             // button_deleteProduct
             // 
@@ -178,14 +180,16 @@
             this.button_deleteProduct.TabIndex = 13;
             this.button_deleteProduct.Text = "Delete Product";
             this.button_deleteProduct.UseVisualStyleBackColor = true;
+            this.button_deleteProduct.Click += new System.EventHandler(this.button_deleteProduct_Click);
             // 
-            // comboBox1
+            // comboBox_product
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(288, 205);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(269, 21);
-            this.comboBox1.TabIndex = 14;
+            this.comboBox_product.FormattingEnabled = true;
+            this.comboBox_product.Location = new System.Drawing.Point(288, 205);
+            this.comboBox_product.Name = "comboBox_product";
+            this.comboBox_product.Size = new System.Drawing.Size(269, 21);
+            this.comboBox_product.TabIndex = 14;
+            this.comboBox_product.SelectedIndexChanged += new System.EventHandler(this.comboBox_product_SelectedIndexChanged);
             // 
             // button_searchProduct
             // 
@@ -195,6 +199,7 @@
             this.button_searchProduct.TabIndex = 15;
             this.button_searchProduct.Text = "Search";
             this.button_searchProduct.UseVisualStyleBackColor = true;
+            this.button_searchProduct.Click += new System.EventHandler(this.button_searchProduct_Click);
             // 
             // textBox_quantity
             // 
@@ -227,6 +232,7 @@
             this.dateTimePicker_orderDate.Name = "dateTimePicker_orderDate";
             this.dateTimePicker_orderDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_orderDate.TabIndex = 19;
+            this.dateTimePicker_orderDate.ValueChanged += new System.EventHandler(this.dateTimePicker_orderDate_ValueChanged);
             // 
             // label_paymentDate
             // 
@@ -252,6 +258,7 @@
             this.button_save.TabIndex = 22;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = true;
+            this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
             // AddNewSalesForm
             // 
@@ -266,7 +273,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBox_quantity);
             this.Controls.Add(this.button_searchProduct);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.comboBox_product);
             this.Controls.Add(this.button_deleteProduct);
             this.Controls.Add(this.button_addProduct);
             this.Controls.Add(this.dataGridView_productPurchased);
@@ -306,7 +313,7 @@
         private System.Windows.Forms.DataGridView dataGridView_productPurchased;
         private System.Windows.Forms.Button button_addProduct;
         private System.Windows.Forms.Button button_deleteProduct;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox_product;
         private System.Windows.Forms.Button button_searchProduct;
         private System.Windows.Forms.TextBox textBox_quantity;
         private System.Windows.Forms.Label label2;

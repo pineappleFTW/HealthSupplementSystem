@@ -52,6 +52,24 @@
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerMainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerMainForm.Designer.cs">
+      <DependentUpon>CustomerMainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerUserControlForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerUserControlForm.Designer.cs">
+      <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryNoticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveryNoticeForm.Designer.cs">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +77,23 @@
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomersData.cs" />
+    <Compile Include="EditSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSalesForm.Designer.cs">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUserAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditUserAccountForm.Designer.cs">
       <DependentUpon>EditUserAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUserControl.Designer.cs">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -89,18 +119,31 @@
     <Compile Include="NewUserAccountForm.Designer.cs">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderConfirmationForm.Designer.cs">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.Designer.cs">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductsData.cs" />
+    <Compile Include="ReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportUserControl.Designer.cs">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs" />
     <Compile Include="NormalCustomer.cs" />
     <Compile Include="PremiumCustomer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalesData.cs" />
     <Compile Include="SalesForm.cs">
       <SubType>Form</SubType>
@@ -128,14 +171,35 @@
     <Compile Include="UserAccountUserControl.Designer.cs">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSalesForm.Designer.cs">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddNewSalesForm.resx">
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerMainForm.resx">
+      <DependentUpon>CustomerMainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerUserControlForm.resx">
+      <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryNoticeForm.resx">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditSalesForm.resx">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUserAccountForm.resx">
       <DependentUpon>EditUserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUserControl.resx">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -149,6 +213,12 @@
     <EmbeddedResource Include="NewUserAccountForm.resx">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderConfirmationForm.resx">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentReceiptForm.resx">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,8 +228,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReportUserControl.resx">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
@@ -172,6 +242,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccountUserControl.resx">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSalesForm.resx">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />

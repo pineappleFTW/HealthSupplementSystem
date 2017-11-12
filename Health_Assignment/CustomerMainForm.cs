@@ -10,19 +10,19 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class SalesForm : Form
+    public partial class CustomerMainForm : Form
     {
-        public SalesForm()
+        public CustomerMainForm()
         {
             InitializeComponent();
         }
 
-        private void salesFormUserControl1_Load(object sender, EventArgs e)
+        private void CustomerMainForm_Load(object sender, EventArgs e)
         {
-
+            
         }
 
-        private void salesFormUserControl1_Load_1(object sender, EventArgs e)
+        private void customerUserControlForm1_Load(object sender, EventArgs e)
         {
 
         }

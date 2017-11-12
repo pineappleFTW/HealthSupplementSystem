@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,42 +10,64 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class CustomerForm : Form
+    public partial class CustomerUserControlForm : UserControl
     {
         public int currentIndex = 0;
         public List<Customer> currentListOfCustomers;
-      
-        public CustomerForm()
+
+        public CustomerUserControlForm()
         {
             InitializeComponent();
         }
 
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void SalesOrderForm_Load_1(object sender, EventArgs e)
+        private void CustomerUserControlForm_Load(object sender, EventArgs e)
         {
             comboBox_searchOptions.Items.Add("First Name");
             comboBox_searchOptions.Items.Add("Last Name");
             comboBox_searchOptions.Items.Add("Address");
             comboBox_searchOptions.Items.Add("Phone Number");
             comboBox_searchOptions.SelectedIndex = 0;
+            dataGridView1.EnableHeadersVisualStyles = false;
             populateList();
         }
-
 
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentIndex = e.RowIndex;
         }
 
+     
+
+        
+
+        public void reloadList()
+        {
+            dataGridView1.DataSource = null;
+            dataGridView1.DataSource = currentListOfCustomers;
+            dataGridView1.Refresh();
+        }
+
+
+        public void populateList()
+        {
+            currentListOfCustomers = CustomersData.getCurrentList();
+            dataGridView1.DataSource = currentListOfCustomers;
+        }
+
+        private void button_add_Click(object sender, EventArgs e)
+        {
+            NewCustomerForm newCustomerForm = new NewCustomerForm();
+            newCustomerForm.Show();
+        }
+
         private void button_editCustomer_Click(object sender, EventArgs e)
         {
             if (currentListOfCustomers.Count != 0)
             {
+                if (currentListOfCustomers.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
                 DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
                 Customer currentObject;
                 string custType = selectedRow.Cells[4].Value.ToString();
@@ -68,39 +90,14 @@ namespace Health_Assignment
             {
                 MessageBox.Show("There is no more user");
             }
-            
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        public void reloadList()
-        {
-            dataGridView1.DataSource = null;
-            dataGridView1.DataSource = currentListOfCustomers ; 
-            dataGridView1.Refresh();
-        }
-
-
-        public void populateList()
-        {
-            currentListOfCustomers = CustomersData.getCurrentList();
-            dataGridView1.DataSource = currentListOfCustomers;
-        }
-
-        private void button_add_Click(object sender, EventArgs e)
-        {
-            NewCustomerForm newCustomerForm = new NewCustomerForm();
-            newCustomerForm.Show();
         }
 
         private void button_delete_Click(object sender, EventArgs e)
         {
             if (currentListOfCustomers.Count != 0)
             {
-                if (currentListOfCustomers.Count <= currentIndex )
+                if (currentListOfCustomers.Count <= currentIndex)
                 {
                     currentIndex = 0;
                 }
@@ -115,13 +112,13 @@ namespace Health_Assignment
                 {
                     CustomersData.deleteCustomer(currentCustomer);
                     currentListOfCustomers.Remove(currentCustomer);
-                    
+
                 }
                 else
                 {
                     // If 'No', do something here.
                 }
-                
+
                 reloadList();
             }
             else
@@ -143,7 +140,7 @@ namespace Health_Assignment
 
             switch (type)
             {
-                case "First Name" :
+                case "First Name":
                     returnedResults =
                     from customer in CustomersData.customers
                     where customer.FirstName == searchQuery
@@ -174,20 +171,25 @@ namespace Health_Assignment
 
             }
 
-           
+
 
             List<Customer> returnedList = returnedResults.ToList();
 
             currentListOfCustomers = returnedList;
             reloadList();
-           
-       
+
+
         }
 
         private void button_completeList_Click(object sender, EventArgs e)
         {
             currentListOfCustomers = CustomersData.customers;
             dataGridView1.DataSource = currentListOfCustomers;
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
