@@ -158,11 +158,11 @@
             this.button_save.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_save.FlatAppearance.BorderSize = 0;
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_save.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_save.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
-            this.button_save.Location = new System.Drawing.Point(129, 342);
+            this.button_save.Location = new System.Drawing.Point(142, 347);
             this.button_save.Name = "button_save";
-            this.button_save.Size = new System.Drawing.Size(78, 32);
+            this.button_save.Size = new System.Drawing.Size(71, 26);
             this.button_save.TabIndex = 11;
             this.button_save.Text = "Save";
             this.button_save.UseVisualStyleBackColor = false;

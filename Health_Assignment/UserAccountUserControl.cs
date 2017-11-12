@@ -19,6 +19,7 @@ namespace Health_Assignment
         
         private void UserAccountUserControl_Load(object sender, EventArgs e)
         {
+            dataGridView_userAccount.EnableHeadersVisualStyles = false;
             populateList();
             
         }
