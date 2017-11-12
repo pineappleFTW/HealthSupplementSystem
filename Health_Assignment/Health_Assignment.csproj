@@ -71,6 +71,12 @@
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomersData.cs" />
+    <Compile Include="EditSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSalesForm.Designer.cs">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUserAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -141,6 +147,12 @@
     <Compile Include="UserAccountUserControl.Designer.cs">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSalesForm.Designer.cs">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddNewSalesForm.resx">
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -152,6 +164,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSalesForm.resx">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditUserAccountForm.resx">
       <DependentUpon>EditUserAccountForm.cs</DependentUpon>
@@ -191,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccountUserControl.resx">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSalesForm.resx">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />

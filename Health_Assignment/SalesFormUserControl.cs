@@ -12,6 +12,7 @@ namespace Health_Assignment
 {
     public partial class SalesFormUserControl : UserControl
     {
+        public int currentIndex = 0;
         private List<Sales> currentListOfSales;
 
         public SalesFormUserControl()
@@ -19,9 +20,9 @@ namespace Health_Assignment
             InitializeComponent();
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            currentIndex = e.RowIndex;
         }
 
         public void populateList()
@@ -49,6 +50,84 @@ namespace Health_Assignment
         {
             AddNewSalesForm newSalesForm = new AddNewSalesForm();
             newSalesForm.Show();
+        }
+
+        private void button_editSales_Click(object sender, EventArgs e)
+        {
+            if (currentListOfSales.Count != 0)
+            {
+                if(currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
+
+                EditSalesForm editSalesForm = new EditSalesForm(currentSaleOrder);
+                editSalesForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+        }
+
+        private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (currentListOfSales.Count != 0)
+            {
+                if (currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
+
+                ViewSalesForm viewSalesForm = new ViewSalesForm(currentSaleOrder);
+                viewSalesForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+        }
+
+        private void button_deleteSales_Click(object sender, EventArgs e)
+        {
+            if (currentListOfSales.Count != 0)
+            {
+                if (currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
+
+                var confirmResult = MessageBox.Show("Are you sure to delete sales: " + currentSaleOrder.ID +  " ?",
+                                      "Delete Confirmation",
+                                      MessageBoxButtons.YesNo);
+
+                if (confirmResult == DialogResult.Yes)
+                {
+                    SalesData.deleteSales(currentSaleOrder);
+                }
+                else
+                {
+                    // If 'No', do something here.
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+
+            reloadList();
+        }
+
+        private void button_generateOrderConfirmation_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

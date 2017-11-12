@@ -81,7 +81,29 @@ namespace Health_Assignment
             PaymentDate = paymentDate;
         }
 
+        public Sales(int id,Customer currentCustomer, Boolean isPaid, string status, string paymentMode, List<Product> productsOrdered, List<int> productsQuantity, DateTime orderDate, DateTime paymentDate)
+        {
+            ID = id;
+            CurrentCustomer = currentCustomer;
+            IsPaid = isPaid;
+            Status = status;
+            PaymentMode = paymentMode;
+            ProductsOrdered = productsOrdered;
+            ProductsQuantity = productsQuantity;
+            OrderDate = orderDate;
+            PaymentDate = paymentDate;
+        }
 
+        public decimal totalCost()
+        {
+            decimal totalSum = 0;
+            for(int i = 0; i < ProductsOrdered.Count; i++)
+            {
+                totalSum += ProductsOrdered[i].Price * ProductsQuantity[i];
+            }
+
+            return totalSum;
+        }
 
     }
 }

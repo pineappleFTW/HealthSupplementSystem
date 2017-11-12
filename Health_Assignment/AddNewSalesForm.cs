@@ -114,15 +114,34 @@ namespace Health_Assignment
             Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
             if (currentListOfProducts.Contains(currentProduct))
             {
-                MessageBox.Show("The product is in the list");
+                int index = currentListOfProducts.IndexOf(currentProduct);
+                currentListOfQuantity[index] += quantity;
+                refreshDataGridView();
             }
             else
             {
+                
                 currentListOfProducts.Add(currentProduct);
                 currentListOfQuantity.Add(quantity);
                 addtoDataGridView(currentProduct, quantity);
             }
 
+        }
+
+        public void refreshDataGridView()
+        {
+            dt = new DataTable();
+            dt.Columns.Add("Product");
+            dt.Columns.Add("Quantity");
+            for (int i = 0; i < currentListOfProducts.Count; i++)
+            {
+                dr = dt.NewRow();
+                dr["Product"] = currentListOfProducts[i].Name + " : " + currentListOfProducts[i].Manufacturer;
+                dr["Quantity"] = currentListOfQuantity[i];
+                dt.Rows.Add(dr);
+            }
+            dataGridView_productPurchased.DataSource = dt;
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void initializeDataGridView()
@@ -139,7 +158,6 @@ namespace Health_Assignment
             dr["Product"] = product.Name +" : "+ product.Manufacturer;
             dr["Quantity"] = quantity;
             dt.Rows.Add(dr);
-            
 
             dataGridView_productPurchased.DataSource = null;
             dataGridView_productPurchased.DataSource = dt;
@@ -208,5 +226,11 @@ namespace Health_Assignment
             mainMenu.salesFormUserControl.reloadList();
             this.Close();
         }
+
+        private void dateTimePicker_orderDate_ValueChanged(object sender, EventArgs e)
+        {
+            dateTimePicker_paymentDate.MinDate = dateTimePicker_orderDate.Value;
+        }
+
     }
 }

@@ -232,6 +232,7 @@
             this.dateTimePicker_orderDate.Name = "dateTimePicker_orderDate";
             this.dateTimePicker_orderDate.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker_orderDate.TabIndex = 19;
+            this.dateTimePicker_orderDate.ValueChanged += new System.EventHandler(this.dateTimePicker_orderDate_ValueChanged);
             // 
             // label_paymentDate
             // 
