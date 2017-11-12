@@ -32,11 +32,12 @@
             this.label_salesID = new System.Windows.Forms.Label();
             this.label_dear = new System.Windows.Forms.Label();
             this.label_customerName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.label_thankYouMessage = new System.Windows.Forms.Label();
             this.dataGridView_productPurchased = new System.Windows.Forms.DataGridView();
             this.label_totalAmounTitle = new System.Windows.Forms.Label();
             this.label_totalAmount = new System.Windows.Forms.Label();
+            this.button_print = new System.Windows.Forms.Button();
+            this.button_send = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productPurchased)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,20 +71,11 @@
             // label_customerName
             // 
             this.label_customerName.AutoSize = true;
-            this.label_customerName.Location = new System.Drawing.Point(258, 99);
+            this.label_customerName.Location = new System.Drawing.Point(288, 99);
             this.label_customerName.Name = "label_customerName";
             this.label_customerName.Size = new System.Drawing.Size(82, 13);
             this.label_customerName.TabIndex = 3;
             this.label_customerName.Text = "Customer Name";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(346, 99);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(10, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = ",";
             // 
             // label_thankYouMessage
             // 
@@ -97,15 +89,15 @@
             // dataGridView_productPurchased
             // 
             this.dataGridView_productPurchased.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_productPurchased.Location = new System.Drawing.Point(193, 222);
+            this.dataGridView_productPurchased.Location = new System.Drawing.Point(147, 212);
             this.dataGridView_productPurchased.Name = "dataGridView_productPurchased";
-            this.dataGridView_productPurchased.Size = new System.Drawing.Size(383, 150);
+            this.dataGridView_productPurchased.Size = new System.Drawing.Size(506, 150);
             this.dataGridView_productPurchased.TabIndex = 6;
             // 
             // label_totalAmounTitle
             // 
             this.label_totalAmounTitle.AutoSize = true;
-            this.label_totalAmounTitle.Location = new System.Drawing.Point(383, 390);
+            this.label_totalAmounTitle.Location = new System.Drawing.Point(470, 384);
             this.label_totalAmounTitle.Name = "label_totalAmounTitle";
             this.label_totalAmounTitle.Size = new System.Drawing.Size(70, 13);
             this.label_totalAmounTitle.TabIndex = 7;
@@ -114,28 +106,48 @@
             // label_totalAmount
             // 
             this.label_totalAmount.AutoSize = true;
-            this.label_totalAmount.Location = new System.Drawing.Point(500, 390);
+            this.label_totalAmount.Location = new System.Drawing.Point(587, 384);
             this.label_totalAmount.Name = "label_totalAmount";
             this.label_totalAmount.Size = new System.Drawing.Size(70, 13);
             this.label_totalAmount.TabIndex = 8;
             this.label_totalAmount.Text = "some amount";
+            // 
+            // button_print
+            // 
+            this.button_print.Location = new System.Drawing.Point(281, 474);
+            this.button_print.Name = "button_print";
+            this.button_print.Size = new System.Drawing.Size(75, 23);
+            this.button_print.TabIndex = 9;
+            this.button_print.Text = "Print";
+            this.button_print.UseVisualStyleBackColor = true;
+            // 
+            // button_send
+            // 
+            this.button_send.Location = new System.Drawing.Point(422, 474);
+            this.button_send.Name = "button_send";
+            this.button_send.Size = new System.Drawing.Size(75, 23);
+            this.button_send.TabIndex = 10;
+            this.button_send.Text = "Send";
+            this.button_send.UseVisualStyleBackColor = true;
             // 
             // OrderConfirmationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(757, 572);
+            this.Controls.Add(this.button_send);
+            this.Controls.Add(this.button_print);
             this.Controls.Add(this.label_totalAmount);
             this.Controls.Add(this.label_totalAmounTitle);
             this.Controls.Add(this.dataGridView_productPurchased);
             this.Controls.Add(this.label_thankYouMessage);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.label_customerName);
             this.Controls.Add(this.label_dear);
             this.Controls.Add(this.label_salesID);
             this.Controls.Add(this.label_orderTitle);
             this.Name = "OrderConfirmationForm";
             this.Text = "OrderConfirmationForm";
+            this.Load += new System.EventHandler(this.OrderConfirmationForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productPurchased)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -148,10 +160,11 @@
         private System.Windows.Forms.Label label_salesID;
         private System.Windows.Forms.Label label_dear;
         private System.Windows.Forms.Label label_customerName;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_thankYouMessage;
         private System.Windows.Forms.DataGridView dataGridView_productPurchased;
         private System.Windows.Forms.Label label_totalAmounTitle;
         private System.Windows.Forms.Label label_totalAmount;
+        private System.Windows.Forms.Button button_print;
+        private System.Windows.Forms.Button button_send;
     }
 }

@@ -10,26 +10,28 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class OrderConfirmationForm : Form
+    public partial class PaymentReceiptForm : Form
     {
         public Sales CurrentSale { get; set; }
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
 
-        public OrderConfirmationForm()
+
+        public PaymentReceiptForm()
         {
             InitializeComponent();
         }
 
-        public OrderConfirmationForm(Sales currentSale) : this()
+        public PaymentReceiptForm(Sales currentSale) : this()
         {
             CurrentSale = currentSale;
         }
 
-        private void OrderConfirmationForm_Load(object sender, EventArgs e)
+        private void PaymentReceiptForm_Load(object sender, EventArgs e)
         {
             label_salesID.Text = CurrentSale.ID.ToString();
-            label_customerName.Text = String.Format("{0} {1},",CurrentSale.CurrentCustomer.FirstName, CurrentSale.CurrentCustomer.LastName);
+            label_paymentMode.Text = CurrentSale.PaymentMode;
+            label_customerName.Text = String.Format("{0} {1},", CurrentSale.CurrentCustomer.FirstName, CurrentSale.CurrentCustomer.LastName);
 
             label_totalAmount.Text = CurrentSale.totalCost().ToString();
 
@@ -51,7 +53,7 @@ namespace Health_Assignment
                 dr["Product Name"] = CurrentSale.ProductsOrdered[i].Name;
                 dr["Quantity"] = CurrentSale.ProductsQuantity[i];
                 dr["Unit Price"] = CurrentSale.ProductsOrdered[i].Price;
-                dr["Total"] = CurrentSale.ProductsOrdered[i].Price* CurrentSale.ProductsQuantity[i];
+                dr["Total"] = CurrentSale.ProductsOrdered[i].Price * CurrentSale.ProductsQuantity[i];
                 dt.Rows.Add(dr);
             }
             dataGridView_productPurchased.DataSource = dt;

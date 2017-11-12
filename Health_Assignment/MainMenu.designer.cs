@@ -49,6 +49,7 @@
             this.salesFormUserControl = new Health_Assignment.SalesFormUserControl();
             this.userAccountUserControl1 = new Health_Assignment.UserAccountUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
+            this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -186,6 +187,7 @@
             this.icon_report.TabIndex = 37;
             this.icon_report.Text = "   Report";
             this.icon_report.UseVisualStyleBackColor = false;
+            this.icon_report.Click += new System.EventHandler(this.icon_report_Click);
             // 
             // icon_sales
             // 
@@ -318,6 +320,13 @@
             this.customerUserControlForm.Size = new System.Drawing.Size(990, 490);
             this.customerUserControlForm.TabIndex = 38;
             // 
+            // reportUserControl
+            // 
+            this.reportUserControl.Location = new System.Drawing.Point(164, 95);
+            this.reportUserControl.Name = "reportUserControl";
+            this.reportUserControl.Size = new System.Drawing.Size(1019, 524);
+            this.reportUserControl.TabIndex = 42;
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -325,6 +334,7 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1183, 613);
+            this.Controls.Add(this.reportUserControl);
             this.Controls.Add(this.homeUserControl3);
             this.Controls.Add(this.salesFormUserControl);
             this.Controls.Add(this.userAccountUserControl1);
@@ -369,5 +379,6 @@
         public CustomerUserControlForm customerUserControlForm;
         public SalesFormUserControl salesFormUserControl;
         public HomeUserControl homeUserControl3;
+        public ReportUserControl reportUserControl;
     }
 }

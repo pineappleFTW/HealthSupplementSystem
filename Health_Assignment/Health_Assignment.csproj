@@ -64,6 +64,12 @@
     <Compile Include="CustomerUserControlForm.Designer.cs">
       <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="DeliveryNoticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveryNoticeForm.Designer.cs">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +119,26 @@
     <Compile Include="NewUserAccountForm.Designer.cs">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderConfirmationForm.Designer.cs">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.Designer.cs">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductsData.cs" />
+    <Compile Include="ReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportUserControl.Designer.cs">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs" />
     <Compile Include="NormalCustomer.cs" />
     <Compile Include="PremiumCustomer.cs" />
@@ -162,6 +186,9 @@
     <EmbeddedResource Include="CustomerUserControlForm.resx">
       <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryNoticeForm.resx">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -186,6 +213,12 @@
     <EmbeddedResource Include="NewUserAccountForm.resx">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderConfirmationForm.resx">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentReceiptForm.resx">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -195,6 +228,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="ReportUserControl.resx">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SalesForm.resx">
       <DependentUpon>SalesForm.cs</DependentUpon>
     </EmbeddedResource>

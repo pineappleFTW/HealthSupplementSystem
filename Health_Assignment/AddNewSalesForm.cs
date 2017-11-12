@@ -32,7 +32,7 @@ namespace Health_Assignment
             comboBox_customer.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox_status.Items.Add("Pending Payment");
             comboBox_status.Items.Add("Paid");
-            comboBox_status.Items.Add("Out Of Delivery");
+            comboBox_status.Items.Add("Out for Delivery");
             comboBox_status.Items.Add("Delivered");
             comboBox_status.SelectedIndex = 0;
 

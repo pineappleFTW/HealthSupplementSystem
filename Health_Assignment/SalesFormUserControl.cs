@@ -127,7 +127,89 @@ namespace Health_Assignment
 
         private void button_generateOrderConfirmation_Click(object sender, EventArgs e)
         {
+            if (currentListOfSales.Count != 0)
+            {
+                if (currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
 
+                OrderConfirmationForm orderConfirmation = new OrderConfirmationForm(currentSaleOrder);
+                orderConfirmation.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+        }
+
+        private void button_generateReceipt_Click(object sender, EventArgs e)
+        {
+            if (currentListOfSales.Count != 0)
+            {
+                if (currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
+
+                if (currentSaleOrder.IsPaid)
+                {
+                    reloadList();
+                    PaymentReceiptForm paymentReceiptForm = new PaymentReceiptForm(currentSaleOrder);
+                    paymentReceiptForm.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Sales order is not paid!");
+                }
+                
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+        }
+
+        private void button_generateDelivery_Click(object sender, EventArgs e)
+        {
+            if (currentListOfSales.Count != 0)
+            {
+                if (currentListOfSales.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
+                Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
+
+                if (currentSaleOrder.IsPaid)
+                {
+                    if (!currentSaleOrder.Status.Equals("Delivered"))
+                    {
+                        currentSaleOrder.Status = "Out for Delivery";
+                        reloadList();
+                        DeliveryNoticeForm deliveryNotice = new DeliveryNoticeForm(currentSaleOrder);
+                        deliveryNotice.Show();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Sales order is delivered!");
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Sales order is not paid!");
+                }
+
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
         }
     }
 }

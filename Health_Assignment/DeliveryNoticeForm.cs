@@ -10,28 +10,29 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class OrderConfirmationForm : Form
+    public partial class DeliveryNoticeForm : Form
     {
         public Sales CurrentSale { get; set; }
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
 
-        public OrderConfirmationForm()
+        public DeliveryNoticeForm()
         {
             InitializeComponent();
         }
 
-        public OrderConfirmationForm(Sales currentSale) : this()
+        public DeliveryNoticeForm(Sales currentSale) : this()
         {
             CurrentSale = currentSale;
         }
 
-        private void OrderConfirmationForm_Load(object sender, EventArgs e)
+        private void DeliveryNoticeForm_Load(object sender, EventArgs e)
         {
             label_salesID.Text = CurrentSale.ID.ToString();
-            label_customerName.Text = String.Format("{0} {1},",CurrentSale.CurrentCustomer.FirstName, CurrentSale.CurrentCustomer.LastName);
-
-            label_totalAmount.Text = CurrentSale.totalCost().ToString();
+            label_customerDetails.Text = String.Format("{0} {1},", CurrentSale.CurrentCustomer.FirstName, CurrentSale.CurrentCustomer.LastName);
+            label_address.Text = CurrentSale.CurrentCustomer.Address;
+            label_orderDate.Text = CurrentSale.OrderDate.ToString("dd/MM/yyyy");
+            label_paymentDate.Text = CurrentSale.PaymentDate.ToString("dd/MM/yyyy");
 
             initializeDataGridView();
         }
@@ -39,23 +40,23 @@ namespace Health_Assignment
         public void initializeDataGridView()
         {
             dt = new DataTable();
-            dt.Columns.Add("Product ID");
-            dt.Columns.Add("Product Name");
+            dt.Columns.Add("Product");
             dt.Columns.Add("Quantity");
-            dt.Columns.Add("Unit Price");
-            dt.Columns.Add("Total");
             for (int i = 0; i < CurrentSale.ProductsOrdered.Count; i++)
             {
                 dr = dt.NewRow();
-                dr["Product ID"] = CurrentSale.ProductsOrdered[i].ID;
-                dr["Product Name"] = CurrentSale.ProductsOrdered[i].Name;
+                dr["Product"] = CurrentSale.ProductsOrdered[i].Name + " : " + CurrentSale.ProductsOrdered[i].Manufacturer;
                 dr["Quantity"] = CurrentSale.ProductsQuantity[i];
-                dr["Unit Price"] = CurrentSale.ProductsOrdered[i].Price;
-                dr["Total"] = CurrentSale.ProductsOrdered[i].Price* CurrentSale.ProductsQuantity[i];
                 dt.Rows.Add(dr);
             }
             dataGridView_productPurchased.DataSource = dt;
             dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+        }
+
+        private void button_send_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Succesfully sent to logistics deparment", "Delivery Notification");
+            this.Close();
         }
     }
 }

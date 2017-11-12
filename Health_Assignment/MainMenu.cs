@@ -76,5 +76,10 @@ namespace Health_Assignment
         {
             homeUserControl3.BringToFront();
         }
+
+        private void icon_report_Click(object sender, EventArgs e)
+        {
+            reportUserControl.BringToFront();
+        }
     }
 }
