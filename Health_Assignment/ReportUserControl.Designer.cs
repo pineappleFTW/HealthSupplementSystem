@@ -56,41 +56,55 @@
             // label_reportTitle
             // 
             this.label_reportTitle.AutoSize = true;
-            this.label_reportTitle.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_reportTitle.Location = new System.Drawing.Point(487, 43);
+            this.label_reportTitle.Font = new System.Drawing.Font("Century Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_reportTitle.ForeColor = System.Drawing.Color.White;
+            this.label_reportTitle.Location = new System.Drawing.Point(484, 9);
             this.label_reportTitle.Name = "label_reportTitle";
-            this.label_reportTitle.Size = new System.Drawing.Size(58, 19);
+            this.label_reportTitle.Size = new System.Drawing.Size(126, 41);
             this.label_reportTitle.TabIndex = 0;
             this.label_reportTitle.Text = "Report";
             // 
             // button_dailySales
             // 
-            this.button_dailySales.Location = new System.Drawing.Point(178, 75);
+            this.button_dailySales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.button_dailySales.FlatAppearance.BorderSize = 0;
+            this.button_dailySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_dailySales.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_dailySales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.button_dailySales.Location = new System.Drawing.Point(92, 73);
             this.button_dailySales.Name = "button_dailySales";
-            this.button_dailySales.Size = new System.Drawing.Size(75, 23);
+            this.button_dailySales.Size = new System.Drawing.Size(109, 25);
             this.button_dailySales.TabIndex = 1;
             this.button_dailySales.Text = "Daily Sales";
-            this.button_dailySales.UseVisualStyleBackColor = true;
+            this.button_dailySales.UseVisualStyleBackColor = false;
             this.button_dailySales.Click += new System.EventHandler(this.button_dailySales_Click);
             // 
             // button_generateMonthlySales
             // 
-            this.button_generateMonthlySales.Location = new System.Drawing.Point(327, 77);
+            this.button_generateMonthlySales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.button_generateMonthlySales.FlatAppearance.BorderSize = 0;
+            this.button_generateMonthlySales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_generateMonthlySales.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_generateMonthlySales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.button_generateMonthlySales.Location = new System.Drawing.Point(256, 73);
             this.button_generateMonthlySales.Name = "button_generateMonthlySales";
-            this.button_generateMonthlySales.Size = new System.Drawing.Size(158, 23);
+            this.button_generateMonthlySales.Size = new System.Drawing.Size(158, 25);
             this.button_generateMonthlySales.TabIndex = 2;
             this.button_generateMonthlySales.Text = "Monthly Sales";
-            this.button_generateMonthlySales.UseVisualStyleBackColor = true;
+            this.button_generateMonthlySales.UseVisualStyleBackColor = false;
             this.button_generateMonthlySales.Click += new System.EventHandler(this.button_generateMonthlySales_Click);
             // 
             // button_allTimeSales
             // 
-            this.button_allTimeSales.Location = new System.Drawing.Point(842, 73);
+            this.button_allTimeSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.button_allTimeSales.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_allTimeSales.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.button_allTimeSales.Location = new System.Drawing.Point(886, 73);
             this.button_allTimeSales.Name = "button_allTimeSales";
             this.button_allTimeSales.Size = new System.Drawing.Size(146, 23);
             this.button_allTimeSales.TabIndex = 3;
             this.button_allTimeSales.Text = "All Time Sales";
-            this.button_allTimeSales.UseVisualStyleBackColor = true;
+            this.button_allTimeSales.UseVisualStyleBackColor = false;
             this.button_allTimeSales.Click += new System.EventHandler(this.button_allTimeSales_Click);
             // 
             // contextMenuStrip1
@@ -100,10 +114,12 @@
             // 
             // comboBox_month
             // 
+            this.comboBox_month.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.comboBox_month.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_month.FormattingEnabled = true;
-            this.comboBox_month.Location = new System.Drawing.Point(491, 77);
+            this.comboBox_month.Location = new System.Drawing.Point(420, 73);
             this.comboBox_month.Name = "comboBox_month";
-            this.comboBox_month.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_month.Size = new System.Drawing.Size(121, 25);
             this.comboBox_month.TabIndex = 6;
             // 
             // dataGridView_report
@@ -119,9 +135,9 @@
             this.orderDateDataGridViewTextBoxColumn,
             this.paymentDateDataGridViewTextBoxColumn});
             this.dataGridView_report.DataSource = this.salesBindingSource;
-            this.dataGridView_report.Location = new System.Drawing.Point(153, 133);
+            this.dataGridView_report.Location = new System.Drawing.Point(92, 133);
             this.dataGridView_report.Name = "dataGridView_report";
-            this.dataGridView_report.Size = new System.Drawing.Size(815, 353);
+            this.dataGridView_report.Size = new System.Drawing.Size(940, 353);
             this.dataGridView_report.TabIndex = 7;
             // 
             // iDDataGridViewTextBoxColumn
@@ -173,45 +189,56 @@
             // 
             // comboBox_year
             // 
+            this.comboBox_year.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.comboBox_year.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_year.FormattingEnabled = true;
-            this.comboBox_year.Location = new System.Drawing.Point(491, 106);
+            this.comboBox_year.Location = new System.Drawing.Point(420, 102);
             this.comboBox_year.Name = "comboBox_year";
-            this.comboBox_year.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_year.Size = new System.Drawing.Size(121, 25);
             this.comboBox_year.TabIndex = 8;
             // 
             // button_year
             // 
-            this.button_year.Location = new System.Drawing.Point(633, 77);
+            this.button_year.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.button_year.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_year.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.button_year.Location = new System.Drawing.Point(593, 71);
             this.button_year.Name = "button_year";
-            this.button_year.Size = new System.Drawing.Size(75, 23);
+            this.button_year.Size = new System.Drawing.Size(131, 27);
             this.button_year.TabIndex = 9;
             this.button_year.Text = "Yearly Sales";
-            this.button_year.UseVisualStyleBackColor = true;
+            this.button_year.UseVisualStyleBackColor = false;
             this.button_year.Click += new System.EventHandler(this.button_year_Click);
             // 
             // comboBox_yearSales
             // 
+            this.comboBox_yearSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.comboBox_yearSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_yearSales.FormattingEnabled = true;
-            this.comboBox_yearSales.Location = new System.Drawing.Point(715, 75);
+            this.comboBox_yearSales.Location = new System.Drawing.Point(730, 73);
             this.comboBox_yearSales.Name = "comboBox_yearSales";
-            this.comboBox_yearSales.Size = new System.Drawing.Size(121, 21);
+            this.comboBox_yearSales.Size = new System.Drawing.Size(121, 24);
             this.comboBox_yearSales.TabIndex = 10;
             // 
             // label_totalSalesText
             // 
             this.label_totalSalesText.AutoSize = true;
-            this.label_totalSalesText.Location = new System.Drawing.Point(776, 489);
+            this.label_totalSalesText.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_totalSalesText.ForeColor = System.Drawing.Color.White;
+            this.label_totalSalesText.Location = new System.Drawing.Point(825, 489);
             this.label_totalSalesText.Name = "label_totalSalesText";
-            this.label_totalSalesText.Size = new System.Drawing.Size(60, 13);
+            this.label_totalSalesText.Size = new System.Drawing.Size(99, 20);
             this.label_totalSalesText.TabIndex = 11;
             this.label_totalSalesText.Text = "Total Sales";
             // 
             // label_totalSales
             // 
             this.label_totalSales.AutoSize = true;
-            this.label_totalSales.Location = new System.Drawing.Point(910, 489);
+            this.label_totalSales.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_totalSales.ForeColor = System.Drawing.Color.White;
+            this.label_totalSales.Location = new System.Drawing.Point(969, 489);
             this.label_totalSales.Name = "label_totalSales";
-            this.label_totalSales.Size = new System.Drawing.Size(31, 13);
+            this.label_totalSales.Size = new System.Drawing.Size(49, 20);
             this.label_totalSales.TabIndex = 12;
             this.label_totalSales.Text = "1000";
             // 
@@ -219,6 +246,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.label_totalSales);
             this.Controls.Add(this.label_totalSalesText);
             this.Controls.Add(this.comboBox_yearSales);

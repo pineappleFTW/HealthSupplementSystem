@@ -36,6 +36,7 @@
             this.label_Welcome.AutoSize = true;
             this.label_Welcome.Cursor = System.Windows.Forms.Cursors.Default;
             this.label_Welcome.Font = new System.Drawing.Font("Raleway", 71.99999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_Welcome.ForeColor = System.Drawing.Color.White;
             this.label_Welcome.Location = new System.Drawing.Point(281, 183);
             this.label_Welcome.Name = "label_Welcome";
             this.label_Welcome.Size = new System.Drawing.Size(518, 112);
@@ -47,6 +48,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.Controls.Add(this.label_Welcome);
             this.Name = "HomeUserControl";
             this.Size = new System.Drawing.Size(1100, 561);

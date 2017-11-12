@@ -37,7 +37,7 @@ namespace Health_Assignment
             MainMenu mainMenu = (MainMenu)mainForm;
 
 
-            mainMenu.userAccountUserControl1.reloadList();
+            mainMenu.userAccountUserControl.reloadList();
 
             this.Close();
         }

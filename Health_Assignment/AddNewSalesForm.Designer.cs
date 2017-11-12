@@ -289,7 +289,7 @@
             this.Controls.Add(this.label_customer);
             this.Controls.Add(this.label1);
             this.Name = "AddNewSalesForm";
-            this.Text = "AddNewSalesForm";
+            this.Text = "aa";
             this.Load += new System.EventHandler(this.AddNewSalesForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productPurchased)).EndInit();
             this.ResumeLayout(false);

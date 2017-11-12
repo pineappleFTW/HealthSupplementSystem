@@ -44,12 +44,11 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.homeUserControl3 = new Health_Assignment.HomeUserControl();
+            this.homeUserControl = new Health_Assignment.HomeUserControl();
             this.salesFormUserControl = new Health_Assignment.SalesFormUserControl();
-            this.userAccountUserControl1 = new Health_Assignment.UserAccountUserControl();
-            this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
+            this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
+            this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -85,7 +84,7 @@
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(164, 613);
+            this.panel1.Size = new System.Drawing.Size(164, 661);
             this.panel1.TabIndex = 34;
             // 
             // button_logOut
@@ -280,66 +279,58 @@
             this.panel2.Location = new System.Drawing.Point(164, 0);
             this.panel2.Margin = new System.Windows.Forms.Padding(2);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1019, 10);
+            this.panel2.Size = new System.Drawing.Size(1136, 10);
             this.panel2.TabIndex = 35;
             // 
-            // panel4
+            // homeUserControl
             // 
-            this.panel4.Location = new System.Drawing.Point(388, 202);
-            this.panel4.Margin = new System.Windows.Forms.Padding(2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(1150, 81);
-            this.panel4.TabIndex = 37;
-            // 
-            // homeUserControl3
-            // 
-            this.homeUserControl3.Location = new System.Drawing.Point(181, 89);
-            this.homeUserControl3.Name = "homeUserControl3";
-            this.homeUserControl3.Size = new System.Drawing.Size(1003, 516);
-            this.homeUserControl3.TabIndex = 41;
+            this.homeUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.homeUserControl.Location = new System.Drawing.Point(177, 123);
+            this.homeUserControl.Name = "homeUserControl";
+            this.homeUserControl.Size = new System.Drawing.Size(1123, 538);
+            this.homeUserControl.TabIndex = 42;
             // 
             // salesFormUserControl
             // 
-            this.salesFormUserControl.Location = new System.Drawing.Point(193, 85);
+            this.salesFormUserControl.Location = new System.Drawing.Point(177, 124);
             this.salesFormUserControl.Name = "salesFormUserControl";
-            this.salesFormUserControl.Size = new System.Drawing.Size(991, 510);
-            this.salesFormUserControl.TabIndex = 40;
+            this.salesFormUserControl.Size = new System.Drawing.Size(1123, 538);
+            this.salesFormUserControl.TabIndex = 41;
             // 
-            // userAccountUserControl1
+            // userAccountUserControl
             // 
-            this.userAccountUserControl1.Location = new System.Drawing.Point(194, 95);
-            this.userAccountUserControl1.Name = "userAccountUserControl1";
-            this.userAccountUserControl1.Size = new System.Drawing.Size(990, 490);
-            this.userAccountUserControl1.TabIndex = 39;
+            this.userAccountUserControl.Location = new System.Drawing.Point(177, 124);
+            this.userAccountUserControl.Name = "userAccountUserControl";
+            this.userAccountUserControl.Size = new System.Drawing.Size(1123, 537);
+            this.userAccountUserControl.TabIndex = 40;
+            // 
+            // reportUserControl
+            // 
+            this.reportUserControl.Location = new System.Drawing.Point(177, 123);
+            this.reportUserControl.Name = "reportUserControl";
+            this.reportUserControl.Size = new System.Drawing.Size(1123, 538);
+            this.reportUserControl.TabIndex = 39;
             // 
             // customerUserControlForm
             // 
             this.customerUserControlForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
-            this.customerUserControlForm.Location = new System.Drawing.Point(194, 105);
+            this.customerUserControlForm.Location = new System.Drawing.Point(169, 115);
             this.customerUserControlForm.Name = "customerUserControlForm";
-            this.customerUserControlForm.Size = new System.Drawing.Size(990, 490);
+            this.customerUserControlForm.Size = new System.Drawing.Size(1131, 546);
             this.customerUserControlForm.TabIndex = 38;
-            // 
-            // reportUserControl
-            // 
-            this.reportUserControl.Location = new System.Drawing.Point(164, 95);
-            this.reportUserControl.Name = "reportUserControl";
-            this.reportUserControl.Size = new System.Drawing.Size(1019, 524);
-            this.reportUserControl.TabIndex = 42;
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1183, 613);
-            this.Controls.Add(this.reportUserControl);
-            this.Controls.Add(this.homeUserControl3);
+            this.ClientSize = new System.Drawing.Size(1300, 661);
+            this.Controls.Add(this.homeUserControl);
             this.Controls.Add(this.salesFormUserControl);
-            this.Controls.Add(this.userAccountUserControl1);
+            this.Controls.Add(this.userAccountUserControl);
+            this.Controls.Add(this.reportUserControl);
             this.Controls.Add(this.customerUserControlForm);
-            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
@@ -374,11 +365,10 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Panel panel4;
-        public UserAccountUserControl userAccountUserControl1;
         public CustomerUserControlForm customerUserControlForm;
-        public SalesFormUserControl salesFormUserControl;
-        public HomeUserControl homeUserControl3;
         public ReportUserControl reportUserControl;
+        public UserAccountUserControl userAccountUserControl;
+        public SalesFormUserControl salesFormUserControl;
+        public HomeUserControl homeUserControl;
     }
 }

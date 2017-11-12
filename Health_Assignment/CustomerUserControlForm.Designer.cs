@@ -125,7 +125,7 @@
             this.button_completeList.Cursor = System.Windows.Forms.Cursors.Default;
             this.button_completeList.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.button_completeList.FlatAppearance.BorderSize = 0;
-            this.button_completeList.ForeColor = System.Drawing.Color.Black;
+            this.button_completeList.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
             this.button_completeList.Name = "button_completeList";
             this.button_completeList.UseVisualStyleBackColor = false;
             this.button_completeList.Click += new System.EventHandler(this.button_completeList_Click);
@@ -142,7 +142,7 @@
             this.button_Search.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_Search.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button_Search, "button_Search");
-            this.button_Search.ForeColor = System.Drawing.Color.Black;
+            this.button_Search.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
             this.button_Search.Name = "button_Search";
             this.button_Search.UseVisualStyleBackColor = false;
             this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
@@ -158,6 +158,7 @@
             this.button_delete.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_delete.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button_delete, "button_delete");
+            this.button_delete.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
             this.button_delete.Name = "button_delete";
             this.button_delete.UseVisualStyleBackColor = false;
             this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
@@ -167,6 +168,7 @@
             this.button_add.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_add.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button_add, "button_add");
+            this.button_add.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
             this.button_add.Name = "button_add";
             this.button_add.UseVisualStyleBackColor = false;
             this.button_add.Click += new System.EventHandler(this.button_add_Click);
@@ -176,6 +178,7 @@
             this.button_edit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_edit.FlatAppearance.BorderSize = 0;
             resources.ApplyResources(this.button_edit, "button_edit");
+            this.button_edit.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
             this.button_edit.Name = "button_edit";
             this.button_edit.UseVisualStyleBackColor = false;
             this.button_edit.Click += new System.EventHandler(this.button_editCustomer_Click);

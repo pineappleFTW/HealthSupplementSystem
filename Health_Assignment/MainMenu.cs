@@ -56,7 +56,7 @@ namespace Health_Assignment
 
         private void icon_users_Click(object sender, EventArgs e)
         {
-            userAccountUserControl1.BringToFront();
+            userAccountUserControl.BringToFront();
         }
 
         private void button_logOut_Click(object sender, EventArgs e)
@@ -74,7 +74,7 @@ namespace Health_Assignment
 
         private void button_home_Click(object sender, EventArgs e)
         {
-            homeUserControl3.BringToFront();
+            homeUserControl.BringToFront();
         }
 
         private void icon_report_Click(object sender, EventArgs e)
