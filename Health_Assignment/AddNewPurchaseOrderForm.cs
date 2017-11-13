@@ -20,8 +20,16 @@ namespace Health_Assignment
             InitializeComponent();
         }
 
+        public AddNewPurchaseOrderForm(Product currentProduct):this()
+        {
+            CurrentProduct = currentProduct;
+        }
+
         private void AddNewPurchaseOrderForm_Load(object sender, EventArgs e)
         {
+            if (CurrentProduct!= null){
+                comboBox_searchProduct.Text = CurrentProduct.ID + "-"+ CurrentProduct.Name;
+            }
             dateTimePicker_orderDate.MinDate = DateTime.Today;
         }
 

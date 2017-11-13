@@ -13,6 +13,7 @@ namespace Health_Assignment
     public partial class EditSalesForm : Form
     {
         public Sales CurrentSale { get; set; }
+        public Sales NonEditedSales { get; set; }
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
 
@@ -24,6 +25,7 @@ namespace Health_Assignment
         public EditSalesForm(Sales currentSale) : this()
         {
             CurrentSale = currentSale;
+            NonEditedSales = currentSale;
         }
 
 
@@ -108,19 +110,40 @@ namespace Health_Assignment
                 return;
             }
             string[] productChosen = comboBox_product.Text.Split('-');
-            Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
-            if (CurrentSale.ProductsOrdered.Contains(currentProduct))
+            Product currentProduct = null;
+            try
             {
-                int index = CurrentSale.ProductsOrdered.IndexOf(currentProduct);
-                CurrentSale.ProductsQuantity[index] += quantity;
-                refreshDataGridView();
+                currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Please select product");
+                return;
+            }
+
+            if (currentProduct.Quantity >= quantity)
+            {
+                if (CurrentSale.ProductsOrdered.Contains(currentProduct))
+                {
+                    currentProduct.Quantity -= quantity;
+                    int index = CurrentSale.ProductsOrdered.IndexOf(currentProduct);
+                    CurrentSale.ProductsQuantity[index] += quantity;
+                    refreshDataGridView();
+                }
+                else
+                {
+                    currentProduct.Quantity -= quantity;
+                    CurrentSale.ProductsOrdered.Add(currentProduct);
+                    CurrentSale.ProductsQuantity.Add(quantity);
+                    addtoDataGridView(currentProduct, quantity);
+                }
+
             }
             else
             {
-                CurrentSale.ProductsOrdered.Add(currentProduct);
-                CurrentSale.ProductsQuantity.Add(quantity);
-                addtoDataGridView(currentProduct, quantity);
+                MessageBox.Show("There is not enough stock please reorder");
             }
+           
         }
 
         public void refreshDataGridView()
@@ -168,6 +191,17 @@ namespace Health_Assignment
 
             Sales editedSales = new Sales(CurrentSale.ID, CurrentSale.CurrentCustomer,isPaid, status, paymentMode, CurrentSale.ProductsOrdered, CurrentSale.ProductsQuantity, orderDate, paymentDate);
             SalesData.updateInformation(editedSales);
+            for (int i = 0; i < CurrentSale.ProductsOrdered.Count; i++)
+            {
+                if (ProductsData.products.Contains(CurrentSale.ProductsOrdered[i]))
+                {
+                    int index = ProductsData.products.IndexOf(CurrentSale.ProductsOrdered[i]);
+                    if (CurrentSale.ProductsOrdered[i].Quantity != NonEditedSales.ProductsOrdered[i].Quantity)
+                    {
+                        ProductsData.products[index].Quantity -= CurrentSale.ProductsQuantity[i];
+                    }
+                }
+            }
 
             Form mainForm = Application.OpenForms["MainMenu"];
             MainMenu mainMenu = (MainMenu)mainForm;

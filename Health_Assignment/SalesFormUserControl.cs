@@ -103,12 +103,31 @@ namespace Health_Assignment
                 DataGridViewRow selectedRow = dataGridView1.Rows[currentIndex];
                 Sales currentSaleOrder = (Sales)dataGridView1.CurrentRow.DataBoundItem;
 
+                if (currentSaleOrder.IsPaid)
+                {
+
+                }
+
                 var confirmResult = MessageBox.Show("Are you sure to delete sales: " + currentSaleOrder.ID +  " ?",
                                       "Delete Confirmation",
                                       MessageBoxButtons.YesNo);
 
                 if (confirmResult == DialogResult.Yes)
                 {
+                    if (!currentSaleOrder.IsPaid)
+                    {
+                        for (int i = 0; i < currentSaleOrder.ProductsOrdered.Count; i++)
+                        {
+                            if (ProductsData.products.Contains(currentSaleOrder.ProductsOrdered[i]))
+                            {
+                                int index = ProductsData.products.IndexOf(currentSaleOrder.ProductsOrdered[i]);
+                                
+                                ProductsData.products[index].Quantity += currentSaleOrder.ProductsQuantity[i];
+                               
+                            }
+                        }
+
+                    }
                     SalesData.deleteSales(currentSaleOrder);
                 }
                 else

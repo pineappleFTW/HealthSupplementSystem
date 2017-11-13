@@ -106,22 +106,31 @@ namespace Health_Assignment
                 DataGridViewRow selectedRow = dataGridView_purchaseOrders.Rows[currentIndex];
                 PurchaseOrder currentPurchaseOrder = (PurchaseOrder)dataGridView_purchaseOrders.CurrentRow.DataBoundItem;
 
-                var confirmResult = MessageBox.Show("Are you sure to the order is arrived?: ",
-                                        "Stock Arrival Confirmation",
-                                        MessageBoxButtons.YesNo);
-
-                if (confirmResult == DialogResult.Yes)
+                if (!currentPurchaseOrder.IsObtained)
                 {
-                    //ADD STOCK TO PRODUCT
-                    currentPurchaseOrder.IsObtained = true;
+                    var confirmResult = MessageBox.Show("Are you sure to the order is arrived?: ",
+                                       "Stock Arrival Confirmation",
+                                       MessageBoxButtons.YesNo);
 
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        //ADD STOCK TO PRODUCT
+                        currentPurchaseOrder.CurrentProduct.Quantity += currentPurchaseOrder.Quantity;
+                        currentPurchaseOrder.IsObtained = true;
+
+                    }
+                    else
+                    {
+                        // If 'No', do something here.
+                    }
+
+                    reloadList();
                 }
                 else
                 {
-                    // If 'No', do something here.
+                    MessageBox.Show("This order is completed!");
                 }
-
-                reloadList();
+               
             }
             else
             {

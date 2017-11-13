@@ -94,5 +94,115 @@ namespace Health_Assignment
             AddNewProductForm newProductForm = new AddNewProductForm();
             newProductForm.Show();
         }
+
+        private void button_edit_Click(object sender, EventArgs e)
+        {
+            if (currentListOfProducts.Count != 0)
+            {
+                if (currentListOfProducts.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView_products.Rows[currentIndex];
+                Product currentObject = null;
+                string category = selectedRow.Cells[5].Value.ToString();
+
+                if (category.Equals("Vitamin"))
+                {
+                    currentObject = (Vitamin)dataGridView_products.CurrentRow.DataBoundItem;
+                }
+                else if(category.Equals("Protein"))
+                {
+                    currentObject = (Protein)dataGridView_products.CurrentRow.DataBoundItem;
+
+                }
+                else if(category.Equals("Mineral Supplement"))
+                {
+                    currentObject = (MineralSupplement)dataGridView_products.CurrentRow.DataBoundItem;
+                }
+
+                EditProductForm editProductForm = new EditProductForm(currentObject);
+                editProductForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no more product");
+            }
+        }
+
+        private void dataGridView_products_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentIndex = e.RowIndex;
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (currentListOfProducts.Count != 0)
+            {
+                if (currentListOfProducts.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView_products.Rows[currentIndex];
+                Product currentObject = (Product)dataGridView_products.CurrentRow.DataBoundItem;
+
+                var confirmResult = MessageBox.Show("Are you sure to delete product " + currentObject.ID + " : " + currentObject.Name + " by " + currentObject.Manufacturer+ " ?",
+                                         "Delete Confirmation",
+                                         MessageBoxButtons.YesNo);
+                if (confirmResult == DialogResult.Yes)
+                {
+                    ProductsData.deleteProduct(currentObject);
+                    currentListOfProducts.Remove(currentObject);
+
+                }
+                else
+                {
+                    // If 'No', do something here.
+                }
+
+                reloadList();
+            }
+            else
+            {
+                MessageBox.Show("There is no more product");
+            }
+        }
+
+        private void button_checkForStock_Click(object sender, EventArgs e)
+        {
+            var returnResults =
+               from product in ProductsData.products
+               where product.Quantity <= 10 
+               select product;
+
+            List<Product> returnedList = returnResults.ToList();
+
+            currentListOfProducts = returnedList;
+            reloadList();
+        }
+
+        private void button_makeOrder_Click(object sender, EventArgs e)
+        {
+            if (currentListOfProducts.Count != 0)
+            {
+                if (currentListOfProducts.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView_products.Rows[currentIndex];
+                Product currentObject = (Product)dataGridView_products.CurrentRow.DataBoundItem;
+
+
+                AddNewPurchaseOrderForm newPurchaseOrderForm = new AddNewPurchaseOrderForm(currentObject);
+                newPurchaseOrderForm.Show();
+                
+            }
+            else
+            {
+                MessageBox.Show("There is no more product");
+            }
+           
+
+        }
     }
 }

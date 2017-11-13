@@ -51,6 +51,7 @@
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
             this.inventoryUserControl = new Health_Assignment.InventoryUserControl();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -342,6 +343,23 @@
             this.inventoryUserControl.Size = new System.Drawing.Size(1113, 558);
             this.inventoryUserControl.TabIndex = 44;
             // 
+            // button_refresh
+            // 
+            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_refresh.Location = new System.Drawing.Point(1159, 6);
+            this.button_refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(141, 39);
+            this.button_refresh.TabIndex = 43;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,6 +367,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 661);
+            this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.homeUserControl);
             this.Controls.Add(this.inventoryUserControl);
             this.Controls.Add(this.purchaseOrderUseControl);
@@ -398,5 +417,6 @@
         public HomeUserControl homeUserControl;
         public PurchaseOrderUseControl purchaseOrderUseControl;
         public InventoryUserControl inventoryUserControl;
+        private System.Windows.Forms.Button button_refresh;
     }
 }

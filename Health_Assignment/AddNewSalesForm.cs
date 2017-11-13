@@ -94,14 +94,14 @@ namespace Health_Assignment
             int quantity;
             try
             {
-               quantity = Int32.Parse(textBox_quantity.Text.Trim());
-            }catch(FormatException fe)
+                quantity = Int32.Parse(textBox_quantity.Text.Trim());
+            } catch (FormatException fe)
             {
                 MessageBox.Show("Invalid or empty quantity", "Quantity is Required");
                 return;
             }
 
-            if (string.IsNullOrWhiteSpace(comboBox_product.Text.Trim())){
+            if (string.IsNullOrWhiteSpace(comboBox_product.Text.Trim())) {
                 MessageBox.Show("Invalid or empty product", "Product is Required");
                 return;
             }
@@ -111,20 +111,38 @@ namespace Health_Assignment
                 return;
             }
             string[] productChosen = comboBox_product.Text.Split('-');
-            Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
-            if (currentListOfProducts.Contains(currentProduct))
+            Product currentProduct = null;
+            try
             {
-                int index = currentListOfProducts.IndexOf(currentProduct);
-                currentListOfQuantity[index] += quantity;
-                refreshDataGridView();
+                currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
+            }catch(Exception exception)
+            {
+                MessageBox.Show("Please select product");
+                return;
+            }
+            
+            if (currentProduct.Quantity >= quantity)
+            {
+                if (currentListOfProducts.Contains(currentProduct))
+                {
+                    currentProduct.Quantity -= quantity;
+                    int index = currentListOfProducts.IndexOf(currentProduct);
+                    currentListOfQuantity[index] += quantity;
+                    refreshDataGridView();
+                }
+                else
+                {
+                    currentProduct.Quantity -= quantity;
+                    currentListOfProducts.Add(currentProduct);
+                    currentListOfQuantity.Add(quantity);
+                    addtoDataGridView(currentProduct, quantity);
+                }
             }
             else
             {
-                
-                currentListOfProducts.Add(currentProduct);
-                currentListOfQuantity.Add(quantity);
-                addtoDataGridView(currentProduct, quantity);
+                MessageBox.Show("There is not enough stock please reorder");
             }
+            
 
         }
 
@@ -220,6 +238,14 @@ namespace Health_Assignment
 
             Sales newSales = new Sales(CurrentCustomer, isPaid, status, paymentMode, currentListOfProducts, currentListOfQuantity, orderDate, paymentDate);
             SalesData.addNewSales(newSales);
+            for(int i = 0; i < currentListOfProducts.Count; i++)
+            {
+                if (ProductsData.products.Contains(currentListOfProducts[i]))
+                {
+                    int index = ProductsData.products.IndexOf(currentListOfProducts[i]);
+                    ProductsData.products[index].Quantity -= currentListOfQuantity[i];
+                }
+            }
 
             Form mainForm = Application.OpenForms["MainMenu"];
             MainMenu mainMenu = (MainMenu)mainForm;

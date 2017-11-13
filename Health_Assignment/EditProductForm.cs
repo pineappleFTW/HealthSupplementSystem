@@ -10,25 +10,37 @@ using System.Windows.Forms;
 
 namespace Health_Assignment
 {
-    public partial class AddNewProductForm : Form
+    public partial class EditProductForm : Form
     {
-        public AddNewProductForm()
+        public Product CurrentProduct { get; set; }
+
+        public EditProductForm()
         {
             InitializeComponent();
         }
 
-        private void AddNewProductForm_Load(object sender, EventArgs e)
+        public EditProductForm(Product currentProduct) : this()
+        {
+            CurrentProduct = currentProduct;
+        }
+
+        private void EditProductForm_Load(object sender, EventArgs e)
         {
             comboBox_category.Items.Add("Vitamin");
             comboBox_category.Items.Add("Protein");
             comboBox_category.Items.Add("Mineral Supplement");
-            comboBox_category.SelectedIndex = 0;
-
+            richTextBox_name.Text = CurrentProduct.Name;
+            richTextBox_description.Text = CurrentProduct.Description;
+            richTextBox_prescription.Text = CurrentProduct.Prescription;
+            richTextBox_manufacturer.Text = CurrentProduct.Manufacturer;
+            comboBox_category.Text = CurrentProduct.Category;
+            richTextBox_price.Text = CurrentProduct.Price.ToString();
+            richTextBox_quantity.Text = CurrentProduct.Quantity.ToString();
         }
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            Product newProduct;
+            
             string name = richTextBox_name.Text.Trim();
             string description = richTextBox_description.Text.Trim();
             string prescription = richTextBox_prescription.Text.Trim();
@@ -95,17 +107,19 @@ namespace Health_Assignment
 
             if (category.Equals("Vitamin"))
             {
-                newProduct = new Vitamin(name, description, prescription, manufacturer,price,quantity);
-            }else if (category.Equals("Protein"))
+                CurrentProduct = new Vitamin(CurrentProduct.ID,name, description, prescription, manufacturer, price, quantity);
+            }
+            else if (category.Equals("Protein"))
             {
-                newProduct = new Protein(name, description, prescription, manufacturer, price, quantity);
+                CurrentProduct = new Protein(CurrentProduct.ID,name, description, prescription, manufacturer, price, quantity);
             }
             else
             {
-                newProduct = new MineralSupplement(name, description, prescription, manufacturer, price, quantity);
+                CurrentProduct = new MineralSupplement(CurrentProduct.ID,name, description, prescription, manufacturer, price, quantity);
             }
 
-            ProductsData.addNewProduct(newProduct);
+            ProductsData.updateInformation(CurrentProduct);
+
             Form mainForm = Application.OpenForms["MainMenu"];
             MainMenu mainMenu = (MainMenu)mainForm;
             mainMenu.inventoryUserControl.reloadList();

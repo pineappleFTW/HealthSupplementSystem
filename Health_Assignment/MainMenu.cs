@@ -106,6 +106,14 @@ namespace Health_Assignment
             }
         }
 
-        
+        private void button_refresh_Click(object sender, EventArgs e)
+        {
+            inventoryUserControl.populateList();
+            purchaseOrderUseControl.populateList();
+            salesFormUserControl.populateList();
+            customerUserControlForm.populateList();
+            userAccountUserControl.populateList();
+            reportUserControl.populateList();
+        }
     }
 }
