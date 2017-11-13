@@ -43,6 +43,7 @@ namespace Health_Assignment
         {
             dataGridView1.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
             dataGridView1.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridView1.EnableHeadersVisualStyles = false;
             populateList();
         }
 

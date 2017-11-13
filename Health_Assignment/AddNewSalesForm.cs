@@ -30,6 +30,7 @@ namespace Health_Assignment
 
         private void AddNewSalesForm_Load(object sender, EventArgs e)
         {
+            
             comboBox_customer.DropDownStyle = ComboBoxStyle.DropDown;
             comboBox_status.Items.Add("Pending Payment");
             comboBox_status.Items.Add("Paid");
@@ -44,7 +45,8 @@ namespace Health_Assignment
             comboBox_paymentMode.Items.Add("Cheque");
             comboBox_paymentMode.SelectedIndex = 0;
             initializeDataGridView();
-
+            dataGridView_productPurchased.EnableHeadersVisualStyles = false;
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void button_search_Click(object sender, EventArgs e)
@@ -154,8 +156,8 @@ namespace Health_Assignment
                 MessageBox.Show("There is not enough stock please reorder");
                 return;
             }
-            
 
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         private void comboBox_product_SelectedIndexChanged(object sender, EventArgs e)

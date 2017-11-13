@@ -58,6 +58,8 @@ namespace Health_Assignment
             dateTimePicker_paymentDate.MinDate = CurrentSale.OrderDate;
 
             initializeDataGridView();
+            dataGridView_productPurchased.EnableHeadersVisualStyles = false;
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void initializeDataGridView()
@@ -151,7 +153,8 @@ namespace Health_Assignment
             {
                 MessageBox.Show("There is not enough stock please reorder");
             }
-           
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+
         }
 
         public void refreshDataGridView()

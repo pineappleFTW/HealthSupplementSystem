@@ -27,7 +27,10 @@ namespace Health_Assignment
             comboBox_searchOptions.Items.Add("Category");
             comboBox_searchOptions.SelectedIndex = 0;
             dataGridView_products.EnableHeadersVisualStyles = false;
+            
+            dataGridView_products.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
             populateList();
+            
         }
 
         public void reloadList()

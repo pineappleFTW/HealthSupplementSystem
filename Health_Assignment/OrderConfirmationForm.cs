@@ -34,6 +34,9 @@ namespace Health_Assignment
             label_totalAmount.Text = CurrentSale.totalCost().ToString();
 
             initializeDataGridView();
+            dataGridView_productPurchased.EnableHeadersVisualStyles = false;
+            dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells;
+            dataGridView_productPurchased.Columns[1].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         public void initializeDataGridView()

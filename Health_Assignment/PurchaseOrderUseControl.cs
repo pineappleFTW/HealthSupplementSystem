@@ -31,6 +31,7 @@ namespace Health_Assignment
             comboBox_searchOption.Items.Add("Date");
             comboBox_searchOption.SelectedIndex = 0;
             dataGridView_purchaseOrders.Columns[3].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridView_purchaseOrders.EnableHeadersVisualStyles = false;
             populateList();
         }
 
