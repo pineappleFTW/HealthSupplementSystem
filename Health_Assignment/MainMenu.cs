@@ -34,15 +34,6 @@ namespace Health_Assignment
 
    
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-
-        }
 
         private void panel4_Paint(object sender, PaintEventArgs e)
         {
@@ -65,6 +56,12 @@ namespace Health_Assignment
             Login loginForm = (Login)mainForm;
             this.Close();
             loginForm.Show();
+        }
+
+
+        private void icon_inventory_Click(object sender, EventArgs e)
+        {
+            inventoryUserControl.BringToFront();
         }
 
         private void icon_sales_Click(object sender, EventArgs e)
@@ -108,5 +105,7 @@ namespace Health_Assignment
                 SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
             }
         }
+
+        
     }
 }

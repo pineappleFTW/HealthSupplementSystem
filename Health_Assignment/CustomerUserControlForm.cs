@@ -36,9 +36,6 @@ namespace Health_Assignment
             currentIndex = e.RowIndex;
         }
 
-     
-
-        
 
         public void reloadList()
         {
