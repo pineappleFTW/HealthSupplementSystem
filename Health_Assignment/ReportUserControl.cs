@@ -21,6 +21,7 @@ namespace Health_Assignment
 
         private void ReportUserControl_Load(object sender, EventArgs e)
         {
+            dataGridView_report.EnableHeadersVisualStyles = false;
             comboBox_month.Items.Add(1);
             comboBox_month.Items.Add(2);
             comboBox_month.Items.Add(3);

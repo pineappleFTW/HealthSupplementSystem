@@ -107,6 +107,7 @@
             // 
             // richTextBox_address
             // 
+            this.richTextBox_address.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_address.Location = new System.Drawing.Point(157, 164);
             this.richTextBox_address.Name = "richTextBox_address";
             this.richTextBox_address.Size = new System.Drawing.Size(163, 33);
@@ -117,6 +118,7 @@
             // 
             this.richTextBox_firstName.BackColor = System.Drawing.SystemColors.Window;
             this.richTextBox_firstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox_firstName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_firstName.Location = new System.Drawing.Point(157, 82);
             this.richTextBox_firstName.MaxLength = 30;
             this.richTextBox_firstName.Name = "richTextBox_firstName";
@@ -126,6 +128,7 @@
             // 
             // richTextBox_lastName
             // 
+            this.richTextBox_lastName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_lastName.Location = new System.Drawing.Point(157, 121);
             this.richTextBox_lastName.Name = "richTextBox_lastName";
             this.richTextBox_lastName.Size = new System.Drawing.Size(163, 21);
@@ -156,15 +159,17 @@
             // 
             // comboBox_customerType
             // 
+            this.comboBox_customerType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_customerType.FormattingEnabled = true;
             this.comboBox_customerType.Location = new System.Drawing.Point(157, 211);
             this.comboBox_customerType.Name = "comboBox_customerType";
-            this.comboBox_customerType.Size = new System.Drawing.Size(163, 21);
+            this.comboBox_customerType.Size = new System.Drawing.Size(163, 25);
             this.comboBox_customerType.TabIndex = 14;
             this.comboBox_customerType.SelectedIndexChanged += new System.EventHandler(this.comboBox_customerType_SelectedIndexChanged);
             // 
             // richTextBox_phoneNumber
             // 
+            this.richTextBox_phoneNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_phoneNumber.Location = new System.Drawing.Point(157, 253);
             this.richTextBox_phoneNumber.Name = "richTextBox_phoneNumber";
             this.richTextBox_phoneNumber.Size = new System.Drawing.Size(163, 22);
@@ -184,6 +189,7 @@
             // 
             // richTextBox_creditLimit
             // 
+            this.richTextBox_creditLimit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_creditLimit.Location = new System.Drawing.Point(157, 301);
             this.richTextBox_creditLimit.Name = "richTextBox_creditLimit";
             this.richTextBox_creditLimit.Size = new System.Drawing.Size(163, 18);

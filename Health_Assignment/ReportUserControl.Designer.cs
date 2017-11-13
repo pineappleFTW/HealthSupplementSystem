@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label_reportTitle = new System.Windows.Forms.Label();
             this.button_dailySales = new System.Windows.Forms.Button();
             this.button_generateMonthlySales = new System.Windows.Forms.Button();
@@ -36,6 +41,11 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.dataGridView_report = new System.Windows.Forms.DataGridView();
+            this.comboBox_year = new System.Windows.Forms.ComboBox();
+            this.button_year = new System.Windows.Forms.Button();
+            this.comboBox_yearSales = new System.Windows.Forms.ComboBox();
+            this.label_totalSalesText = new System.Windows.Forms.Label();
+            this.label_totalSales = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPaidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -44,11 +54,6 @@
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.comboBox_year = new System.Windows.Forms.ComboBox();
-            this.button_year = new System.Windows.Forms.Button();
-            this.comboBox_yearSales = new System.Windows.Forms.ComboBox();
-            this.label_totalSalesText = new System.Windows.Forms.Label();
-            this.label_totalSales = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -124,7 +129,21 @@
             // 
             // dataGridView_report
             // 
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            this.dataGridView_report.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridView_report.AutoGenerateColumns = false;
+            this.dataGridView_report.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.dataGridView_report.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView_report.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Raleway", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_report.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dataGridView_report.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView_report.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.iDDataGridViewTextBoxColumn,
@@ -135,57 +154,29 @@
             this.orderDateDataGridViewTextBoxColumn,
             this.paymentDateDataGridViewTextBoxColumn});
             this.dataGridView_report.DataSource = this.salesBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView_report.DefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView_report.Location = new System.Drawing.Point(92, 133);
             this.dataGridView_report.Name = "dataGridView_report";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView_report.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            this.dataGridView_report.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dataGridView_report.Size = new System.Drawing.Size(940, 353);
             this.dataGridView_report.TabIndex = 7;
-            // 
-            // iDDataGridViewTextBoxColumn
-            // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // currentCustomerDataGridViewTextBoxColumn
-            // 
-            this.currentCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.currentCustomerDataGridViewTextBoxColumn.DataPropertyName = "CurrentCustomer";
-            this.currentCustomerDataGridViewTextBoxColumn.HeaderText = "CurrentCustomer";
-            this.currentCustomerDataGridViewTextBoxColumn.Name = "currentCustomerDataGridViewTextBoxColumn";
-            // 
-            // isPaidDataGridViewCheckBoxColumn
-            // 
-            this.isPaidDataGridViewCheckBoxColumn.DataPropertyName = "IsPaid";
-            this.isPaidDataGridViewCheckBoxColumn.HeaderText = "IsPaid";
-            this.isPaidDataGridViewCheckBoxColumn.Name = "isPaidDataGridViewCheckBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // paymentModeDataGridViewTextBoxColumn
-            // 
-            this.paymentModeDataGridViewTextBoxColumn.DataPropertyName = "PaymentMode";
-            this.paymentModeDataGridViewTextBoxColumn.HeaderText = "PaymentMode";
-            this.paymentModeDataGridViewTextBoxColumn.Name = "paymentModeDataGridViewTextBoxColumn";
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            // 
-            // paymentDateDataGridViewTextBoxColumn
-            // 
-            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
-            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "PaymentDate";
-            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
-            // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataSource = typeof(Health_Assignment.Sales);
             // 
             // comboBox_year
             // 
@@ -241,6 +232,53 @@
             this.label_totalSales.Size = new System.Drawing.Size(49, 20);
             this.label_totalSales.TabIndex = 12;
             this.label_totalSales.Text = "1000";
+            // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // currentCustomerDataGridViewTextBoxColumn
+            // 
+            this.currentCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.currentCustomerDataGridViewTextBoxColumn.DataPropertyName = "CurrentCustomer";
+            this.currentCustomerDataGridViewTextBoxColumn.HeaderText = "CurrentCustomer";
+            this.currentCustomerDataGridViewTextBoxColumn.Name = "currentCustomerDataGridViewTextBoxColumn";
+            // 
+            // isPaidDataGridViewCheckBoxColumn
+            // 
+            this.isPaidDataGridViewCheckBoxColumn.DataPropertyName = "IsPaid";
+            this.isPaidDataGridViewCheckBoxColumn.HeaderText = "IsPaid";
+            this.isPaidDataGridViewCheckBoxColumn.Name = "isPaidDataGridViewCheckBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // paymentModeDataGridViewTextBoxColumn
+            // 
+            this.paymentModeDataGridViewTextBoxColumn.DataPropertyName = "PaymentMode";
+            this.paymentModeDataGridViewTextBoxColumn.HeaderText = "PaymentMode";
+            this.paymentModeDataGridViewTextBoxColumn.Name = "paymentModeDataGridViewTextBoxColumn";
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            // 
+            // paymentDateDataGridViewTextBoxColumn
+            // 
+            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
+            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "PaymentDate";
+            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataSource = typeof(Health_Assignment.Sales);
             // 
             // ReportUserControl
             // 

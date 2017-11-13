@@ -117,39 +117,44 @@
             // textBox_newFirstName
             // 
             this.textBox_newFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBox_newFirstName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_newFirstName.Location = new System.Drawing.Point(155, 81);
             this.textBox_newFirstName.Name = "textBox_newFirstName";
-            this.textBox_newFirstName.Size = new System.Drawing.Size(171, 20);
+            this.textBox_newFirstName.Size = new System.Drawing.Size(171, 23);
             this.textBox_newFirstName.TabIndex = 6;
             // 
             // textBox_newLastName
             // 
+            this.textBox_newLastName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_newLastName.Location = new System.Drawing.Point(155, 120);
             this.textBox_newLastName.Name = "textBox_newLastName";
-            this.textBox_newLastName.Size = new System.Drawing.Size(171, 20);
+            this.textBox_newLastName.Size = new System.Drawing.Size(171, 23);
             this.textBox_newLastName.TabIndex = 7;
             // 
             // textBox_newAddress
             // 
+            this.textBox_newAddress.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_newAddress.Location = new System.Drawing.Point(155, 161);
             this.textBox_newAddress.Name = "textBox_newAddress";
-            this.textBox_newAddress.Size = new System.Drawing.Size(171, 20);
+            this.textBox_newAddress.Size = new System.Drawing.Size(171, 23);
             this.textBox_newAddress.TabIndex = 8;
             // 
             // comboBox_customerType
             // 
+            this.comboBox_customerType.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox_customerType.FormattingEnabled = true;
             this.comboBox_customerType.Location = new System.Drawing.Point(155, 204);
             this.comboBox_customerType.Name = "comboBox_customerType";
-            this.comboBox_customerType.Size = new System.Drawing.Size(171, 21);
+            this.comboBox_customerType.Size = new System.Drawing.Size(171, 25);
             this.comboBox_customerType.TabIndex = 9;
             this.comboBox_customerType.SelectedIndexChanged += new System.EventHandler(this.comboBox_customerType_SelectedIndexChanged);
             // 
             // textBox_newPhoneNumber
             // 
+            this.textBox_newPhoneNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox_newPhoneNumber.Location = new System.Drawing.Point(155, 246);
             this.textBox_newPhoneNumber.Name = "textBox_newPhoneNumber";
-            this.textBox_newPhoneNumber.Size = new System.Drawing.Size(171, 20);
+            this.textBox_newPhoneNumber.Size = new System.Drawing.Size(171, 23);
             this.textBox_newPhoneNumber.TabIndex = 10;
             this.textBox_newPhoneNumber.TextChanged += new System.EventHandler(this.textBox_newPhoneNumber_TextChanged);
             // 
@@ -181,6 +186,7 @@
             // 
             // richTextBox_creditLimit
             // 
+            this.richTextBox_creditLimit.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox_creditLimit.Location = new System.Drawing.Point(155, 296);
             this.richTextBox_creditLimit.Name = "richTextBox_creditLimit";
             this.richTextBox_creditLimit.Size = new System.Drawing.Size(171, 25);
