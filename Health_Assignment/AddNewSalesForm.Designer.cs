@@ -143,6 +143,7 @@
             this.comboBox_paymentMode.Name = "comboBox_paymentMode";
             this.comboBox_paymentMode.Size = new System.Drawing.Size(263, 21);
             this.comboBox_paymentMode.TabIndex = 9;
+            this.comboBox_paymentMode.SelectedIndexChanged += new System.EventHandler(this.comboBox_paymentMode_SelectedIndexChanged);
             // 
             // label_productPurchased
             // 
@@ -161,6 +162,7 @@
             this.dataGridView_productPurchased.Size = new System.Drawing.Size(269, 85);
             this.dataGridView_productPurchased.TabIndex = 11;
             this.dataGridView_productPurchased.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellClick);
+            this.dataGridView_productPurchased.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellContentClick);
             // 
             // button_addProduct
             // 

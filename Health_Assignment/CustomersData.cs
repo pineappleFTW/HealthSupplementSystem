@@ -13,7 +13,7 @@ namespace Health_Assignment
         public static List<Customer> initializeData()
         {
             
-            customers.Add(new PremiumCustomer("lisheng", "ong", "address", "Premium", "34573487",33333M));
+            customers.Add(new PremiumCustomer("lisheng", "ong", "address", "Premium", "34573487",100M));
             customers.Add(new NormalCustomer("hahhaa", "ong", "sdaddress", "Normal", "34573487"));
             customers.Add(new NormalCustomer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
             customers.Add(new NormalCustomer("josh", "teh", "sdaddress", "Normal", "12345"));

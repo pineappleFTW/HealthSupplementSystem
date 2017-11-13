@@ -19,6 +19,7 @@ namespace Health_Assignment
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
         public int currentIndex = 0;
+        private static int QUANTITY_LEFT =0;
 
         public AddNewSalesForm()
         {
@@ -41,7 +42,6 @@ namespace Health_Assignment
             comboBox_paymentMode.Items.Add("Debit Card");
             comboBox_paymentMode.Items.Add("Bank Transfer");
             comboBox_paymentMode.Items.Add("Cheque");
-            comboBox_paymentMode.Items.Add("Credit Limit");
             comboBox_paymentMode.SelectedIndex = 0;
             initializeDataGridView();
 
@@ -70,6 +70,14 @@ namespace Health_Assignment
             string[] customerDetails = comboBox_customer.Text.Split('-');
             Customer currentCustomer = CustomersData.customers.Find(x => x.ID == Int32.Parse(customerDetails[0]));
             CurrentCustomer = currentCustomer;
+            if (CurrentCustomer.CustomerType.Equals("Premium"))
+            {
+                comboBox_paymentMode.Items.Add("Credit Payment");
+            }
+            else
+            {
+                comboBox_paymentMode.Items.Remove("Credit Payment");
+            }
         }
 
         private void button_searchProduct_Click(object sender, EventArgs e)
@@ -121,18 +129,21 @@ namespace Health_Assignment
                 return;
             }
             
-            if (currentProduct.Quantity >= quantity)
+            if (QUANTITY_LEFT >= quantity)
             {
+                MessageBox.Show(QUANTITY_LEFT.ToString());
                 if (currentListOfProducts.Contains(currentProduct))
                 {
-                    currentProduct.Quantity -= quantity;
+                    //currentProduct.Quantity -= quantity;
+                    QUANTITY_LEFT -= quantity;
                     int index = currentListOfProducts.IndexOf(currentProduct);
                     currentListOfQuantity[index] += quantity;
                     refreshDataGridView();
                 }
                 else
                 {
-                    currentProduct.Quantity -= quantity;
+                    //currentProduct.Quantity -= quantity;
+                    QUANTITY_LEFT -= quantity;
                     currentListOfProducts.Add(currentProduct);
                     currentListOfQuantity.Add(quantity);
                     addtoDataGridView(currentProduct, quantity);
@@ -141,9 +152,18 @@ namespace Health_Assignment
             else
             {
                 MessageBox.Show("There is not enough stock please reorder");
+                return;
             }
             
 
+        }
+
+        private void comboBox_product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] productDetails = comboBox_product.Text.Split('-');
+            Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productDetails[0]));
+            QUANTITY_LEFT = currentProduct.Quantity;
+            
         }
 
         public void refreshDataGridView()
@@ -181,10 +201,7 @@ namespace Health_Assignment
             dataGridView_productPurchased.DataSource = dt;
         }
 
-        private void comboBox_product_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
 
         //need some thinking
         private void button_deleteProduct_Click(object sender, EventArgs e)
@@ -236,7 +253,26 @@ namespace Health_Assignment
             DateTime orderDate = dateTimePicker_orderDate.Value;
             DateTime paymentDate = dateTimePicker_paymentDate.Value;
 
+           
             Sales newSales = new Sales(CurrentCustomer, isPaid, status, paymentMode, currentListOfProducts, currentListOfQuantity, orderDate, paymentDate);
+
+            if (paymentMode.Equals("Credit Payment") && CurrentCustomer is PremiumCustomer)
+            {
+                PremiumCustomer premiumCustomer =(PremiumCustomer) CurrentCustomer;
+                if (newSales.totalCost() > premiumCustomer.CreditLimit)
+                {
+                    MessageBox.Show("Please choose other purchase option", "Exceeded Credit Limit");
+                    return;
+                }
+                else
+                {
+                    int index = CustomersData.customers.IndexOf(premiumCustomer);
+                    premiumCustomer.CreditLimit -= newSales.totalCost();
+                    MessageBox.Show(premiumCustomer.CreditLimit.ToString());
+                    CustomersData.updateInformation(premiumCustomer);
+                }
+            }
+
             SalesData.addNewSales(newSales);
             for(int i = 0; i < currentListOfProducts.Count; i++)
             {
@@ -258,5 +294,14 @@ namespace Health_Assignment
             dateTimePicker_paymentDate.MinDate = dateTimePicker_orderDate.Value;
         }
 
+        private void comboBox_paymentMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataGridView_productPurchased_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

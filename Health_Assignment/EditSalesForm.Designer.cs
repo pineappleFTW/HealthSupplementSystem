@@ -149,6 +149,7 @@
             this.comboBox_product.Name = "comboBox_product";
             this.comboBox_product.Size = new System.Drawing.Size(268, 21);
             this.comboBox_product.TabIndex = 10;
+            this.comboBox_product.SelectedIndexChanged += new System.EventHandler(this.comboBox_product_SelectedIndexChanged);
             // 
             // button_search
             // 

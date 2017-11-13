@@ -13,9 +13,11 @@ namespace Health_Assignment
     public partial class EditSalesForm : Form
     {
         public Sales CurrentSale { get; set; }
-        public Sales NonEditedSales { get; set; }
+        public decimal NonEditedSales { get; set; }
+        public List<int> currentListOfQuantity; 
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
+        private static int QUANTITY_LEFT = 0;
 
         public EditSalesForm()
         {
@@ -25,7 +27,8 @@ namespace Health_Assignment
         public EditSalesForm(Sales currentSale) : this()
         {
             CurrentSale = currentSale;
-            NonEditedSales = currentSale;
+            NonEditedSales = currentSale.totalCost();
+            currentListOfQuantity = CurrentSale.ProductsQuantity.ToList();
         }
 
 
@@ -41,7 +44,10 @@ namespace Health_Assignment
             comboBox_paymentMode.Items.Add("Debit Card");
             comboBox_paymentMode.Items.Add("Bank Transfer");
             comboBox_paymentMode.Items.Add("Cheque");
-            comboBox_paymentMode.Items.Add("Credit Limit");
+            if (CurrentSale.CurrentCustomer.CustomerType.Equals("Premium"))
+            {
+                comboBox_paymentMode.Items.Add("Credit Payment");
+            }
             label_customerDetails.Text = String.Format("ID: {0} {1} {2}", CurrentSale.CurrentCustomer.ID, CurrentSale.CurrentCustomer.FirstName, CurrentSale.CurrentCustomer.LastName);
             checkBox_paid.Checked = CurrentSale.IsPaid;
             comboBox_status.Text = CurrentSale.Status;
@@ -121,18 +127,20 @@ namespace Health_Assignment
                 return;
             }
 
-            if (currentProduct.Quantity >= quantity)
+            if (QUANTITY_LEFT >= quantity)
             {
                 if (CurrentSale.ProductsOrdered.Contains(currentProduct))
                 {
-                    currentProduct.Quantity -= quantity;
+                    //currentProduct.Quantity -= quantity;
+                    QUANTITY_LEFT -= quantity;
                     int index = CurrentSale.ProductsOrdered.IndexOf(currentProduct);
                     CurrentSale.ProductsQuantity[index] += quantity;
                     refreshDataGridView();
                 }
                 else
                 {
-                    currentProduct.Quantity -= quantity;
+                    //currentProduct.Quantity -= quantity;
+                    QUANTITY_LEFT -= quantity;
                     CurrentSale.ProductsOrdered.Add(currentProduct);
                     CurrentSale.ProductsQuantity.Add(quantity);
                     addtoDataGridView(currentProduct, quantity);
@@ -190,15 +198,45 @@ namespace Health_Assignment
             DateTime paymentDate = dateTimePicker_paymentDate.Value;
 
             Sales editedSales = new Sales(CurrentSale.ID, CurrentSale.CurrentCustomer,isPaid, status, paymentMode, CurrentSale.ProductsOrdered, CurrentSale.ProductsQuantity, orderDate, paymentDate);
-            SalesData.updateInformation(editedSales);
-            for (int i = 0; i < CurrentSale.ProductsOrdered.Count; i++)
+
+            if (paymentMode.Equals("Credit Payment") && CurrentSale.CurrentCustomer is PremiumCustomer)
             {
-                if (ProductsData.products.Contains(CurrentSale.ProductsOrdered[i]))
+                PremiumCustomer premiumCustomer = (PremiumCustomer)CurrentSale.CurrentCustomer;
+                if ((editedSales.totalCost()-NonEditedSales) > premiumCustomer.CreditLimit)
                 {
-                    int index = ProductsData.products.IndexOf(CurrentSale.ProductsOrdered[i]);
-                    if (CurrentSale.ProductsOrdered[i].Quantity != NonEditedSales.ProductsOrdered[i].Quantity)
+                    MessageBox.Show("Please choose other purchase option", "Exceeded Credit Limit");
+                    return;
+                }
+                else
+                {
+                    int index = CustomersData.customers.IndexOf(premiumCustomer);
+                    premiumCustomer.CreditLimit -= (editedSales.totalCost() - NonEditedSales);
+                    MessageBox.Show(premiumCustomer.CreditLimit.ToString());
+                    CustomersData.updateInformation(premiumCustomer);
+                }
+            }
+
+            SalesData.updateInformation(editedSales);
+            
+            for (int i = 0; i < editedSales.ProductsOrdered.Count; i++)
+            {
+                if (ProductsData.products.Contains(editedSales.ProductsOrdered[i]))
+                {
+                    int index = ProductsData.products.IndexOf(editedSales.ProductsOrdered[i]);
+                    if (editedSales.ProductsOrdered.Count > currentListOfQuantity.Count)
                     {
-                        ProductsData.products[index].Quantity -= CurrentSale.ProductsQuantity[i];
+                        try
+                        {
+                            ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
+                        }
+                        catch (Exception ee)
+                        {
+                            ProductsData.products[index].Quantity -= editedSales.ProductsQuantity[i];
+                        }
+                    }
+                    else
+                    {
+                        ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
                     }
                 }
             }
@@ -207,6 +245,13 @@ namespace Health_Assignment
             MainMenu mainMenu = (MainMenu)mainForm;
             mainMenu.salesFormUserControl.reloadList();
             this.Close();
+        }
+
+        private void comboBox_product_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string[] productDetails = comboBox_product.Text.Split('-');
+            Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productDetails[0]));
+            QUANTITY_LEFT = currentProduct.Quantity;
         }
     }
 }
