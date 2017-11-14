@@ -207,5 +207,25 @@ namespace Health_Assignment
            
 
         }
+
+        private void dataGridView_product_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (currentListOfProducts.Count != 0)
+            {
+                if (currentListOfProducts.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+                DataGridViewRow selectedRow = dataGridView_products.Rows[currentIndex];
+                Product currentProductOrder = (Product)dataGridView_products.CurrentRow.DataBoundItem;
+
+                ViewProductForm viewProductForm = new ViewProductForm(currentProductOrder);
+                viewProductForm.Show();
+            }
+            else
+            {
+                MessageBox.Show("There is no sales order");
+            }
+        }
     }
 }

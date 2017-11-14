@@ -37,6 +37,7 @@ namespace Health_Assignment
             label_orderDate.Text = CurrentSale.OrderDate.ToString("dd/MM/yyyy");
             label_paymentDate.Text = CurrentSale.PaymentDate.ToString("dd/MM/yyyy");
             label_totalAmount.Text = CurrentSale.totalCost().ToString();
+            dataGridView_productPurchased.EnableHeadersVisualStyles = false;
             initializeDataGridView();
         }
 

@@ -118,6 +118,7 @@
             this.dataGridView_products.Size = new System.Drawing.Size(984, 311);
             this.dataGridView_products.TabIndex = 1;
             this.dataGridView_products.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_products_CellClick);
+            this.dataGridView_products.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_product_CellDoubleClick);
             // 
             // button_add
             // 
