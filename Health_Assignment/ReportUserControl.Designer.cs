@@ -41,11 +41,6 @@
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.comboBox_month = new System.Windows.Forms.ComboBox();
             this.dataGridView_report = new System.Windows.Forms.DataGridView();
-            this.comboBox_year = new System.Windows.Forms.ComboBox();
-            this.button_year = new System.Windows.Forms.Button();
-            this.comboBox_yearSales = new System.Windows.Forms.ComboBox();
-            this.label_totalSalesText = new System.Windows.Forms.Label();
-            this.label_totalSales = new System.Windows.Forms.Label();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.currentCustomerDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.isPaidDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
@@ -54,6 +49,12 @@
             this.orderDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.paymentDateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.comboBox_year = new System.Windows.Forms.ComboBox();
+            this.button_year = new System.Windows.Forms.Button();
+            this.comboBox_yearSales = new System.Windows.Forms.ComboBox();
+            this.label_totalSalesText = new System.Windows.Forms.Label();
+            this.label_totalSales = new System.Windows.Forms.Label();
+            this.button_export = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_report)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.salesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -178,6 +179,53 @@
             this.dataGridView_report.Size = new System.Drawing.Size(940, 353);
             this.dataGridView_report.TabIndex = 7;
             // 
+            // iDDataGridViewTextBoxColumn
+            // 
+            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
+            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
+            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
+            // 
+            // currentCustomerDataGridViewTextBoxColumn
+            // 
+            this.currentCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.currentCustomerDataGridViewTextBoxColumn.DataPropertyName = "CurrentCustomer";
+            this.currentCustomerDataGridViewTextBoxColumn.HeaderText = "CurrentCustomer";
+            this.currentCustomerDataGridViewTextBoxColumn.Name = "currentCustomerDataGridViewTextBoxColumn";
+            // 
+            // isPaidDataGridViewCheckBoxColumn
+            // 
+            this.isPaidDataGridViewCheckBoxColumn.DataPropertyName = "IsPaid";
+            this.isPaidDataGridViewCheckBoxColumn.HeaderText = "IsPaid";
+            this.isPaidDataGridViewCheckBoxColumn.Name = "isPaidDataGridViewCheckBoxColumn";
+            // 
+            // statusDataGridViewTextBoxColumn
+            // 
+            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
+            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
+            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
+            // 
+            // paymentModeDataGridViewTextBoxColumn
+            // 
+            this.paymentModeDataGridViewTextBoxColumn.DataPropertyName = "PaymentMode";
+            this.paymentModeDataGridViewTextBoxColumn.HeaderText = "PaymentMode";
+            this.paymentModeDataGridViewTextBoxColumn.Name = "paymentModeDataGridViewTextBoxColumn";
+            // 
+            // orderDateDataGridViewTextBoxColumn
+            // 
+            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
+            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
+            // 
+            // paymentDateDataGridViewTextBoxColumn
+            // 
+            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
+            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "PaymentDate";
+            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
+            // 
+            // salesBindingSource
+            // 
+            this.salesBindingSource.DataSource = typeof(Health_Assignment.Sales);
+            // 
             // comboBox_year
             // 
             this.comboBox_year.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
@@ -233,58 +281,25 @@
             this.label_totalSales.TabIndex = 12;
             this.label_totalSales.Text = "1000";
             // 
-            // iDDataGridViewTextBoxColumn
+            // button_export
             // 
-            this.iDDataGridViewTextBoxColumn.DataPropertyName = "ID";
-            this.iDDataGridViewTextBoxColumn.HeaderText = "ID";
-            this.iDDataGridViewTextBoxColumn.Name = "iDDataGridViewTextBoxColumn";
-            // 
-            // currentCustomerDataGridViewTextBoxColumn
-            // 
-            this.currentCustomerDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.currentCustomerDataGridViewTextBoxColumn.DataPropertyName = "CurrentCustomer";
-            this.currentCustomerDataGridViewTextBoxColumn.HeaderText = "CurrentCustomer";
-            this.currentCustomerDataGridViewTextBoxColumn.Name = "currentCustomerDataGridViewTextBoxColumn";
-            // 
-            // isPaidDataGridViewCheckBoxColumn
-            // 
-            this.isPaidDataGridViewCheckBoxColumn.DataPropertyName = "IsPaid";
-            this.isPaidDataGridViewCheckBoxColumn.HeaderText = "IsPaid";
-            this.isPaidDataGridViewCheckBoxColumn.Name = "isPaidDataGridViewCheckBoxColumn";
-            // 
-            // statusDataGridViewTextBoxColumn
-            // 
-            this.statusDataGridViewTextBoxColumn.DataPropertyName = "Status";
-            this.statusDataGridViewTextBoxColumn.HeaderText = "Status";
-            this.statusDataGridViewTextBoxColumn.Name = "statusDataGridViewTextBoxColumn";
-            // 
-            // paymentModeDataGridViewTextBoxColumn
-            // 
-            this.paymentModeDataGridViewTextBoxColumn.DataPropertyName = "PaymentMode";
-            this.paymentModeDataGridViewTextBoxColumn.HeaderText = "PaymentMode";
-            this.paymentModeDataGridViewTextBoxColumn.Name = "paymentModeDataGridViewTextBoxColumn";
-            // 
-            // orderDateDataGridViewTextBoxColumn
-            // 
-            this.orderDateDataGridViewTextBoxColumn.DataPropertyName = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.HeaderText = "OrderDate";
-            this.orderDateDataGridViewTextBoxColumn.Name = "orderDateDataGridViewTextBoxColumn";
-            // 
-            // paymentDateDataGridViewTextBoxColumn
-            // 
-            this.paymentDateDataGridViewTextBoxColumn.DataPropertyName = "PaymentDate";
-            this.paymentDateDataGridViewTextBoxColumn.HeaderText = "PaymentDate";
-            this.paymentDateDataGridViewTextBoxColumn.Name = "paymentDateDataGridViewTextBoxColumn";
-            // 
-            // salesBindingSource
-            // 
-            this.salesBindingSource.DataSource = typeof(Health_Assignment.Sales);
+            this.button_export.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
+            this.button_export.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_export.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
+            this.button_export.Location = new System.Drawing.Point(92, 492);
+            this.button_export.Name = "button_export";
+            this.button_export.Size = new System.Drawing.Size(166, 23);
+            this.button_export.TabIndex = 13;
+            this.button_export.Text = "Export PDF";
+            this.button_export.UseVisualStyleBackColor = false;
+            this.button_export.Click += new System.EventHandler(this.button_export_Click);
             // 
             // ReportUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.Controls.Add(this.button_export);
             this.Controls.Add(this.label_totalSales);
             this.Controls.Add(this.label_totalSalesText);
             this.Controls.Add(this.comboBox_yearSales);
@@ -328,5 +343,6 @@
         private System.Windows.Forms.ComboBox comboBox_yearSales;
         private System.Windows.Forms.Label label_totalSalesText;
         private System.Windows.Forms.Label label_totalSales;
+        private System.Windows.Forms.Button button_export;
     }
 }

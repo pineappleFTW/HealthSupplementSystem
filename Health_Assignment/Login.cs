@@ -29,7 +29,7 @@ namespace Health_Assignment
             currentListOfSales = SalesData.initializeData();
             List<PurchaseOrder> currentListOfPurchaseOrders = new List<PurchaseOrder>();
             currentListOfPurchaseOrders = PurchaseOrdersData.initializeData();
-         
+
         }
 
         private void txtUserID_TextChanged(object sender, EventArgs e)

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using iTextSharp.text.pdf;
+using iTextSharp.text;
 
 namespace Health_Assignment
 {
@@ -131,6 +133,59 @@ namespace Health_Assignment
             }
 
             return sum;
+        }
+
+        private void button_export_Click(object sender, EventArgs e)
+        {
+            PdfPTable pdfTable = new PdfPTable(dataGridView_report.ColumnCount);
+            pdfTable.DefaultCell.Padding = 3;
+            pdfTable.WidthPercentage = 100;
+            pdfTable.HorizontalAlignment = Element.ALIGN_LEFT;
+            pdfTable.DefaultCell.BorderWidth = 1;
+
+            foreach (DataGridViewColumn column in dataGridView_report.Columns)
+            {
+                PdfPCell cell = new PdfPCell(new Phrase(column.HeaderText));
+                cell.BackgroundColor = new iTextSharp.text.BaseColor(240, 240, 240);
+                pdfTable.AddCell(cell);
+            }
+
+            foreach (DataGridViewRow row in dataGridView_report.Rows)
+            {
+                Sales currentSaleOrder = (Sales)row.DataBoundItem;
+                foreach (DataGridViewCell cell in row.Cells)
+                {
+                   if(cell.ColumnIndex  ==5 )
+                    {
+                        pdfTable.AddCell(currentSaleOrder.OrderDate.ToString("dd/MM/yyyy"));
+                    }
+                    else if(cell.ColumnIndex ==6)
+                    {
+                        pdfTable.AddCell(currentSaleOrder.PaymentDate.ToString("dd/MM/yyyy"));
+                    }
+                    else
+                    {
+                        pdfTable.AddCell(cell.Value.ToString());
+                    }
+                }
+            }
+
+            
+            string folderPath = "C:\\Users\\lisheng\\Desktop\\";
+            if (!System.IO.Directory.Exists(folderPath))
+            {
+                System.IO.Directory.CreateDirectory(folderPath);
+            }
+            using (System.IO.FileStream stream = new System.IO.FileStream(folderPath + "DataGridViewExport.pdf", System.IO.FileMode.Create))
+            {
+                Document pdfDoc = new Document(PageSize.A2, 10f, 10f, 10f, 0f);
+                PdfWriter.GetInstance(pdfDoc, stream);
+                pdfDoc.Open();
+                pdfDoc.Add(pdfTable);
+                pdfDoc.Close();
+                stream.Close();
+            }
+
         }
     }
 }
