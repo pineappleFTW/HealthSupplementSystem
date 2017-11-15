@@ -115,5 +115,10 @@ namespace Health_Assignment
             userAccountUserControl.populateList();
             reportUserControl.populateList();
         }
+
+        private void button_pos_Click(object sender, EventArgs e)
+        {
+            pointOfSaleForm.BringToFront();
+        }
     }
 }

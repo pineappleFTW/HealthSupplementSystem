@@ -162,6 +162,12 @@
     <Compile Include="PaymentReceiptForm.Designer.cs">
       <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="PointOfSaleForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointOfSaleForm.Designer.cs">
+      <DependentUpon>PointOfSaleForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
     <Compile Include="ProductsData.cs" />
     <Compile Include="Protein.cs" />
@@ -277,6 +283,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PaymentReceiptForm.resx">
       <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointOfSaleForm.resx">
+      <DependentUpon>PointOfSaleForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

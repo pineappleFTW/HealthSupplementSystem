@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.button_pos = new System.Windows.Forms.Button();
             this.button_logOut = new System.Windows.Forms.Button();
             this.button_home = new System.Windows.Forms.Button();
             this.icon_customer = new System.Windows.Forms.Button();
@@ -44,14 +45,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.button_refresh = new System.Windows.Forms.Button();
             this.homeUserControl = new Health_Assignment.HomeUserControl();
+            this.inventoryUserControl = new Health_Assignment.InventoryUserControl();
             this.purchaseOrderUseControl = new Health_Assignment.PurchaseOrderUseControl();
             this.salesFormUserControl = new Health_Assignment.SalesFormUserControl();
             this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
-            this.inventoryUserControl = new Health_Assignment.InventoryUserControl();
-            this.button_refresh = new System.Windows.Forms.Button();
+            this.pointOfSaleForm = new Health_Assignment.PointOfSaleForm();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -74,6 +76,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel1.Controls.Add(this.button_pos);
             this.panel1.Controls.Add(this.button_logOut);
             this.panel1.Controls.Add(this.button_home);
             this.panel1.Controls.Add(this.icon_customer);
@@ -91,6 +94,23 @@
             this.panel1.TabIndex = 34;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
+            // button_pos
+            // 
+            this.button_pos.BackColor = System.Drawing.Color.Transparent;
+            this.button_pos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_pos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_pos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_pos.Image = ((System.Drawing.Image)(resources.GetObject("button_pos.Image")));
+            this.button_pos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_pos.Location = new System.Drawing.Point(11, 124);
+            this.button_pos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_pos.Name = "button_pos";
+            this.button_pos.Size = new System.Drawing.Size(141, 39);
+            this.button_pos.TabIndex = 43;
+            this.button_pos.Text = "   POS";
+            this.button_pos.UseVisualStyleBackColor = false;
+            this.button_pos.Click += new System.EventHandler(this.button_pos_Click);
+            // 
             // button_logOut
             // 
             this.button_logOut.BackColor = System.Drawing.Color.Transparent;
@@ -99,7 +119,7 @@
             this.button_logOut.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.button_logOut.Image = ((System.Drawing.Image)(resources.GetObject("button_logOut.Image")));
             this.button_logOut.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_logOut.Location = new System.Drawing.Point(10, 436);
+            this.button_logOut.Location = new System.Drawing.Point(10, 489);
             this.button_logOut.Margin = new System.Windows.Forms.Padding(2);
             this.button_logOut.Name = "button_logOut";
             this.button_logOut.Size = new System.Drawing.Size(141, 39);
@@ -133,7 +153,7 @@
             this.icon_customer.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_customer.Image = ((System.Drawing.Image)(resources.GetObject("icon_customer.Image")));
             this.icon_customer.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_customer.Location = new System.Drawing.Point(10, 281);
+            this.icon_customer.Location = new System.Drawing.Point(10, 334);
             this.icon_customer.Margin = new System.Windows.Forms.Padding(2);
             this.icon_customer.Name = "icon_customer";
             this.icon_customer.Size = new System.Drawing.Size(141, 39);
@@ -150,7 +170,7 @@
             this.icon_purchase.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_purchase.Image = ((System.Drawing.Image)(resources.GetObject("icon_purchase.Image")));
             this.icon_purchase.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_purchase.Location = new System.Drawing.Point(10, 175);
+            this.icon_purchase.Location = new System.Drawing.Point(10, 228);
             this.icon_purchase.Margin = new System.Windows.Forms.Padding(2);
             this.icon_purchase.Name = "icon_purchase";
             this.icon_purchase.Size = new System.Drawing.Size(141, 39);
@@ -167,7 +187,7 @@
             this.icon_users.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_users.Image = ((System.Drawing.Image)(resources.GetObject("icon_users.Image")));
             this.icon_users.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_users.Location = new System.Drawing.Point(10, 334);
+            this.icon_users.Location = new System.Drawing.Point(10, 387);
             this.icon_users.Margin = new System.Windows.Forms.Padding(2);
             this.icon_users.Name = "icon_users";
             this.icon_users.Size = new System.Drawing.Size(141, 39);
@@ -184,7 +204,7 @@
             this.icon_report.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_report.Image = ((System.Drawing.Image)(resources.GetObject("icon_report.Image")));
             this.icon_report.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_report.Location = new System.Drawing.Point(10, 385);
+            this.icon_report.Location = new System.Drawing.Point(10, 438);
             this.icon_report.Margin = new System.Windows.Forms.Padding(2);
             this.icon_report.Name = "icon_report";
             this.icon_report.Size = new System.Drawing.Size(141, 39);
@@ -201,7 +221,7 @@
             this.icon_sales.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_sales.Image = ((System.Drawing.Image)(resources.GetObject("icon_sales.Image")));
             this.icon_sales.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_sales.Location = new System.Drawing.Point(10, 229);
+            this.icon_sales.Location = new System.Drawing.Point(10, 282);
             this.icon_sales.Margin = new System.Windows.Forms.Padding(2);
             this.icon_sales.Name = "icon_sales";
             this.icon_sales.Size = new System.Drawing.Size(141, 39);
@@ -218,7 +238,7 @@
             this.icon_inventory.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.icon_inventory.Image = ((System.Drawing.Image)(resources.GetObject("icon_inventory.Image")));
             this.icon_inventory.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.icon_inventory.Location = new System.Drawing.Point(10, 124);
+            this.icon_inventory.Location = new System.Drawing.Point(10, 177);
             this.icon_inventory.Margin = new System.Windows.Forms.Padding(2);
             this.icon_inventory.Name = "icon_inventory";
             this.icon_inventory.Size = new System.Drawing.Size(141, 39);
@@ -287,6 +307,23 @@
             this.panel2.Size = new System.Drawing.Size(1136, 10);
             this.panel2.TabIndex = 35;
             // 
+            // button_refresh
+            // 
+            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.button_refresh.FlatAppearance.BorderSize = 0;
+            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_refresh.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_refresh.Location = new System.Drawing.Point(1159, 6);
+            this.button_refresh.Margin = new System.Windows.Forms.Padding(2);
+            this.button_refresh.Name = "button_refresh";
+            this.button_refresh.Size = new System.Drawing.Size(141, 39);
+            this.button_refresh.TabIndex = 43;
+            this.button_refresh.Text = "Refresh";
+            this.button_refresh.UseVisualStyleBackColor = false;
+            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
+            // 
             // homeUserControl
             // 
             this.homeUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
@@ -294,6 +331,14 @@
             this.homeUserControl.Name = "homeUserControl";
             this.homeUserControl.Size = new System.Drawing.Size(1123, 538);
             this.homeUserControl.TabIndex = 42;
+            // 
+            // inventoryUserControl
+            // 
+            this.inventoryUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.inventoryUserControl.Location = new System.Drawing.Point(187, 103);
+            this.inventoryUserControl.Name = "inventoryUserControl";
+            this.inventoryUserControl.Size = new System.Drawing.Size(1113, 558);
+            this.inventoryUserControl.TabIndex = 44;
             // 
             // purchaseOrderUseControl
             // 
@@ -335,30 +380,16 @@
             this.customerUserControlForm.Size = new System.Drawing.Size(1131, 546);
             this.customerUserControlForm.TabIndex = 38;
             // 
-            // inventoryUserControl
+            // pointOfSaleForm
             // 
-            this.inventoryUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
-            this.inventoryUserControl.Location = new System.Drawing.Point(187, 103);
-            this.inventoryUserControl.Name = "inventoryUserControl";
-            this.inventoryUserControl.Size = new System.Drawing.Size(1113, 558);
-            this.inventoryUserControl.TabIndex = 44;
-            // 
-            // button_refresh
-            // 
-            this.button_refresh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.button_refresh.FlatAppearance.BorderSize = 0;
-            this.button_refresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_refresh.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_refresh.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_refresh.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_refresh.Location = new System.Drawing.Point(1159, 6);
-            this.button_refresh.Margin = new System.Windows.Forms.Padding(2);
-            this.button_refresh.Name = "button_refresh";
-            this.button_refresh.Size = new System.Drawing.Size(141, 39);
-            this.button_refresh.TabIndex = 43;
-            this.button_refresh.Text = "Refresh";
-            this.button_refresh.UseVisualStyleBackColor = false;
-            this.button_refresh.Click += new System.EventHandler(this.button_refresh_Click);
+            this.pointOfSaleForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.pointOfSaleForm.CurrentCustomer = null;
+            this.pointOfSaleForm.CurrentProduct = null;
+            this.pointOfSaleForm.dr = null;
+            this.pointOfSaleForm.Location = new System.Drawing.Point(169, 115);
+            this.pointOfSaleForm.Name = "pointOfSaleForm";
+            this.pointOfSaleForm.Size = new System.Drawing.Size(1131, 547);
+            this.pointOfSaleForm.TabIndex = 45;
             // 
             // MainMenu
             // 
@@ -367,8 +398,9 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1300, 661);
-            this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.homeUserControl);
+            this.Controls.Add(this.pointOfSaleForm);
+            this.Controls.Add(this.button_refresh);
             this.Controls.Add(this.inventoryUserControl);
             this.Controls.Add(this.purchaseOrderUseControl);
             this.Controls.Add(this.salesFormUserControl);
@@ -414,9 +446,11 @@
         public ReportUserControl reportUserControl;
         public UserAccountUserControl userAccountUserControl;
         public SalesFormUserControl salesFormUserControl;
-        public HomeUserControl homeUserControl;
         public PurchaseOrderUseControl purchaseOrderUseControl;
         public InventoryUserControl inventoryUserControl;
         private System.Windows.Forms.Button button_refresh;
+        private System.Windows.Forms.Button button_pos;
+        public HomeUserControl homeUserControl;
+        public PointOfSaleForm pointOfSaleForm;
     }
 }
