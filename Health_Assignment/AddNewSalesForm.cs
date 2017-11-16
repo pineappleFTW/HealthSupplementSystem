@@ -165,7 +165,15 @@ namespace Health_Assignment
             string[] productDetails = comboBox_product.Text.Split('-');
             Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productDetails[0]));
             QUANTITY_LEFT = currentProduct.Quantity;
-            
+            for (int i = 0; i < currentListOfProducts.Count; i++)
+            {
+                string currentProductDetails = currentProduct.Name + " : " + currentProduct.Manufacturer;
+                if (currentProductDetails.Equals(dataGridView_productPurchased.Rows[i].Cells[0].Value.ToString()))
+                {
+                    QUANTITY_LEFT -= Int32.Parse(dataGridView_productPurchased.Rows[i].Cells[1].Value.ToString());
+                }
+            }
+
         }
 
         public void refreshDataGridView()
@@ -210,15 +218,42 @@ namespace Health_Assignment
         {
             if (currentListOfProducts.Count != 0)
             {
-                if(currentListOfProducts.Count <= currentIndex){
+
+                if (currentListOfProducts.Count <= currentIndex)
+                {
                     currentIndex = 0;
                 }
-                
-                //DataGridViewRow selectedRow = dataGridView_productPurchased.Rows[currentIndex];
-                //Product currentProduct = (Product)dataGridView_productPurchased.CurrentRow.DataBoundItem;
 
-                //currentListOfProducts.Remove(currentProduct);
-                //currentListOfQuantity.RemoveAt(currentIndex);
+
+                try
+                {
+                    string[] productChosen = comboBox_product.Text.Split('-');
+                    Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
+                    string matchProduct = productChosen[1] + " : " + productChosen[2];
+                    if (matchProduct.Equals(dataGridView_productPurchased.Rows[currentIndex].Cells[0].Value.ToString()))
+                    {
+                        MessageBox.Show("run");
+                        QUANTITY_LEFT += currentListOfQuantity[currentIndex];
+                    }
+
+                    currentListOfProducts.RemoveAt(currentIndex);
+                    currentListOfQuantity.RemoveAt(currentIndex);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("run2");
+                    currentListOfProducts.RemoveAt(currentIndex);
+                    currentListOfQuantity.RemoveAt(currentIndex);
+                    QUANTITY_LEFT = 0;
+                }
+
+
+                refreshDataGridView();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no product in cart", "Empty cart");
             }
         }
 
@@ -253,7 +288,16 @@ namespace Health_Assignment
             string status = comboBox_status.Text;
             string paymentMode = comboBox_paymentMode.Text;
             DateTime orderDate = dateTimePicker_orderDate.Value;
-            DateTime paymentDate = dateTimePicker_paymentDate.Value;
+            DateTime paymentDate;
+            if (isPaid)
+            {
+                paymentDate = dateTimePicker_paymentDate.Value;
+            }
+            else
+            {
+                paymentDate = DateTime.MaxValue;
+            }
+            
 
            
             Sales newSales = new Sales(CurrentCustomer, isPaid, status, paymentMode, currentListOfProducts, currentListOfQuantity, orderDate, paymentDate);

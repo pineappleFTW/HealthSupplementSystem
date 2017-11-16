@@ -216,6 +216,7 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_productPurchased.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_productPurchased.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_productPurchased.Size = new System.Drawing.Size(395, 206);
             this.dataGridView_productPurchased.TabIndex = 11;
             this.dataGridView_productPurchased.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellClick);

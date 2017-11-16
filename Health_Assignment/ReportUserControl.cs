@@ -68,7 +68,7 @@ namespace Health_Assignment
         {
             var getTodaySales =
                 from todaySales in SalesData.sales
-                where todaySales.PaymentDate.Date == DateTime.Today
+                where todaySales.PaymentDate.Date == DateTime.Today && todaySales.IsPaid==true
                 select todaySales;
 
             List<Sales> todaySalesReport = getTodaySales.ToList();
@@ -82,7 +82,7 @@ namespace Health_Assignment
         {
             var getMonthlySales =
                 from monthlySales in SalesData.sales
-                where monthlySales.PaymentDate.Month == Int32.Parse(comboBox_month.Text.Trim()) && monthlySales.PaymentDate.Year == Int32.Parse(comboBox_year.Text.Trim())
+                where monthlySales.PaymentDate.Month == Int32.Parse(comboBox_month.Text.Trim()) && monthlySales.PaymentDate.Year == Int32.Parse(comboBox_year.Text.Trim()) && monthlySales.IsPaid == true
                 select monthlySales;
 
             List<Sales> monthlySalesReport = getMonthlySales.ToList();
@@ -96,7 +96,7 @@ namespace Health_Assignment
         {
             var getYearlySales =
                 from yearlySales in SalesData.sales
-                where yearlySales.PaymentDate.Year == Int32.Parse(comboBox_yearSales.Text.Trim())
+                where yearlySales.PaymentDate.Year == Int32.Parse(comboBox_yearSales.Text.Trim()) && yearlySales.IsPaid == true
                 select yearlySales;
 
             List<Sales> yearlySalesReport = getYearlySales.ToList();
@@ -110,6 +110,7 @@ namespace Health_Assignment
         {
             var getAllTimeSales =
                 from allTimeSales in SalesData.sales
+                where allTimeSales.IsPaid == true
                 select allTimeSales;
 
             List<Sales> allTimeSalesReport = getAllTimeSales.ToList();

@@ -242,8 +242,11 @@
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridView_productPurchased.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView_productPurchased.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView_productPurchased.Size = new System.Drawing.Size(407, 222);
             this.dataGridView_productPurchased.TabIndex = 14;
+            this.dataGridView_productPurchased.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellClick);
+            this.dataGridView_productPurchased.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_productPurchased_CellContentClick);
             // 
             // button_addProduct
             // 
@@ -273,6 +276,7 @@
             this.button_delete.TabIndex = 16;
             this.button_delete.Text = "Delete";
             this.button_delete.UseVisualStyleBackColor = false;
+            this.button_delete.Click += new System.EventHandler(this.button_delete_Click);
             // 
             // label_orderDate
             // 
@@ -311,6 +315,7 @@
             this.dateTimePicker_paymentDate.Name = "dateTimePicker_paymentDate";
             this.dateTimePicker_paymentDate.Size = new System.Drawing.Size(231, 23);
             this.dateTimePicker_paymentDate.TabIndex = 20;
+            this.dateTimePicker_paymentDate.ValueChanged += new System.EventHandler(this.dateTimePicker_paymentDate_ValueChanged);
             // 
             // button_save
             // 

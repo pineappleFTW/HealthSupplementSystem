@@ -47,13 +47,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_refresh = new System.Windows.Forms.Button();
             this.homeUserControl = new Health_Assignment.HomeUserControl();
+            this.pointOfSaleForm = new Health_Assignment.PointOfSaleForm();
             this.inventoryUserControl = new Health_Assignment.InventoryUserControl();
             this.purchaseOrderUseControl = new Health_Assignment.PurchaseOrderUseControl();
             this.salesFormUserControl = new Health_Assignment.SalesFormUserControl();
             this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
-            this.pointOfSaleForm = new Health_Assignment.PointOfSaleForm();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -226,7 +226,7 @@
             this.icon_sales.Name = "icon_sales";
             this.icon_sales.Size = new System.Drawing.Size(141, 39);
             this.icon_sales.TabIndex = 36;
-            this.icon_sales.Text = " Sales";
+            this.icon_sales.Text = "     Total Sales";
             this.icon_sales.UseVisualStyleBackColor = false;
             this.icon_sales.Click += new System.EventHandler(this.icon_sales_Click);
             // 
@@ -327,10 +327,22 @@
             // homeUserControl
             // 
             this.homeUserControl.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
-            this.homeUserControl.Location = new System.Drawing.Point(177, 124);
+            this.homeUserControl.Location = new System.Drawing.Point(177, 114);
             this.homeUserControl.Name = "homeUserControl";
-            this.homeUserControl.Size = new System.Drawing.Size(1123, 538);
+            this.homeUserControl.Size = new System.Drawing.Size(1123, 548);
             this.homeUserControl.TabIndex = 42;
+            // 
+            // pointOfSaleForm
+            // 
+            this.pointOfSaleForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.pointOfSaleForm.CurrentCustomer = null;
+            this.pointOfSaleForm.CurrentProduct = null;
+            this.pointOfSaleForm.CurrentSale = null;
+            this.pointOfSaleForm.dr = null;
+            this.pointOfSaleForm.Location = new System.Drawing.Point(169, 115);
+            this.pointOfSaleForm.Name = "pointOfSaleForm";
+            this.pointOfSaleForm.Size = new System.Drawing.Size(1131, 547);
+            this.pointOfSaleForm.TabIndex = 45;
             // 
             // inventoryUserControl
             // 
@@ -379,17 +391,6 @@
             this.customerUserControlForm.Name = "customerUserControlForm";
             this.customerUserControlForm.Size = new System.Drawing.Size(1131, 546);
             this.customerUserControlForm.TabIndex = 38;
-            // 
-            // pointOfSaleForm
-            // 
-            this.pointOfSaleForm.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
-            this.pointOfSaleForm.CurrentCustomer = null;
-            this.pointOfSaleForm.CurrentProduct = null;
-            this.pointOfSaleForm.dr = null;
-            this.pointOfSaleForm.Location = new System.Drawing.Point(169, 115);
-            this.pointOfSaleForm.Name = "pointOfSaleForm";
-            this.pointOfSaleForm.Size = new System.Drawing.Size(1131, 547);
-            this.pointOfSaleForm.TabIndex = 45;
             // 
             // MainMenu
             // 

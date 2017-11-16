@@ -17,6 +17,7 @@ namespace Health_Assignment
         public List<int> currentListOfQuantity; 
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
+        public int currentIndex = 0;
         private static int QUANTITY_LEFT = 0;
 
         public EditSalesForm()
@@ -53,8 +54,17 @@ namespace Health_Assignment
             comboBox_status.Text = CurrentSale.Status;
             comboBox_paymentMode.Text = CurrentSale.PaymentMode;
             dateTimePicker_orderDate.Value = CurrentSale.OrderDate;
-            
-            dateTimePicker_paymentDate.Value = CurrentSale.PaymentDate;
+
+            if (CurrentSale.PaymentDate == DateTime.MaxValue)
+            {
+                dateTimePicker_paymentDate.Value = DateTimePicker.MaximumDateTime;
+            }
+            else
+            {
+                dateTimePicker_paymentDate.Value = CurrentSale.PaymentDate;
+            }
+                
+           
             dateTimePicker_paymentDate.MinDate = CurrentSale.OrderDate;
 
             initializeDataGridView();
@@ -186,68 +196,72 @@ namespace Health_Assignment
 
         private void button_save_Click(object sender, EventArgs e)
         {
-            Boolean isPaid;
-            if (checkBox_paid.Checked)
+            if (CurrentSale.ProductsOrdered.Count != 0)
             {
-                isPaid = true;
-            }
-            else
-            {
-                isPaid = false;
-            }
-            string status = comboBox_status.Text;
-            string paymentMode = comboBox_paymentMode.Text;
-            DateTime orderDate = dateTimePicker_orderDate.Value;
-            DateTime paymentDate = dateTimePicker_paymentDate.Value;
-
-            Sales editedSales = new Sales(CurrentSale.ID, CurrentSale.CurrentCustomer,isPaid, status, paymentMode, CurrentSale.ProductsOrdered, CurrentSale.ProductsQuantity, orderDate, paymentDate);
-
-            if (paymentMode.Equals("Credit Payment") && CurrentSale.CurrentCustomer is PremiumCustomer)
-            {
-                PremiumCustomer premiumCustomer = (PremiumCustomer)CurrentSale.CurrentCustomer;
-                if ((editedSales.totalCost()-NonEditedSales) > premiumCustomer.CreditLimit)
+                Boolean isPaid;
+                if (checkBox_paid.Checked)
                 {
-                    MessageBox.Show("Please choose other purchase option", "Exceeded Credit Limit");
-                    return;
+                    isPaid = true;
                 }
                 else
                 {
-                    int index = CustomersData.customers.IndexOf(premiumCustomer);
-                    premiumCustomer.CreditLimit -= (editedSales.totalCost() - NonEditedSales);
-                    MessageBox.Show(premiumCustomer.CreditLimit.ToString());
-                    CustomersData.updateInformation(premiumCustomer);
+                    isPaid = false;
                 }
-            }
+                string status = comboBox_status.Text;
+                string paymentMode = comboBox_paymentMode.Text;
+                DateTime orderDate = dateTimePicker_orderDate.Value;
+                DateTime paymentDate = dateTimePicker_paymentDate.Value;
 
-            SalesData.updateInformation(editedSales);
-            
-            for (int i = 0; i < editedSales.ProductsOrdered.Count; i++)
-            {
-                if (ProductsData.products.Contains(editedSales.ProductsOrdered[i]))
+                Sales editedSales = new Sales(CurrentSale.ID, CurrentSale.CurrentCustomer, isPaid, status, paymentMode, CurrentSale.ProductsOrdered, CurrentSale.ProductsQuantity, orderDate, paymentDate);
+
+                if (paymentMode.Equals("Credit Payment") && CurrentSale.CurrentCustomer is PremiumCustomer)
                 {
-                    int index = ProductsData.products.IndexOf(editedSales.ProductsOrdered[i]);
-                    if (editedSales.ProductsOrdered.Count > currentListOfQuantity.Count)
+                    PremiumCustomer premiumCustomer = (PremiumCustomer)CurrentSale.CurrentCustomer;
+                    if ((editedSales.totalCost() - NonEditedSales) > premiumCustomer.CreditLimit)
                     {
-                        try
-                        {
-                            ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
-                        }
-                        catch (Exception ee)
-                        {
-                            ProductsData.products[index].Quantity -= editedSales.ProductsQuantity[i];
-                        }
+                        MessageBox.Show("Please choose other purchase option", "Exceeded Credit Limit");
+                        return;
                     }
                     else
                     {
-                        ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
+                        int index = CustomersData.customers.IndexOf(premiumCustomer);
+                        premiumCustomer.CreditLimit -= (editedSales.totalCost() - NonEditedSales);
+                        MessageBox.Show(premiumCustomer.CreditLimit.ToString());
+                        CustomersData.updateInformation(premiumCustomer);
                     }
                 }
-            }
 
-            Form mainForm = Application.OpenForms["MainMenu"];
-            MainMenu mainMenu = (MainMenu)mainForm;
-            mainMenu.salesFormUserControl.reloadList();
-            this.Close();
+                SalesData.updateInformation(editedSales);
+
+                for (int i = 0; i < editedSales.ProductsOrdered.Count; i++)
+                {
+                    if (ProductsData.products.Contains(editedSales.ProductsOrdered[i]))
+                    {
+                        int index = ProductsData.products.IndexOf(editedSales.ProductsOrdered[i]);
+                        if (editedSales.ProductsOrdered.Count > currentListOfQuantity.Count)
+                        {
+                            try
+                            {
+                                ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
+                            }
+                            catch (Exception ee)
+                            {
+                                ProductsData.products[index].Quantity -= editedSales.ProductsQuantity[i];
+                            }
+                        }
+                        else
+                        {
+                            ProductsData.products[index].Quantity -= (editedSales.ProductsQuantity[i] - currentListOfQuantity[i]);
+                        }
+                    }
+                }
+
+                Form mainForm = Application.OpenForms["MainMenu"];
+                MainMenu mainMenu = (MainMenu)mainForm;
+                mainMenu.salesFormUserControl.reloadList();
+                this.Close();
+            }
+           
         }
 
         private void comboBox_product_SelectedIndexChanged(object sender, EventArgs e)
@@ -255,6 +269,72 @@ namespace Health_Assignment
             string[] productDetails = comboBox_product.Text.Split('-');
             Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productDetails[0]));
             QUANTITY_LEFT = currentProduct.Quantity;
+            for (int i = 0; i < CurrentSale.ProductsOrdered.Count; i++)
+            {
+                string currentProductDetails = currentProduct.Name + " : " + currentProduct.Manufacturer;
+                if (currentProductDetails.Equals(dataGridView_productPurchased.Rows[i].Cells[0].Value.ToString()))
+                {
+                    QUANTITY_LEFT -= Int32.Parse(dataGridView_productPurchased.Rows[i].Cells[1].Value.ToString());
+                }
+            }
+        }
+
+        private void dateTimePicker_paymentDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button_delete_Click(object sender, EventArgs e)
+        {
+            if (CurrentSale.ProductsOrdered.Count != 0)
+            {
+
+                if (CurrentSale.ProductsOrdered.Count <= currentIndex)
+                {
+                    currentIndex = 0;
+                }
+
+
+                try
+                {
+                    string[] productChosen = comboBox_product.Text.Split('-');
+                    Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
+                    string matchProduct = productChosen[1] + " : " + productChosen[2];
+                    if (matchProduct.Equals(dataGridView_productPurchased.Rows[currentIndex].Cells[0].Value.ToString()))
+                    {
+                        MessageBox.Show("run");
+                        QUANTITY_LEFT += currentListOfQuantity[currentIndex];
+                    }
+
+                    CurrentSale.ProductsOrdered.RemoveAt(currentIndex);
+                    CurrentSale.ProductsQuantity.RemoveAt(currentIndex);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("run2");
+                    CurrentSale.ProductsOrdered.RemoveAt(currentIndex);
+                    CurrentSale.ProductsQuantity.RemoveAt(currentIndex);
+                    QUANTITY_LEFT = 0;
+                }
+
+
+                refreshDataGridView();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no product in cart", "Empty cart");
+            }
+        }
+
+        private void dataGridView_productPurchased_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            currentIndex = e.RowIndex;
+        }
+
+        private void dataGridView_productPurchased_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

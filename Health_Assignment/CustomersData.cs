@@ -13,12 +13,12 @@ namespace Health_Assignment
         public static List<Customer> initializeData()
         {
             
-            customers.Add(new PremiumCustomer("lisheng", "ong", "address", "Premium", "34573487",100M));
-            customers.Add(new NormalCustomer("hahhaa", "ong", "sdaddress", "Normal", "34573487"));
-            customers.Add(new NormalCustomer("shihern", "lim", "sdaddrdsss", "Normal", "12345"));
-            customers.Add(new NormalCustomer("josh", "teh", "sdaddress", "Normal", "12345"));
-            customers.Add(new NormalCustomer("awad", "lol", "sdaddress", "Normal", "12345"));
-            customers.Add(new NormalCustomer("awad", "lsssol", "sdaddress", "Normal", "12345"));
+            customers.Add(new PremiumCustomer("Li Sheng", "Ong", "Taman Mutiara Barat Cheras", "Premium", "0102398273",100M));
+            customers.Add(new NormalCustomer("Shi Hern", "Lim", "Bandar Utama", "Normal", "012832812"));
+            customers.Add(new NormalCustomer("Wei Zheng", "Chia", "Tmaman Satu Klang", "Normal", "012398289"));
+            customers.Add(new NormalCustomer("Cuok Syen", "Teh", "Taman Ceras Rawang", "Normal", "0183923828"));
+            customers.Add(new NormalCustomer("Awad", "Muhammad", "Jalan University Sunway", "Normal", "019302672"));
+            customers.Add(new NormalCustomer("Kai Wern", "Choong", "Jalan Panglima Penang", "Normal", "0173822188"));
 
             return customers;
         }

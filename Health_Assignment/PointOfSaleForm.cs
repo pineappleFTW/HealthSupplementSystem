@@ -65,6 +65,9 @@ namespace Health_Assignment
             string[] customerDetails = comboBox_customer.Text.Split('-');
             Customer currentCustomer = CustomersData.customers.Find(x => x.ID == Int32.Parse(customerDetails[0]));
             CurrentCustomer = currentCustomer;
+            label_customerAddress.Text = CurrentCustomer.Address;
+            label_customerType.Text = CurrentCustomer.CustomerType;
+            label_customerPhoneNumber.Text = CurrentCustomer.PhoneNumber;
             if (CurrentCustomer.CustomerType.Equals("Premium"))
             {
                 comboBox_paymentMode.Items.Add("Credit Payment");
@@ -161,7 +164,13 @@ namespace Health_Assignment
             string[] productDetails = comboBox_product.Text.Split('-');
             Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productDetails[0]));
             QUANTITY_LEFT = currentProduct.Quantity;
-
+            for(int i = 0; i < currentListOfProducts.Count; i++)
+            {
+                string currentProductDetails = currentProduct.Name + " : " + currentProduct.Manufacturer;
+                if (currentProductDetails.Equals(dataGridView_productPurchased.Rows[i].Cells[0].Value.ToString())){
+                    QUANTITY_LEFT -= Int32.Parse(dataGridView_productPurchased.Rows[i].Cells[1].Value.ToString());
+                }
+            }
         }
 
         public void refreshDataGridView()
@@ -206,23 +215,53 @@ namespace Health_Assignment
         {
             if (currentListOfProducts.Count != 0)
             {
+
                 if (currentListOfProducts.Count <= currentIndex)
                 {
                     currentIndex = 0;
                 }
+                
 
-                //DataGridViewRow selectedRow = dataGridView_productPurchased.Rows[currentIndex];
-                //Product currentProduct = (Product)dataGridView_productPurchased.CurrentRow.DataBoundItem;
+                try
+                {
+                    string[] productChosen = comboBox_product.Text.Split('-');
+                    Product currentProduct = ProductsData.products.Find(x => x.ID == Int32.Parse(productChosen[0]));
+                    string matchProduct = productChosen[1]+" : "+productChosen[2];
+                    if (matchProduct.Equals(dataGridView_productPurchased.Rows[currentIndex].Cells[0].Value.ToString()))
+                    {
+                        MessageBox.Show("run");
+                        QUANTITY_LEFT += currentListOfQuantity[currentIndex];
+                    }
+                    
+                    currentListOfProducts.RemoveAt(currentIndex);
+                    currentListOfQuantity.RemoveAt(currentIndex);
+                }
+                catch (Exception)
+                {
+                    MessageBox.Show("run2");
+                    currentListOfProducts.RemoveAt(currentIndex);
+                    currentListOfQuantity.RemoveAt(currentIndex);
+                    QUANTITY_LEFT = 0;
+                }
 
-                //currentListOfProducts.Remove(currentProduct);
-                //currentListOfQuantity.RemoveAt(currentIndex);
+
+                refreshDataGridView();
+
+            }
+            else
+            {
+                MessageBox.Show("There is no product in cart", "Empty cart");
             }
         }
+
+
+   
 
         private void dataGridView_productPurchased_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             currentIndex = e.RowIndex;
         }
+
 
         private void button_save_Click(object sender, EventArgs e)
         {
@@ -246,7 +285,7 @@ namespace Health_Assignment
                 paymentMode = comboBox_paymentMode.Text;
                 DateTime orderDate = dateTimePicker_orderDate.Value;
 
-                Sales newSales = new Sales(CurrentCustomer, false, "Pending Payment", paymentMode, currentListOfProducts, currentListOfQuantity, orderDate, DateTime.MinValue);
+                Sales newSales = new Sales(CurrentCustomer, false, "Pending Payment", paymentMode, currentListOfProducts.ToList(), currentListOfQuantity.ToList(), orderDate, DateTime.MaxValue);
 
                 if (paymentMode.Equals("Credit Payment") && CurrentCustomer is PremiumCustomer)
                 {
@@ -311,10 +350,18 @@ namespace Health_Assignment
         {
             if (CurrentSale != null)
             {
-                CurrentSale.PaymentDate = DateTime.Now;
-                CurrentSale.Status  = "Paid";
-                CurrentSale.IsPaid = true;
-                MessageBox.Show("Order is Paid!", "Paid Order");
+                if (CurrentSale.IsPaid != true)
+                {
+                    CurrentSale.PaymentDate = DateTime.Now;
+                    CurrentSale.Status = "Paid";
+                    CurrentSale.IsPaid = true;
+                    MessageBox.Show("Order is Paid!", "Paid Order");
+                }
+                else
+                {
+                    MessageBox.Show("Sale order is paid!p", "Sale Paid");
+                }
+                
             }
             else
             {
@@ -328,10 +375,20 @@ namespace Health_Assignment
             CurrentCustomer = null;
             comboBox_paymentMode.SelectedIndex = 0;
             dateTimePicker_orderDate.Value = DateTime.Now;
+            currentListOfProducts.Clear();
+            currentListOfQuantity.Clear();
             comboBox_customer.Text = "";
             comboBox_product.Text = "";
             textBox_quantity.Text = "";
+            label_customerAddress.Text = "";
+            label_customerType.Text = "";
+            label_customerPhoneNumber.Text = "";
             dataGridView_productPurchased.DataSource = null;
+            currentIndex = 0;
+            dt.Clear();
+            
         }
+
+       
     }
 }
