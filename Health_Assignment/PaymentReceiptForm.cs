@@ -62,5 +62,17 @@ namespace Health_Assignment
             dataGridView_productPurchased.DataSource = dt;
             dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
+
+        private void button_print_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Payment Receipt is sent to printer.", "Order Sent");
+            this.Close();
+        }
+
+        private void button_send_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Payment Receipt is sent to customer.", "Order Sent");
+            this.Close();
+        }
     }
 }

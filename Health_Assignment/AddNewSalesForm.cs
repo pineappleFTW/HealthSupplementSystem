@@ -37,7 +37,8 @@ namespace Health_Assignment
             comboBox_status.Items.Add("Out for Delivery");
             comboBox_status.Items.Add("Delivered");
             comboBox_status.SelectedIndex = 0;
-
+            label_cardNumber.Hide();
+            textBox_cardNumber.Hide();
             comboBox_paymentMode.Items.Add("Cash");
             comboBox_paymentMode.Items.Add("Credit Card");
             comboBox_paymentMode.Items.Add("Debit Card");
@@ -276,6 +277,13 @@ namespace Health_Assignment
                 return;
             }
 
+            if ((comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card")) && string.IsNullOrWhiteSpace(textBox_cardNumber.Text))
+            {
+                MessageBox.Show("Card number is invalid or missing", "Card Number needed");
+                return;
+            }
+            
+
             Boolean isPaid;
             if (checkBox_paid.Checked)
             {
@@ -342,7 +350,16 @@ namespace Health_Assignment
 
         private void comboBox_paymentMode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card"))
+            {
+                label_cardNumber.Show();
+                textBox_cardNumber.Show();
+            }
+            else
+            {
+                label_cardNumber.Hide();
+                textBox_cardNumber.Hide();
+            }
         }
 
         private void dataGridView_productPurchased_CellContentClick(object sender, DataGridViewCellEventArgs e)

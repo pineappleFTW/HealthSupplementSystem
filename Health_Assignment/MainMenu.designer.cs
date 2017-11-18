@@ -31,7 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainMenu));
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button_pos = new System.Windows.Forms.Button();
             this.button_logOut = new System.Windows.Forms.Button();
             this.button_home = new System.Windows.Forms.Button();
             this.icon_customer = new System.Windows.Forms.Button();
@@ -54,6 +53,7 @@
             this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
+            this.button_pos = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,23 +93,6 @@
             this.panel1.Size = new System.Drawing.Size(164, 661);
             this.panel1.TabIndex = 34;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // button_pos
-            // 
-            this.button_pos.BackColor = System.Drawing.Color.Transparent;
-            this.button_pos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button_pos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_pos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.button_pos.Image = ((System.Drawing.Image)(resources.GetObject("button_pos.Image")));
-            this.button_pos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_pos.Location = new System.Drawing.Point(11, 124);
-            this.button_pos.Margin = new System.Windows.Forms.Padding(2);
-            this.button_pos.Name = "button_pos";
-            this.button_pos.Size = new System.Drawing.Size(141, 39);
-            this.button_pos.TabIndex = 43;
-            this.button_pos.Text = "   POS";
-            this.button_pos.UseVisualStyleBackColor = false;
-            this.button_pos.Click += new System.EventHandler(this.button_pos_Click);
             // 
             // button_logOut
             // 
@@ -392,6 +375,23 @@
             this.customerUserControlForm.Size = new System.Drawing.Size(1131, 546);
             this.customerUserControlForm.TabIndex = 38;
             // 
+            // button_pos
+            // 
+            this.button_pos.BackColor = System.Drawing.Color.Transparent;
+            this.button_pos.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button_pos.Font = new System.Drawing.Font("Century Gothic", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_pos.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button_pos.Image = ((System.Drawing.Image)(resources.GetObject("button_pos.Image")));
+            this.button_pos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_pos.Location = new System.Drawing.Point(10, 124);
+            this.button_pos.Margin = new System.Windows.Forms.Padding(2);
+            this.button_pos.Name = "button_pos";
+            this.button_pos.Size = new System.Drawing.Size(141, 39);
+            this.button_pos.TabIndex = 44;
+            this.button_pos.Text = "   POS";
+            this.button_pos.UseVisualStyleBackColor = false;
+            this.button_pos.Click += new System.EventHandler(this.button_pos_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -450,8 +450,8 @@
         public PurchaseOrderUserControl purchaseOrderUseControl;
         public InventoryUserControl inventoryUserControl;
         private System.Windows.Forms.Button button_refresh;
-        private System.Windows.Forms.Button button_pos;
         public HomeUserControl homeUserControl;
         public PointOfSaleUserControl pointOfSaleForm;
+        private System.Windows.Forms.Button button_pos;
     }
 }

@@ -120,5 +120,7 @@ namespace Health_Assignment
         {
             pointOfSaleForm.BringToFront();
         }
+
+       
     }
 }

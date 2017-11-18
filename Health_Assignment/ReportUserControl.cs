@@ -7,8 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using iTextSharp.text.pdf;
-using iTextSharp.text;
+//using iTextSharp.text.pdf;
+//using iTextSharp.text;
 
 namespace Health_Assignment
 {
@@ -55,6 +55,8 @@ namespace Health_Assignment
             comboBox_yearSales.SelectedIndex = 5;
             populateList();
             dataGridView_report.EnableHeadersVisualStyles = false;
+            dataGridView_report.Columns[5].DefaultCellStyle.Format = "dd/MM/yyyy";
+            dataGridView_report.Columns[6].DefaultCellStyle.Format = "dd/MM/yyyy";
         }
 
         public void reloadList()
@@ -138,6 +140,7 @@ namespace Health_Assignment
 
         private void button_export_Click(object sender, EventArgs e)
         {
+            /*
             PdfPTable pdfTable = new PdfPTable(dataGridView_report.ColumnCount);
             pdfTable.DefaultCell.Padding = 3;
             pdfTable.WidthPercentage = 100;
@@ -186,7 +189,7 @@ namespace Health_Assignment
                 pdfDoc.Close();
                 stream.Close();
             }
-
+            */
         }
     }
 }

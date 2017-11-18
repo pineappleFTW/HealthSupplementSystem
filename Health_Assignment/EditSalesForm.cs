@@ -14,7 +14,7 @@ namespace Health_Assignment
     {
         public Sales CurrentSale { get; set; }
         public decimal NonEditedSales { get; set; }
-        public List<int> currentListOfQuantity; 
+        public List<int> currentListOfQuantity;
         public DataTable dt { get; set; }
         public DataRow dr { get; set; }
         public int currentIndex = 0;
@@ -34,7 +34,7 @@ namespace Health_Assignment
 
 
         private void EditSalesForm_Load(object sender, EventArgs e)
-        {           
+        {
             comboBox_status.Items.Add("Pending Payment");
             comboBox_status.Items.Add("Paid");
             comboBox_status.Items.Add("Out for Delivery");
@@ -54,6 +54,11 @@ namespace Health_Assignment
             comboBox_status.Text = CurrentSale.Status;
             comboBox_paymentMode.Text = CurrentSale.PaymentMode;
             dateTimePicker_orderDate.Value = CurrentSale.OrderDate;
+
+          
+            label_cardNumber.Hide();
+            textBox_cardNumber.Hide();
+            
 
             if (CurrentSale.PaymentDate == DateTime.MaxValue)
             {
@@ -207,6 +212,13 @@ namespace Health_Assignment
                 {
                     isPaid = false;
                 }
+
+                if ((comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card")) && string.IsNullOrWhiteSpace(textBox_cardNumber.Text))
+                {
+                    MessageBox.Show("Card number is invalid or missing", "Card Number needed");
+                    return;
+                }
+
                 string status = comboBox_status.Text;
                 string paymentMode = comboBox_paymentMode.Text;
                 DateTime orderDate = dateTimePicker_orderDate.Value;
@@ -335,6 +347,20 @@ namespace Health_Assignment
         private void dataGridView_productPurchased_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void comboBox_paymentMode_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card"))
+            {
+                label_cardNumber.Show();
+                textBox_cardNumber.Show();
+            }
+            else
+            {
+                label_cardNumber.Hide();
+                textBox_cardNumber.Hide();
+            }
         }
     }
 }

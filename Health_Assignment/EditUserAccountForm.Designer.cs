@@ -28,24 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.label_userName = new System.Windows.Forms.Label();
             this.label_password = new System.Windows.Forms.Label();
             this.richTextBox_userName = new System.Windows.Forms.RichTextBox();
             this.richTextBox_password = new System.Windows.Forms.RichTextBox();
             this.button_save = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(116, 33);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(170, 19);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Existing User Account";
             // 
             // label_userName
             // 
@@ -53,7 +44,7 @@
             this.label_userName.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_userName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_userName.ForeColor = System.Drawing.Color.White;
-            this.label_userName.Location = new System.Drawing.Point(76, 87);
+            this.label_userName.Location = new System.Drawing.Point(58, 92);
             this.label_userName.Name = "label_userName";
             this.label_userName.Size = new System.Drawing.Size(78, 16);
             this.label_userName.TabIndex = 1;
@@ -65,7 +56,7 @@
             this.label_password.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.label_password.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_password.ForeColor = System.Drawing.Color.White;
-            this.label_password.Location = new System.Drawing.Point(76, 145);
+            this.label_password.Location = new System.Drawing.Point(58, 152);
             this.label_password.Name = "label_password";
             this.label_password.Size = new System.Drawing.Size(68, 16);
             this.label_password.TabIndex = 2;
@@ -75,19 +66,19 @@
             // 
             this.richTextBox_userName.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.richTextBox_userName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_userName.Location = new System.Drawing.Point(201, 86);
+            this.richTextBox_userName.Location = new System.Drawing.Point(165, 92);
             this.richTextBox_userName.Name = "richTextBox_userName";
             this.richTextBox_userName.ReadOnly = true;
-            this.richTextBox_userName.Size = new System.Drawing.Size(109, 28);
+            this.richTextBox_userName.Size = new System.Drawing.Size(172, 28);
             this.richTextBox_userName.TabIndex = 3;
             this.richTextBox_userName.Text = "";
             // 
             // richTextBox_password
             // 
             this.richTextBox_password.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBox_password.Location = new System.Drawing.Point(201, 145);
+            this.richTextBox_password.Location = new System.Drawing.Point(165, 152);
             this.richTextBox_password.Name = "richTextBox_password";
-            this.richTextBox_password.Size = new System.Drawing.Size(109, 33);
+            this.richTextBox_password.Size = new System.Drawing.Size(172, 33);
             this.richTextBox_password.TabIndex = 4;
             this.richTextBox_password.Text = "";
             // 
@@ -98,7 +89,7 @@
             this.button_save.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_save.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_save.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
-            this.button_save.Location = new System.Drawing.Point(163, 220);
+            this.button_save.Location = new System.Drawing.Point(165, 227);
             this.button_save.Name = "button_save";
             this.button_save.Size = new System.Drawing.Size(76, 30);
             this.button_save.TabIndex = 5;
@@ -106,33 +97,59 @@
             this.button_save.UseVisualStyleBackColor = false;
             this.button_save.Click += new System.EventHandler(this.button_save_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Maroon;
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(398, 68);
+            this.panel1.TabIndex = 70;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.label1.Location = new System.Drawing.Point(121, 20);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(206, 23);
+            this.label1.TabIndex = 64;
+            this.label1.Text = "Existing User Account";
+            // 
             // EditUserAccountForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
-            this.ClientSize = new System.Drawing.Size(380, 274);
+            this.ClientSize = new System.Drawing.Size(398, 269);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.button_save);
             this.Controls.Add(this.richTextBox_password);
             this.Controls.Add(this.richTextBox_userName);
             this.Controls.Add(this.label_password);
             this.Controls.Add(this.label_userName);
-            this.Controls.Add(this.label1);
             this.Name = "EditUserAccountForm";
             this.Text = "EditUserAccountForm";
             this.Load += new System.EventHandler(this.EditUserAccountForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label_userName;
         private System.Windows.Forms.Label label_password;
         private System.Windows.Forms.RichTextBox richTextBox_userName;
         private System.Windows.Forms.RichTextBox richTextBox_password;
         private System.Windows.Forms.Button button_save;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

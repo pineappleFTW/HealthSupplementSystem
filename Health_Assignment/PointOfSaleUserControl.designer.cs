@@ -58,6 +58,8 @@
             this.label_customerAddress = new System.Windows.Forms.Label();
             this.label_customerType = new System.Windows.Forms.Label();
             this.label_customerPhoneNumber = new System.Windows.Forms.Label();
+            this.label_cardNumber = new System.Windows.Forms.Label();
+            this.textBox_cardNumber = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productPurchased)).BeginInit();
             this.SuspendLayout();
             // 
@@ -91,7 +93,7 @@
             // 
             this.dateTimePicker_orderDate.CalendarFont = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dateTimePicker_orderDate.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker_orderDate.Location = new System.Drawing.Point(756, 124);
+            this.dateTimePicker_orderDate.Location = new System.Drawing.Point(756, 161);
             this.dateTimePicker_orderDate.Name = "dateTimePicker_orderDate";
             this.dateTimePicker_orderDate.Size = new System.Drawing.Size(265, 23);
             this.dateTimePicker_orderDate.TabIndex = 41;
@@ -102,7 +104,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(642, 129);
+            this.label3.Location = new System.Drawing.Point(642, 166);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(80, 16);
             this.label3.TabIndex = 40;
@@ -398,11 +400,32 @@
             this.label_customerPhoneNumber.Size = new System.Drawing.Size(0, 16);
             this.label_customerPhoneNumber.TabIndex = 53;
             // 
-            // PointOfSaleForm
+            // label_cardNumber
+            // 
+            this.label_cardNumber.AutoSize = true;
+            this.label_cardNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label_cardNumber.ForeColor = System.Drawing.Color.White;
+            this.label_cardNumber.Location = new System.Drawing.Point(642, 128);
+            this.label_cardNumber.Name = "label_cardNumber";
+            this.label_cardNumber.Size = new System.Drawing.Size(97, 16);
+            this.label_cardNumber.TabIndex = 54;
+            this.label_cardNumber.Text = "Card Number";
+            // 
+            // textBox_cardNumber
+            // 
+            this.textBox_cardNumber.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox_cardNumber.Location = new System.Drawing.Point(756, 125);
+            this.textBox_cardNumber.Name = "textBox_cardNumber";
+            this.textBox_cardNumber.Size = new System.Drawing.Size(265, 23);
+            this.textBox_cardNumber.TabIndex = 55;
+            // 
+            // PointOfSaleUserControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.Controls.Add(this.textBox_cardNumber);
+            this.Controls.Add(this.label_cardNumber);
             this.Controls.Add(this.label_customerPhoneNumber);
             this.Controls.Add(this.label_customerType);
             this.Controls.Add(this.label_customerAddress);
@@ -429,7 +452,7 @@
             this.Controls.Add(this.comboBox_customer);
             this.Controls.Add(this.label_customer);
             this.Controls.Add(this.label_pointOfSale);
-            this.Name = "PointOfSaleForm";
+            this.Name = "PointOfSaleUserControl";
             this.Size = new System.Drawing.Size(1073, 557);
             this.Load += new System.EventHandler(this.PointOfSaleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_productPurchased)).EndInit();
@@ -466,5 +489,7 @@
         private System.Windows.Forms.Label label_customerAddress;
         private System.Windows.Forms.Label label_customerType;
         private System.Windows.Forms.Label label_customerPhoneNumber;
+        private System.Windows.Forms.Label label_cardNumber;
+        private System.Windows.Forms.TextBox textBox_cardNumber;
     }
 }

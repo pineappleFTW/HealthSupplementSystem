@@ -111,5 +111,10 @@ namespace Health_Assignment
             mainMenu.inventoryUserControl.reloadList();
             this.Close();
         }
+
+        private void richTextBox_quantity_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -37,6 +37,8 @@ namespace Health_Assignment
             comboBox_paymentMode.Items.Add("Bank Transfer");
             comboBox_paymentMode.Items.Add("Cheque");
             comboBox_paymentMode.SelectedIndex = 0;
+            label_cardNumber.Hide();
+            textBox_cardNumber.Hide();
             initializeDataGridView();
             dataGridView_productPurchased.EnableHeadersVisualStyles = false;
             dataGridView_productPurchased.Columns[0].AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
@@ -281,6 +283,11 @@ namespace Health_Assignment
                     return;
                 }
 
+                if ((comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card")) && string.IsNullOrWhiteSpace(textBox_cardNumber.Text))
+                {
+                    MessageBox.Show("Card number is invalid or missing", "Card Number needed");
+                    return;
+                }
 
                 paymentMode = comboBox_paymentMode.Text;
                 DateTime orderDate = dateTimePicker_orderDate.Value;
@@ -337,7 +344,16 @@ namespace Health_Assignment
 
         private void comboBox_paymentMode_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if(comboBox_paymentMode.Text.Equals("Credit Card") || comboBox_paymentMode.Text.Equals("Debit Card"))
+            {
+                label_cardNumber.Show();
+                textBox_cardNumber.Show();
+            }
+            else
+            {
+                label_cardNumber.Hide();
+                textBox_cardNumber.Hide();
+            }
         }
 
         private void button_newCustomer_Click(object sender, EventArgs e)

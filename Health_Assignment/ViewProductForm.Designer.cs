@@ -45,6 +45,8 @@
             this.label_categoryDetails = new System.Windows.Forms.Label();
             this.label_priceDetails = new System.Windows.Forms.Label();
             this.label_quantityDetails = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_quantity
@@ -52,7 +54,7 @@
             this.label_quantity.AutoSize = true;
             this.label_quantity.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_quantity.ForeColor = System.Drawing.Color.White;
-            this.label_quantity.Location = new System.Drawing.Point(61, 496);
+            this.label_quantity.Location = new System.Drawing.Point(26, 496);
             this.label_quantity.Name = "label_quantity";
             this.label_quantity.Size = new System.Drawing.Size(64, 16);
             this.label_quantity.TabIndex = 29;
@@ -63,7 +65,7 @@
             this.label_price.AutoSize = true;
             this.label_price.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_price.ForeColor = System.Drawing.Color.White;
-            this.label_price.Location = new System.Drawing.Point(61, 454);
+            this.label_price.Location = new System.Drawing.Point(26, 454);
             this.label_price.Name = "label_price";
             this.label_price.Size = new System.Drawing.Size(40, 16);
             this.label_price.TabIndex = 28;
@@ -74,7 +76,7 @@
             this.button_close.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(234)))), ((int)(((byte)(226)))), ((int)(((byte)(183)))));
             this.button_close.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_close.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(48)))), ((int)(((byte)(73)))));
-            this.button_close.Location = new System.Drawing.Point(300, 622);
+            this.button_close.Location = new System.Drawing.Point(137, 643);
             this.button_close.Name = "button_close";
             this.button_close.Size = new System.Drawing.Size(75, 23);
             this.button_close.TabIndex = 27;
@@ -87,7 +89,7 @@
             this.label_category.AutoSize = true;
             this.label_category.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_category.ForeColor = System.Drawing.Color.White;
-            this.label_category.Location = new System.Drawing.Point(61, 415);
+            this.label_category.Location = new System.Drawing.Point(26, 415);
             this.label_category.Name = "label_category";
             this.label_category.Size = new System.Drawing.Size(69, 16);
             this.label_category.TabIndex = 21;
@@ -98,7 +100,7 @@
             this.label_manufacturer.AutoSize = true;
             this.label_manufacturer.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_manufacturer.ForeColor = System.Drawing.Color.White;
-            this.label_manufacturer.Location = new System.Drawing.Point(61, 381);
+            this.label_manufacturer.Location = new System.Drawing.Point(26, 381);
             this.label_manufacturer.Name = "label_manufacturer";
             this.label_manufacturer.Size = new System.Drawing.Size(96, 16);
             this.label_manufacturer.TabIndex = 20;
@@ -109,7 +111,7 @@
             this.label_prescription.AutoSize = true;
             this.label_prescription.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_prescription.ForeColor = System.Drawing.Color.White;
-            this.label_prescription.Location = new System.Drawing.Point(61, 275);
+            this.label_prescription.Location = new System.Drawing.Point(26, 275);
             this.label_prescription.Name = "label_prescription";
             this.label_prescription.Size = new System.Drawing.Size(84, 16);
             this.label_prescription.TabIndex = 19;
@@ -120,7 +122,7 @@
             this.label_desc.AutoSize = true;
             this.label_desc.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_desc.ForeColor = System.Drawing.Color.White;
-            this.label_desc.Location = new System.Drawing.Point(64, 110);
+            this.label_desc.Location = new System.Drawing.Point(29, 110);
             this.label_desc.Name = "label_desc";
             this.label_desc.Size = new System.Drawing.Size(81, 16);
             this.label_desc.TabIndex = 18;
@@ -131,7 +133,7 @@
             this.label_name.AutoSize = true;
             this.label_name.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_name.ForeColor = System.Drawing.Color.White;
-            this.label_name.Location = new System.Drawing.Point(64, 74);
+            this.label_name.Location = new System.Drawing.Point(29, 74);
             this.label_name.Name = "label_name";
             this.label_name.Size = new System.Drawing.Size(47, 16);
             this.label_name.TabIndex = 17;
@@ -142,7 +144,7 @@
             this.label_newProductDetails.AutoSize = true;
             this.label_newProductDetails.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_newProductDetails.ForeColor = System.Drawing.Color.White;
-            this.label_newProductDetails.Location = new System.Drawing.Point(279, 23);
+            this.label_newProductDetails.Location = new System.Drawing.Point(25, 23);
             this.label_newProductDetails.Name = "label_newProductDetails";
             this.label_newProductDetails.Size = new System.Drawing.Size(82, 19);
             this.label_newProductDetails.TabIndex = 16;
@@ -153,7 +155,7 @@
             this.label_id.AutoSize = true;
             this.label_id.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label_id.ForeColor = System.Drawing.Color.White;
-            this.label_id.Location = new System.Drawing.Point(357, 23);
+            this.label_id.Location = new System.Drawing.Point(113, 23);
             this.label_id.Name = "label_id";
             this.label_id.Size = new System.Drawing.Size(18, 19);
             this.label_id.TabIndex = 32;
@@ -162,9 +164,10 @@
             // label_productName
             // 
             this.label_productName.AutoSize = true;
+            this.label_productName.BackColor = System.Drawing.Color.White;
             this.label_productName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_productName.ForeColor = System.Drawing.Color.White;
-            this.label_productName.Location = new System.Drawing.Point(184, 74);
+            this.label_productName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_productName.Location = new System.Drawing.Point(18, 86);
             this.label_productName.Name = "label_productName";
             this.label_productName.Size = new System.Drawing.Size(100, 16);
             this.label_productName.TabIndex = 33;
@@ -174,9 +177,9 @@
             // 
             this.label_description.AutoSize = true;
             this.label_description.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_description.ForeColor = System.Drawing.Color.White;
-            this.label_description.Location = new System.Drawing.Point(64, 140);
-            this.label_description.MaximumSize = new System.Drawing.Size(550, 200);
+            this.label_description.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_description.Location = new System.Drawing.Point(18, 122);
+            this.label_description.MaximumSize = new System.Drawing.Size(500, 200);
             this.label_description.Name = "label_description";
             this.label_description.Size = new System.Drawing.Size(81, 16);
             this.label_description.TabIndex = 34;
@@ -186,8 +189,9 @@
             // 
             this.label_prescriptionContent.AutoSize = true;
             this.label_prescriptionContent.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_prescriptionContent.ForeColor = System.Drawing.Color.White;
-            this.label_prescriptionContent.Location = new System.Drawing.Point(61, 305);
+            this.label_prescriptionContent.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_prescriptionContent.Location = new System.Drawing.Point(18, 287);
+            this.label_prescriptionContent.MaximumSize = new System.Drawing.Size(500, 100);
             this.label_prescriptionContent.Name = "label_prescriptionContent";
             this.label_prescriptionContent.Size = new System.Drawing.Size(84, 16);
             this.label_prescriptionContent.TabIndex = 35;
@@ -197,8 +201,8 @@
             // 
             this.label_manufacturerDetails.AutoSize = true;
             this.label_manufacturerDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_manufacturerDetails.ForeColor = System.Drawing.Color.White;
-            this.label_manufacturerDetails.Location = new System.Drawing.Point(181, 381);
+            this.label_manufacturerDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_manufacturerDetails.Location = new System.Drawing.Point(18, 393);
             this.label_manufacturerDetails.Name = "label_manufacturerDetails";
             this.label_manufacturerDetails.Size = new System.Drawing.Size(96, 16);
             this.label_manufacturerDetails.TabIndex = 36;
@@ -208,8 +212,8 @@
             // 
             this.label_categoryDetails.AutoSize = true;
             this.label_categoryDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_categoryDetails.ForeColor = System.Drawing.Color.White;
-            this.label_categoryDetails.Location = new System.Drawing.Point(181, 415);
+            this.label_categoryDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_categoryDetails.Location = new System.Drawing.Point(18, 427);
             this.label_categoryDetails.Name = "label_categoryDetails";
             this.label_categoryDetails.Size = new System.Drawing.Size(69, 16);
             this.label_categoryDetails.TabIndex = 37;
@@ -219,8 +223,8 @@
             // 
             this.label_priceDetails.AutoSize = true;
             this.label_priceDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_priceDetails.ForeColor = System.Drawing.Color.White;
-            this.label_priceDetails.Location = new System.Drawing.Point(181, 454);
+            this.label_priceDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_priceDetails.Location = new System.Drawing.Point(22, 466);
             this.label_priceDetails.Name = "label_priceDetails";
             this.label_priceDetails.Size = new System.Drawing.Size(40, 16);
             this.label_priceDetails.TabIndex = 38;
@@ -230,12 +234,28 @@
             // 
             this.label_quantityDetails.AutoSize = true;
             this.label_quantityDetails.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label_quantityDetails.ForeColor = System.Drawing.Color.White;
-            this.label_quantityDetails.Location = new System.Drawing.Point(181, 496);
+            this.label_quantityDetails.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
+            this.label_quantityDetails.Location = new System.Drawing.Point(22, 508);
             this.label_quantityDetails.Name = "label_quantityDetails";
             this.label_quantityDetails.Size = new System.Drawing.Size(29, 16);
             this.label_quantityDetails.TabIndex = 39;
             this.label_quantityDetails.Text = "100";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.Controls.Add(this.label_productName);
+            this.panel1.Controls.Add(this.label_prescriptionContent);
+            this.panel1.Controls.Add(this.label_quantityDetails);
+            this.panel1.Controls.Add(this.label_description);
+            this.panel1.Controls.Add(this.label_manufacturerDetails);
+            this.panel1.Controls.Add(this.label_priceDetails);
+            this.panel1.Controls.Add(this.label_categoryDetails);
+            this.panel1.Controls.Add(this.button_close);
+            this.panel1.Location = new System.Drawing.Point(152, -12);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(534, 715);
+            this.panel1.TabIndex = 40;
             // 
             // ViewProductForm
             // 
@@ -244,17 +264,10 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(239)))), ((int)(((byte)(35)))), ((int)(((byte)(63)))));
             this.ClientSize = new System.Drawing.Size(675, 682);
-            this.Controls.Add(this.label_quantityDetails);
-            this.Controls.Add(this.label_priceDetails);
-            this.Controls.Add(this.label_categoryDetails);
-            this.Controls.Add(this.label_manufacturerDetails);
-            this.Controls.Add(this.label_prescriptionContent);
-            this.Controls.Add(this.label_description);
-            this.Controls.Add(this.label_productName);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label_id);
             this.Controls.Add(this.label_quantity);
             this.Controls.Add(this.label_price);
-            this.Controls.Add(this.button_close);
             this.Controls.Add(this.label_category);
             this.Controls.Add(this.label_manufacturer);
             this.Controls.Add(this.label_prescription);
@@ -265,6 +278,8 @@
             this.Name = "ViewProductForm";
             this.Text = "ViewProductForm";
             this.Load += new System.EventHandler(this.ViewProductForm_Load);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -289,5 +304,6 @@
         private System.Windows.Forms.Label label_categoryDetails;
         private System.Windows.Forms.Label label_priceDetails;
         private System.Windows.Forms.Label label_quantityDetails;
+        private System.Windows.Forms.Panel panel1;
     }
 }
