@@ -47,10 +47,10 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.button_refresh = new System.Windows.Forms.Button();
             this.homeUserControl = new Health_Assignment.HomeUserControl();
-            this.pointOfSaleForm = new Health_Assignment.PointOfSaleForm();
+            this.pointOfSaleForm = new Health_Assignment.PointOfSaleUserControl();
             this.inventoryUserControl = new Health_Assignment.InventoryUserControl();
-            this.purchaseOrderUseControl = new Health_Assignment.PurchaseOrderUseControl();
-            this.salesFormUserControl = new Health_Assignment.SalesFormUserControl();
+            this.purchaseOrderUseControl = new Health_Assignment.PurchaseOrderUserControl();
+            this.salesFormUserControl = new Health_Assignment.TotalSalesFormUserControl();
             this.userAccountUserControl = new Health_Assignment.UserAccountUserControl();
             this.reportUserControl = new Health_Assignment.ReportUserControl();
             this.customerUserControlForm = new Health_Assignment.CustomerUserControlForm();
@@ -446,12 +446,12 @@
         public CustomerUserControlForm customerUserControlForm;
         public ReportUserControl reportUserControl;
         public UserAccountUserControl userAccountUserControl;
-        public SalesFormUserControl salesFormUserControl;
-        public PurchaseOrderUseControl purchaseOrderUseControl;
+        public TotalSalesFormUserControl salesFormUserControl;
+        public PurchaseOrderUserControl purchaseOrderUseControl;
         public InventoryUserControl inventoryUserControl;
         private System.Windows.Forms.Button button_refresh;
         private System.Windows.Forms.Button button_pos;
         public HomeUserControl homeUserControl;
-        public PointOfSaleForm pointOfSaleForm;
+        public PointOfSaleUserControl pointOfSaleForm;
     }
 }

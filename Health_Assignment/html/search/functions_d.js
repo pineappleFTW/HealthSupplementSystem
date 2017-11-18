@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['sales',['Sales',['../class_health___assignment_1_1_sales.html#adb0acbfa3b27fe020dd10590008d28f7',1,'Health_Assignment.Sales.Sales()'],['../class_health___assignment_1_1_sales.html#accb6abdf20104662a4b91c81e0e198c4',1,'Health_Assignment.Sales.Sales(Customer currentCustomer, Boolean isPaid, string status, string paymentMode, List&lt; Product &gt; productsOrdered, List&lt; int &gt; productsQuantity, DateTime orderDate, DateTime paymentDate)'],['../class_health___assignment_1_1_sales.html#adc0cc4e815eca662714b7dfae8c35084',1,'Health_Assignment.Sales.Sales(int id, Customer currentCustomer, Boolean isPaid, string status, string paymentMode, List&lt; Product &gt; productsOrdered, List&lt; int &gt; productsQuantity, DateTime orderDate, DateTime paymentDate)']]],
+  ['salesformusercontrol',['SalesFormUserControl',['../class_health___assignment_1_1_sales_form_user_control.html#ab1d2ca98434c8e8e9e2b02d0c6e8b4da',1,'Health_Assignment::SalesFormUserControl']]],
+  ['sendmessage',['SendMessage',['../class_health___assignment_1_1_login.html#a94f5aef20bd1600a113d31e085428a2c',1,'Health_Assignment.Login.SendMessage()'],['../class_health___assignment_1_1_main_menu.html#a44c86004f90d336070e9b3ce44b5c0c3',1,'Health_Assignment.MainMenu.SendMessage()']]]
+];

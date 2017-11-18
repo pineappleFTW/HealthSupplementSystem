@@ -1,0 +1,4 @@
+<map id="Health_Assignment.Customer" name="Health_Assignment.Customer">
+<area shape="rect" id="node2" href="$class_health___assignment_1_1_normal_customer.html" title="{Health_Assignment.Normal\lCustomer\n||+ NormalCustomer()\l+ NormalCustomer()\l+ NormalCustomer()\l}" alt="" coords="5,277,185,399"/>
+<area shape="rect" id="node3" href="$class_health___assignment_1_1_premium_customer.html" title="{Health_Assignment.Premium\lCustomer\n|+ CreditLimit\l|+ PremiumCustomer()\l+ PremiumCustomer()\l}" alt="" coords="209,285,400,391"/>
+</map>
