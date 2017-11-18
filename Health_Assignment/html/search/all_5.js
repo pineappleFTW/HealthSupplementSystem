@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['generateid',['generateID',['../class_health___assignment_1_1_customer.html#a877c996d37f087d8d3d561d32b5fd8bf',1,'Health_Assignment.Customer.generateID()'],['../class_health___assignment_1_1_product.html#aee3dead4e155db8130aa5c2e83ef0e5a',1,'Health_Assignment.Product.generateID()'],['../class_health___assignment_1_1_purchase_order.html#a806f820f1e7ec4cd404b7b58b3b087ed',1,'Health_Assignment.PurchaseOrder.generateID()'],['../class_health___assignment_1_1_sales.html#a6a20a2d589f2d1b41bb11a935910af7e',1,'Health_Assignment.Sales.generateID()']]],
+  ['getcurrentlist',['getCurrentList',['../class_health___assignment_1_1_customers_data.html#a3e48c151490121db0bf830ffd7406cb6',1,'Health_Assignment.CustomersData.getCurrentList()'],['../class_health___assignment_1_1_products_data.html#a6b4b2e06eeb9b3e631921fa21a5f0373',1,'Health_Assignment.ProductsData.getCurrentList()'],['../class_health___assignment_1_1_purchase_orders_data.html#aef768684a04943e77d24185aa0ba0641',1,'Health_Assignment.PurchaseOrdersData.getCurrentList()'],['../class_health___assignment_1_1_sales_data.html#a6fbe82eb1e5f98390ca94130a14e5597',1,'Health_Assignment.SalesData.getCurrentList()']]],
+  ['gettotalsales',['getTotalSales',['../class_health___assignment_1_1_report_user_control.html#aa16985cdd6d11217c6fe43fac1fe2937',1,'Health_Assignment::ReportUserControl']]]
+];

@@ -93,10 +93,24 @@ namespace Health_Assignment
             }
 
             CustomersData.addNewCustomer(newCustomer);
-            Form mainForm = Application.OpenForms["CustomerForm"];
-            CustomerForm salesForm = (CustomerForm)mainForm;
-            salesForm.reloadList();
+            Form mainForm = Application.OpenForms["MainMenu"];
+            MainMenu mainMenu = (MainMenu)mainForm;
+            if (mainMenu != null)
+            {
+                mainMenu.customerUserControlForm.reloadList();
+            }
+            
             this.Close();
+        }
+
+        private void textBox_newPhoneNumber_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label_newCustomerText_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

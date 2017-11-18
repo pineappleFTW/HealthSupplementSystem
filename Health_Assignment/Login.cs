@@ -23,10 +23,14 @@ namespace Health_Assignment
             currentUserAccounts = UserAccountsData.initializeAccount();
             List<Customer> currentListOfCustomers = new List<Customer>();
             currentListOfCustomers = CustomersData.initializeData();
+            List<Product> currentListOfProducts = new List<Product>();
+            currentListOfProducts = ProductsData.initializeData();
             List<Sales> currentListOfSales = new List<Sales>();
             currentListOfSales = SalesData.initializeData();
+            List<PurchaseOrder> currentListOfPurchaseOrders = new List<PurchaseOrder>();
+            currentListOfPurchaseOrders = PurchaseOrdersData.initializeData();
 
-    }
+        }
 
         private void txtUserID_TextChanged(object sender, EventArgs e)
         {
@@ -73,6 +77,22 @@ namespace Health_Assignment
             
         }
 
-        
+        public const int WM_NCLBUTTONDOWN = 0xA1;
+        public const int HT_CAPTION = 0x2;
+
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
+        [System.Runtime.InteropServices.DllImportAttribute("user32.dll")]
+        public static extern bool ReleaseCapture();
+
+        private void login_MouseDown(object sender, System.Windows.Forms.MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                ReleaseCapture();
+                SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0);
+            }
+        }
+
     }
 }

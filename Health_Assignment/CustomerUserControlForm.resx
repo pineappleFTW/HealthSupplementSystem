@@ -1,0 +1,477 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="iDDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="firstNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>First Name</value>
+  </data>
+  <data name="lastNameDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Last Name</value>
+  </data>
+  <data name="addressDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Address</value>
+  </data>
+  <data name="customerTypeDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Customer Type</value>
+  </data>
+  <data name="phoneNumberDataGridViewTextBoxColumn.HeaderText" xml:space="preserve">
+    <value>Phone Number</value>
+  </data>
+  <metadata name="customerBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridView1.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="dataGridView1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 205</value>
+  </data>
+  <data name="dataGridView1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>817, 183</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dataGridView1.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Name" xml:space="preserve">
+    <value>dataGridView1</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dataGridView1.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="label_Sales.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="label_Sales.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 26.25pt, style=Bold</value>
+  </data>
+  <data name="label_Sales.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="label_Sales.Location" type="System.Drawing.Point, System.Drawing">
+    <value>392, 36</value>
+  </data>
+  <data name="label_Sales.Size" type="System.Drawing.Size, System.Drawing">
+    <value>395, 41</value>
+  </data>
+  <data name="label_Sales.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="label_Sales.Text" xml:space="preserve">
+    <value>Customers Information</value>
+  </data>
+  <data name="&gt;&gt;label_Sales.Name" xml:space="preserve">
+    <value>label_Sales</value>
+  </data>
+  <data name="&gt;&gt;label_Sales.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;label_Sales.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;label_Sales.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="button_completeList.BackgroundImageLayout" type="System.Windows.Forms.ImageLayout, System.Windows.Forms">
+    <value>Center</value>
+  </data>
+  <data name="button_completeList.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_completeList.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="button_completeList.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_completeList.Location" type="System.Drawing.Point, System.Drawing">
+    <value>184, 132</value>
+  </data>
+  <data name="button_completeList.Size" type="System.Drawing.Size, System.Drawing">
+    <value>175, 23</value>
+  </data>
+  <data name="button_completeList.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="button_completeList.Text" xml:space="preserve">
+    <value>Complete List</value>
+  </data>
+  <data name="&gt;&gt;button_completeList.Name" xml:space="preserve">
+    <value>button_completeList</value>
+  </data>
+  <data name="&gt;&gt;button_completeList.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_completeList.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_completeList.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="comboBox_searchOptions.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="comboBox_searchOptions.Location" type="System.Drawing.Point, System.Drawing">
+    <value>872, 132</value>
+  </data>
+  <data name="comboBox_searchOptions.Size" type="System.Drawing.Size, System.Drawing">
+    <value>93, 25</value>
+  </data>
+  <data name="comboBox_searchOptions.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;comboBox_searchOptions.Name" xml:space="preserve">
+    <value>comboBox_searchOptions</value>
+  </data>
+  <data name="&gt;&gt;comboBox_searchOptions.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBox_searchOptions.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;comboBox_searchOptions.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="button_Search.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_Search.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="button_Search.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_Search.Location" type="System.Drawing.Point, System.Drawing">
+    <value>716, 161</value>
+  </data>
+  <data name="button_Search.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_Search.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="button_Search.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;button_Search.Name" xml:space="preserve">
+    <value>button_Search</value>
+  </data>
+  <data name="&gt;&gt;button_Search.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_Search.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_Search.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="richTextBox_searchBox.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="richTextBox_searchBox.Location" type="System.Drawing.Point, System.Drawing">
+    <value>716, 132</value>
+  </data>
+  <data name="richTextBox_searchBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>144, 23</value>
+  </data>
+  <data name="richTextBox_searchBox.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="richTextBox_searchBox.Text" xml:space="preserve">
+    <value>Search</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_searchBox.Name" xml:space="preserve">
+    <value>richTextBox_searchBox</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_searchBox.Type" xml:space="preserve">
+    <value>System.Windows.Forms.RichTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_searchBox.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;richTextBox_searchBox.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="button_delete.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_delete.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="button_delete.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_delete.Location" type="System.Drawing.Point, System.Drawing">
+    <value>399, 414</value>
+  </data>
+  <data name="button_delete.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_delete.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="button_delete.Text" xml:space="preserve">
+    <value>Delete</value>
+  </data>
+  <data name="&gt;&gt;button_delete.Name" xml:space="preserve">
+    <value>button_delete</value>
+  </data>
+  <data name="&gt;&gt;button_delete.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_delete.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_delete.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="button_add.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_add.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="button_add.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_add.Location" type="System.Drawing.Point, System.Drawing">
+    <value>200, 414</value>
+  </data>
+  <data name="button_add.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_add.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="button_add.Text" xml:space="preserve">
+    <value>Add</value>
+  </data>
+  <data name="&gt;&gt;button_add.Name" xml:space="preserve">
+    <value>button_add</value>
+  </data>
+  <data name="&gt;&gt;button_add.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_add.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_add.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="button_edit.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
+    <value>Flat</value>
+  </data>
+  <data name="button_edit.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Century Gothic, 9.75pt</value>
+  </data>
+  <data name="button_edit.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="button_edit.Location" type="System.Drawing.Point, System.Drawing">
+    <value>300, 414</value>
+  </data>
+  <data name="button_edit.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="button_edit.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="button_edit.Text" xml:space="preserve">
+    <value>Edit</value>
+  </data>
+  <data name="&gt;&gt;button_edit.Name" xml:space="preserve">
+    <value>button_edit</value>
+  </data>
+  <data name="&gt;&gt;button_edit.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;button_edit.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;button_edit.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1158, 533</value>
+  </data>
+  <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>iDDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;iDDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;firstNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>firstNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;firstNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>lastNameDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;lastNameDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;addressDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>addressDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;addressDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customerTypeDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>customerTypeDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;customerTypeDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;phoneNumberDataGridViewTextBoxColumn.Name" xml:space="preserve">
+    <value>phoneNumberDataGridViewTextBoxColumn</value>
+  </data>
+  <data name="&gt;&gt;phoneNumberDataGridViewTextBoxColumn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridViewTextBoxColumn, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;customerBindingSource.Name" xml:space="preserve">
+    <value>customerBindingSource</value>
+  </data>
+  <data name="&gt;&gt;customerBindingSource.Type" xml:space="preserve">
+    <value>System.Windows.Forms.BindingSource, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>CustomerUserControlForm</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+</root>

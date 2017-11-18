@@ -1,0 +1,5 @@
+<map id="Health_Assignment.Product" name="Health_Assignment.Product">
+<area shape="rect" id="node2" href="$class_health___assignment_1_1_mineral_supplement.html" title="{Health_Assignment.Mineral\lSupplement\n||+ MineralSupplement()\l+ MineralSupplement()\l+ MineralSupplement()\l}" alt="" coords="5,307,187,428"/>
+<area shape="rect" id="node3" href="$class_health___assignment_1_1_protein.html" title="{Health_Assignment.Protein\n||+ Protein()\l+ Protein()\l+ Protein()\l}" alt="" coords="211,314,391,421"/>
+<area shape="rect" id="node4" href="$class_health___assignment_1_1_vitamin.html" title="{Health_Assignment.Vitamin\n||+ Vitamin()\l+ Vitamin()\l+ Vitamin()\l}" alt="" coords="415,314,598,421"/>
+</map>

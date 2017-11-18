@@ -33,11 +33,11 @@ namespace Health_Assignment
                 return;
             }
 
-            Form mainForm = Application.OpenForms["UserAccountForm"];
-            UserAccountForm userAccountForm = (UserAccountForm)mainForm;
+            Form mainForm = Application.OpenForms["MainMenu"];
+            MainMenu mainMenu = (MainMenu)mainForm;
 
 
-            userAccountForm.userAccountUserControl.reloadList();
+            mainMenu.userAccountUserControl.reloadList();
 
             this.Close();
         }

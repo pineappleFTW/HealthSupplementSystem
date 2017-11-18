@@ -13,7 +13,7 @@ namespace Health_Assignment
         public Boolean IsPaid { set; get; }
         public string Status { set; get; }
         public string PaymentMode { set; get; }
-        public List<int> ProductsOrdered { set; get; }
+        public List<Product> ProductsOrdered { set; get; }
         public List<int> ProductsQuantity { set; get; }
 
         private DateTime orderDate;
@@ -68,7 +68,7 @@ namespace Health_Assignment
 
         public Sales() { }
 
-        public Sales(Customer currentCustomer,Boolean isPaid,string status,string paymentMode,List<int> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
+        public Sales(Customer currentCustomer,Boolean isPaid,string status,string paymentMode,List<Product> productsOrdered,List<int> productsQuantity,DateTime orderDate,DateTime paymentDate)
         {
             ID = generateID();
             CurrentCustomer = currentCustomer;
@@ -81,7 +81,43 @@ namespace Health_Assignment
             PaymentDate = paymentDate;
         }
 
+        public Sales(int id,Customer currentCustomer, Boolean isPaid, string status, string paymentMode, List<Product> productsOrdered, List<int> productsQuantity, DateTime orderDate, DateTime paymentDate)
+        {
+            ID = id;
+            CurrentCustomer = currentCustomer;
+            IsPaid = isPaid;
+            Status = status;
+            PaymentMode = paymentMode;
+            ProductsOrdered = productsOrdered;
+            ProductsQuantity = productsQuantity;
+            OrderDate = orderDate;
+            PaymentDate = paymentDate;
+        }
 
+        public decimal totalCost()
+        {
+            decimal totalSum = 0;
+            for(int i = 0; i < ProductsOrdered.Count; i++)
+            {
+                totalSum += ProductsOrdered[i].Price * ProductsQuantity[i];
+            }
+
+            return totalSum;
+        }
+
+        public override bool Equals(object obj)
+        {
+            if (obj == null || GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Sales sales = (Sales)obj;
+            {
+                return (ID == sales.ID) && (CurrentCustomer == sales.CurrentCustomer);
+            }
+
+
+        }
 
     }
 }

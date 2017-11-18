@@ -32,6 +32,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="itextsharp">
+      <HintPath>..\..\..\..\Documents\itextsharp-all-5.5.10\itextsharp-dll-core\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.pdfa">
+      <HintPath>..\..\..\..\Documents\itextsharp-all-5.5.10\itextsharp-dll-pdfa\itextsharp.pdfa.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,6 +51,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddNewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewProductForm.Designer.cs">
+      <DependentUpon>AddNewProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AddNewPurchaseOrderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddNewPurchaseOrderForm.Designer.cs">
+      <DependentUpon>AddNewPurchaseOrderForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="AddNewSalesForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -52,6 +70,18 @@
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Customer.cs" />
+    <Compile Include="CustomerUserControlForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CustomerUserControlForm.Designer.cs">
+      <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DeliveryNoticeForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DeliveryNoticeForm.Designer.cs">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -59,11 +89,35 @@
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </Compile>
     <Compile Include="CustomersData.cs" />
+    <Compile Include="EditProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditProductForm.Designer.cs">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditSalesForm.Designer.cs">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="EditUserAccountForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EditUserAccountForm.Designer.cs">
       <DependentUpon>EditUserAccountForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="HomeUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HomeUserControl.Designer.cs">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="InventoryUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="InventoryUserControl.Designer.cs">
+      <DependentUpon>InventoryUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
@@ -77,6 +131,7 @@
     <Compile Include="MainMenu.designer.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="MineralSupplement.cs" />
     <Compile Include="NewCustomerForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,38 +144,54 @@
     <Compile Include="NewUserAccountForm.Designer.cs">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OrderConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OrderConfirmationForm.Designer.cs">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PaymentReceiptForm.Designer.cs">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PointOfSaleUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PointOfSaleUserControl.designer.cs">
+      <DependentUpon>PointOfSaleUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs" />
+    <Compile Include="ProductsData.cs" />
+    <Compile Include="Protein.cs" />
+    <Compile Include="PurchaseOrder.cs" />
+    <Compile Include="PurchaseOrdersData.cs" />
+    <Compile Include="PurchaseOrderUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PurchaseOrderUserControl.Designer.cs">
+      <DependentUpon>PurchaseOrderUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReportUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ReportUserControl.Designer.cs">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="Sales.cs" />
     <Compile Include="NormalCustomer.cs" />
     <Compile Include="PremiumCustomer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="CustomerForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerForm.Designer.cs">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="SalesData.cs" />
-    <Compile Include="SalesForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="SalesForm.Designer.cs">
-      <DependentUpon>SalesForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="SalesFormUserControl.cs">
+    <Compile Include="TotalSalesFormUserControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="SalesFormUserControl.Designer.cs">
-      <DependentUpon>SalesFormUserControl.cs</DependentUpon>
+    <Compile Include="TotalSalesFormUserControl.Designer.cs">
+      <DependentUpon>TotalSalesFormUserControl.cs</DependentUpon>
     </Compile>
     <Compile Include="UserAccount.cs" />
-    <Compile Include="UserAccountForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UserAccountForm.Designer.cs">
-      <DependentUpon>UserAccountForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="UserAccountsData.cs" />
     <Compile Include="UserAccountUserControl.cs">
       <SubType>UserControl</SubType>
@@ -128,14 +199,51 @@
     <Compile Include="UserAccountUserControl.Designer.cs">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewProductForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewProductForm.Designer.cs">
+      <DependentUpon>ViewProductForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewSalesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewSalesForm.Designer.cs">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vitamin.cs" />
+    <EmbeddedResource Include="AddNewProductForm.resx">
+      <DependentUpon>AddNewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AddNewPurchaseOrderForm.resx">
+      <DependentUpon>AddNewPurchaseOrderForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="AddNewSalesForm.resx">
       <DependentUpon>AddNewSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerUserControlForm.resx">
+      <DependentUpon>CustomerUserControlForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DeliveryNoticeForm.resx">
+      <DependentUpon>DeliveryNoticeForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EditCustomerForm.resx">
       <DependentUpon>EditCustomerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditProductForm.resx">
+      <DependentUpon>EditProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditSalesForm.resx">
+      <DependentUpon>EditSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUserAccountForm.resx">
       <DependentUpon>EditUserAccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUserControl.resx">
+      <DependentUpon>HomeUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="InventoryUserControl.resx">
+      <DependentUpon>InventoryUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -149,6 +257,15 @@
     <EmbeddedResource Include="NewUserAccountForm.resx">
       <DependentUpon>NewUserAccountForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="OrderConfirmationForm.resx">
+      <DependentUpon>OrderConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PaymentReceiptForm.resx">
+      <DependentUpon>PaymentReceiptForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PointOfSaleUserControl.resx">
+      <DependentUpon>PointOfSaleUserControl.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -158,22 +275,27 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="CustomerForm.resx">
-      <DependentUpon>CustomerForm.cs</DependentUpon>
+    <EmbeddedResource Include="PurchaseOrderUserControl.resx">
+      <DependentUpon>PurchaseOrderUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesForm.resx">
-      <DependentUpon>SalesForm.cs</DependentUpon>
+    <EmbeddedResource Include="ReportUserControl.resx">
+      <DependentUpon>ReportUserControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="SalesFormUserControl.resx">
-      <DependentUpon>SalesFormUserControl.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UserAccountForm.resx">
-      <DependentUpon>UserAccountForm.cs</DependentUpon>
+    <EmbeddedResource Include="TotalSalesFormUserControl.resx">
+      <DependentUpon>TotalSalesFormUserControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserAccountUserControl.resx">
       <DependentUpon>UserAccountUserControl.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewProductForm.resx">
+      <DependentUpon>ViewProductForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewSalesForm.resx">
+      <DependentUpon>ViewSalesForm.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\DataSources\Customer.datasource" />
+    <None Include="Properties\DataSources\Product.datasource" />
+    <None Include="Properties\DataSources\PurchaseOrder.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />
     <None Include="Properties\DataSources\UserAccount.datasource" />
     <None Include="Properties\Settings.settings">

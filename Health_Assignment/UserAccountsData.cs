@@ -26,7 +26,9 @@ namespace Health_Assignment
 
         public static bool addUserAccount(UserAccount newUserAccount)
         {
-            if (userAccounts.Contains(newUserAccount))
+            
+            UserAccount existingAccount = userAccounts.Find(x => x.UserName == newUserAccount.UserName);
+            if (existingAccount!=null)
             {
                 return false;
             }

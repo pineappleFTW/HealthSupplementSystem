@@ -1,0 +1,10 @@
+<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
+<area shape="rect" id="node1" href="$class_health___assignment_1_1_customer_user_control_form.html" title="Health_Assignment.Customer\lUserControlForm" alt="" coords="5,201,200,243"/>
+<area shape="rect" id="node2" href="$class_health___assignment_1_1_home_user_control.html" title="Health_Assignment.HomeUser\lControl" alt="" coords="255,5,455,47"/>
+<area shape="rect" id="node3" href="$class_health___assignment_1_1_inventory_user_control.html" title="Health_Assignment.Inventory\lUserControl" alt="" coords="260,71,451,112"/>
+<area shape="rect" id="node4" href="$class_health___assignment_1_1_point_of_sale_form.html" title="Health_Assignment.PointOf\lSaleForm" alt="" coords="264,136,447,177"/>
+<area shape="rect" id="node5" href="$class_health___assignment_1_1_purchase_order_use_control.html" title="Health_Assignment.Purchase\lOrderUseControl" alt="" coords="258,201,453,243"/>
+<area shape="rect" id="node6" href="$class_health___assignment_1_1_report_user_control.html" title="Health_Assignment.Report\lUserControl" alt="" coords="267,267,444,308"/>
+<area shape="rect" id="node7" href="$class_health___assignment_1_1_sales_form_user_control.html" title="Health_Assignment.SalesForm\lUserControl" alt="" coords="254,332,457,373"/>
+<area shape="rect" id="node8" href="$class_health___assignment_1_1_user_account_user_control.html" title="Health_Assignment.UserAccount\lUserControl" alt="" coords="248,397,463,439"/>
+</map>
